@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { cn } from "@/lib/utils";
 
 const ADSENSE_CLIENT = process.env.NEXT_PUBLIC_ADSENSE_CLIENT;
+const ADSENSE_SLOT_TOOL = process.env.NEXT_PUBLIC_ADSENSE_SLOT_TOOL;
 
 declare global {
   interface Window {
@@ -17,7 +18,7 @@ declare global {
  * development and renders nothing in production.
  */
 export function AdSlot({
-  slot,
+  slot = ADSENSE_SLOT_TOOL,
   className,
 }: {
   slot?: string;

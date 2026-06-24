@@ -10,7 +10,7 @@ const FEATURED_SLUGS = [
   "image-compressor",
   "mp4-to-mp3",
   "qr-code-generator",
-  "word-counter",
+  "text-rewriter",
 ];
 
 /**
@@ -29,12 +29,13 @@ export function PopularChips() {
       <p className="mb-3 text-center text-sm font-semibold uppercase tracking-wide text-primary">
         Popular
       </p>
-      <div className="flex flex-wrap items-center justify-center gap-2">
+      <div className="flex flex-wrap items-center justify-center gap-1.5 sm:flex-nowrap">
+
         {featured.map((tool) => (
           <Link
             key={tool.slug}
             href={`/${tool.slug}`}
-            className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-3.5 py-1.5 text-sm font-medium transition-colors hover:border-primary/40 hover:bg-muted"
+            className="inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full border border-border bg-card px-3 py-1.5 text-[13px] font-medium transition-colors hover:border-primary/40 hover:bg-muted"
           >
             <Icon name={tool.icon} className="size-4 text-primary" />
             {tool.name}

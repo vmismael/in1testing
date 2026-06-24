@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { HomeTools } from "@/components/home-tools";
+import { HeroMarquee } from "@/components/hero-marquee";
 import { Logo } from "@/components/layout/logo";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -11,8 +12,9 @@ export default function Home() {
   return (
     <>
       {/* Hero — full-bleed dark tile (DESIGN-apple: product-tile-dark) */}
-      <section className="bg-[#1d1d1f] text-white">
-        <div className="mx-auto max-w-4xl px-4 py-24 text-center sm:py-32">
+      <section className="relative overflow-hidden bg-[#1d1d1f] text-white">
+        <HeroMarquee tools={tools} rows={5} />
+        <div className="relative z-10 mx-auto max-w-4xl px-4 py-24 text-center sm:py-32">
           <h1 className="mx-auto max-w-3xl text-5xl font-semibold leading-[1.05] tracking-tight text-balance sm:text-6xl lg:text-7xl">
             Every tool you need,{" "}
             <Logo className="text-5xl sm:text-6xl lg:text-7xl" /> place
@@ -27,6 +29,15 @@ export default function Home() {
               className={cn(buttonVariants({ size: "lg" }), "h-11 px-6 text-[15px]")}
             >
               Explore tools
+            </Link>
+            <Link
+              href="/all"
+              className={cn(
+                buttonVariants({ variant: "secondary", size: "lg" }),
+                "h-11 px-6 text-[15px]",
+              )}
+            >
+              See all
             </Link>
           </div>
         </div>
