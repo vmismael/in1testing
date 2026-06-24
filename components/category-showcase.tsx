@@ -44,7 +44,7 @@ export function CategoryShowcase() {
         </div>
       </Reveal>
 
-      <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
         {SHOWCASE.map((c, i) => (
           <Reveal key={c.slug} delay={i * 90} className="h-full">
             <Link
@@ -57,19 +57,19 @@ export function CategoryShowcase() {
                     src={c.icon}
                     alt=""
                     fill
-                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                    className="object-contain p-8"
+                    sizes="(min-width: 1024px) 16vw, (min-width: 640px) 33vw, 50vw"
+                    className="object-contain p-6"
                   />
                 ) : c.lucide ? (
-                  <Icon name={c.lucide} className="size-9 text-foreground/70" strokeWidth={1.75} />
+                  <Icon name={c.lucide} className="size-8 text-foreground/70" strokeWidth={1.75} />
                 ) : null}
               </div>
-              <div className="flex flex-1 flex-col p-5">
-                <h3 className="text-xl font-semibold tracking-tight">{c.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{c.blurb}</p>
-                <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-primary">
+              <div className="flex flex-1 flex-col p-4">
+                <h3 className="text-sm font-semibold tracking-tight">{c.title}</h3>
+                <p className="mt-1 line-clamp-2 text-xs text-muted-foreground">{c.blurb}</p>
+                <span className="mt-3 inline-flex items-center gap-1 text-xs font-medium text-primary">
                   See all
-                  <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
+                  <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-0.5" />
                 </span>
               </div>
             </Link>
