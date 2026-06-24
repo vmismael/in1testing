@@ -52,6 +52,15 @@ import {
   Barcode,
   Wifi,
   Contact,
+  Calculator,
+  Percent,
+  Landmark,
+  TrendingUp,
+  HeartPulse,
+  Cake,
+  CalendarDays,
+  Receipt,
+  BadgePercent,
   type LucideIcon,
 } from "lucide-react";
 
@@ -114,6 +123,15 @@ export const iconMap = {
   barcode: Barcode,
   wifi: Wifi,
   contact: Contact,
+  calculator: Calculator,
+  percent: Percent,
+  landmark: Landmark,
+  "trending-up": TrendingUp,
+  "heart-pulse": HeartPulse,
+  cake: Cake,
+  "calendar-days": CalendarDays,
+  receipt: Receipt,
+  "badge-percent": BadgePercent,
 } satisfies Record<string, LucideIcon>;
 
 export type IconName = keyof typeof iconMap;

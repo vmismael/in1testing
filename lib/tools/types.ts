@@ -1,6 +1,6 @@
 import type { IconName } from "@/components/icons";
 
-export type ToolCategory = "pdf" | "image" | "video" | "text" | "web";
+export type ToolCategory = "pdf" | "image" | "video" | "text" | "web" | "calculators";
 
 /** Where the actual work happens. Client tools never upload the user's files. */
 export type ProcessingMode = "client" | "server";

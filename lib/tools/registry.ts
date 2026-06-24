@@ -10,6 +10,7 @@ export const categories: CategoryMeta[] = [
   { slug: "video", label: "Video & Audio", icon: "film", description: "Convert and extract audio from video files." },
   { slug: "text", label: "Text & AI", icon: "type", description: "Rewrite, summarize and transform text." },
   { slug: "web", label: "Web", icon: "globe", description: "Links, QR codes and everyday web utilities." },
+  { slug: "calculators", label: "Calculators", icon: "calculator", description: "Finance, health and everyday calculators." },
 ];
 
 /**
@@ -2861,6 +2862,430 @@ export const tools: Tool[] = [
       { q: "Are my details uploaded anywhere?", a: "No. The code is generated entirely in your browser, so your contact details never leave your device." },
       { q: "Can I print it on a business card?", a: "Yes. It downloads as a PNG you can print on cards, badges and signage or add to a digital signature." },
       { q: "Is it free?", a: "Yes. The vCard QR code generator is completely free, with no account and no limits." },
+    ],
+  },
+
+  // ---------------------------------------------------------------------------
+  {
+    slug: "percentage-calculator",
+    category: "calculators",
+    name: "Percentage Calculator",
+    shortDescription: "Work out percentages, ratios and percentage change.",
+    icon: "percent",
+    processing: "client",
+    keywords: ["percentage calculator", "percent calculator", "percentage change", "what percent of", "calculate percentage"],
+    metaTitle: "Percentage Calculator — Work Out Percentages Free | In1",
+    metaDescription:
+      "Calculate percentages online for free. Find X% of a number, what percent one number is of another, and percentage change. Instant, private, runs in your browser.",
+    h1: "Percentage calculator",
+    intro:
+      "Solve the three percentage questions people actually ask: what is X% of a number, what percent one number is of another, and the percentage change between two values. Pick a mode, type your numbers, and read the answer instantly.",
+    sections: [
+      {
+        heading: "Three percentage questions, one calculator",
+        body: "Percentages come up constantly, but they take a few different shapes, and mixing up which formula to use is where mistakes creep in. This calculator covers the three that matter. 'What is X% of Y' finds a portion of a value — a tip, a tax, a commission, a share. 'X is what percent of Y' tells you the proportion one number represents of a whole — a score out of a total, a part of a budget, a completion rate. 'Percentage change' shows how much a value has grown or shrunk between a starting and ending figure — a price increase, a drop in traffic, a gain on an investment. Each mode uses the right formula behind the scenes, so you do not have to remember which is which or risk dividing the wrong way around. You simply choose the question you are asking, enter the two numbers, and get the correct answer immediately, with the labels updating to make clear exactly what each input means.",
+      },
+      {
+        heading: "Answers update as you type",
+        body: "There is no calculate button to press and no page to reload. The moment you have entered the numbers a mode needs, the result appears, and it keeps updating as you adjust the inputs. This live behavior makes the tool fast for one-off sums and genuinely useful for exploring: you can nudge a percentage up or down and watch the result move, try a few different totals to see how a proportion shifts, or compare scenarios without retyping everything. The instant feedback turns the calculator into something you think with rather than just a box that spits out a single answer. Because the math runs entirely in your browser, there is no lag waiting for a server, and the responsiveness is the same whether you are doing a quick mental-math check or working through a series of related figures. It is the difference between a tool that answers one question and one that helps you reason through a whole set of them.",
+      },
+      {
+        heading: "Everyday and professional uses",
+        body: "Percentages are everywhere, so the calculator earns its place across daily life and work. Shoppers work out discounts and sale prices, and check whether a 'percent off' deal is as good as it sounds. Diners and service users calculate tips and split them fairly. Students compute grades, test scores and the weighting of assignments. Employees and freelancers figure commissions, raises, tax portions and markups. Investors and savers look at percentage gains and losses. Business owners track margins, growth rates and changes in sales or costs month over month. Anyone reading the news encounters percentage changes in prices, populations and statistics that they may want to sanity-check. Because the three modes cover finding a portion, finding a proportion and measuring change, they map onto almost every real situation where a percentage is involved. Instead of reaching for a phone calculator and remembering the formula, you pick the matching question and get a labeled, correct answer that tells you not just the number but what it means.",
+      },
+      {
+        heading: "Private, instant and free",
+        body: "Percentage math is simple arithmetic, and there is no reason it should involve uploading anything. In1 runs the entire calculation locally in your browser, so the numbers you enter — which might relate to your salary, your business margins, your investments or your grades — stay entirely on your own device. Nothing is uploaded, nothing is stored and there is no account or sign-up. The result appears the instant you type, with no network request, which means the calculator works exactly the same offline as online and never stalls on a slow connection. There are no limits, no clutter and no watermark. It is a small, focused tool, but percentages are something people calculate surprisingly often, and having a single calculator that asks which of the three common questions you mean, labels the inputs clearly, and answers instantly removes the small but frequent friction of doing percentage math by hand or hunting for the right formula. Quick, correct and private is exactly what an everyday calculator should be.",
+      },
+      {
+        heading: "Avoid the classic percentage mistakes",
+        body: "Some of the most common math errors are percentage errors, and they happen because the operations are easy to confuse. People divide in the wrong direction when working out what percent one number is of another, or they calculate percentage change against the wrong baseline, comparing to the new value instead of the original. They confuse a percentage-point change with a percentage change, or forget that a 50% drop followed by a 50% rise does not return you to where you started. By giving each question its own mode with clear labels, this calculator steers you toward the right computation for what you are actually asking, which quietly prevents many of these slip-ups. The percentage-change mode always measures relative to the starting value, the proportion mode always divides the part by the whole, and the portion mode always takes the percentage of the second number. You still understand the result — but you are far less likely to get a confidently wrong answer because you set the calculation up the wrong way around.",
+      },
+    ],
+    howTo: [
+      { name: "Choose a mode", text: "Pick X% of Y, X is what percent of Y, or percentage change." },
+      { name: "Enter your numbers", text: "Type the two values; the labels show exactly what each one means." },
+      { name: "Read the answer", text: "The result appears instantly and updates as you change the inputs." },
+      { name: "Try other scenarios", text: "Adjust the numbers to compare results without retyping everything." },
+    ],
+    faq: [
+      { q: "What can this calculator work out?", a: "What X% of a number is, what percent one number is of another, and the percentage change between two values." },
+      { q: "How is percentage change calculated?", a: "It measures the difference between the two values relative to the starting value, so an increase is positive and a decrease is negative." },
+      { q: "Do I have to press calculate?", a: "No. The answer appears instantly as you type and updates when you change the numbers." },
+      { q: "Are my numbers uploaded anywhere?", a: "No. The calculation runs locally in your browser, so your numbers never leave your device." },
+      { q: "Can it handle decimals?", a: "Yes. You can enter decimal values and the result is shown with sensible precision." },
+      { q: "Is it free?", a: "Yes. The percentage calculator is completely free, with no account and no limits." },
+    ],
+  },
+
+  // ---------------------------------------------------------------------------
+  {
+    slug: "loan-calculator",
+    category: "calculators",
+    name: "Loan Calculator",
+    shortDescription: "Estimate monthly loan payments, total cost and interest.",
+    icon: "landmark",
+    processing: "client",
+    keywords: ["loan calculator", "monthly payment calculator", "loan payment", "mortgage calculator", "loan interest calculator"],
+    metaTitle: "Loan Calculator — Monthly Payment & Interest Free | In1",
+    metaDescription:
+      "Calculate your monthly loan payment, total interest and total cost online for free. Works for personal, auto and mortgage loans. Instant, private, runs in your browser.",
+    h1: "Loan calculator",
+    intro:
+      "Enter a loan amount, interest rate and term to see your monthly payment, the total you will repay, and how much of that is interest. Everything is calculated instantly in your browser.",
+    sections: [
+      {
+        heading: "Know your monthly payment before you borrow",
+        body: "The single most important number when taking on a loan is the monthly payment, because that is what has to fit into your budget month after month. This calculator works it out for you using the standard amortization formula that banks and lenders use, based on three inputs: how much you are borrowing, the annual interest rate, and the length of the loan in years. The moment you enter them, you see the monthly payment, so you can judge immediately whether a loan is affordable before you commit to anything. This works for the loans people most commonly take out — personal loans, car loans and mortgages all use the same underlying math — so whether you are sizing up a vehicle purchase, a home loan or a personal borrowing need, the calculator gives you a realistic figure. Knowing the payment up front lets you shop with confidence, compare offers on an equal footing, and avoid the unpleasant surprise of agreeing to a loan whose repayments turn out to be more than you expected.",
+      },
+      {
+        heading: "See the true cost, not just the payment",
+        body: "A low monthly payment can be misleading, because stretching a loan over more years reduces the monthly figure while quietly increasing the total amount you pay. That is why this calculator shows more than just the payment. It also reveals the total of all payments over the life of the loan and, crucially, how much of that total is interest rather than the amount you actually borrowed. Seeing the interest figure laid out plainly is often eye-opening: it is the real price of borrowing, and it can be a substantial fraction of the loan itself, especially at higher rates or over longer terms. With these numbers in front of you, you can make a genuinely informed decision rather than fixating on the monthly payment alone. It becomes obvious how much a longer term really costs, or how much a slightly lower interest rate saves over the years, which is exactly the perspective you need when comparing loan offers that differ in rate and length.",
+      },
+      {
+        heading: "Compare scenarios instantly",
+        body: "Choosing a loan is rarely about one set of numbers; it is about weighing options. What does the payment look like if you borrow a bit less? How much would a shorter term save in interest, and can you afford the higher monthly cost? How much difference does a one-point change in the interest rate actually make? Because this calculator updates the instant you change any input, you can answer these questions in seconds, adjusting the amount, rate or term and watching all the figures respond together. This makes it easy to find the balance that works for you — a payment you can comfortably afford while keeping the total interest as low as you reasonably can. Instead of running each scenario through a formula by hand or filling in a lender's form repeatedly, you explore the trade-offs live. That interactive comparison is where the real value lies, turning a single calculation into a tool for genuinely understanding the shape of a borrowing decision before you make it.",
+      },
+      {
+        heading: "Private by design — calculated in your browser",
+        body: "The numbers behind a loan are personal: how much you earn, what you can afford, what you are planning to buy. There is no reason to send any of that to a server just to do arithmetic, and good reason to keep it to yourself. In1 performs the entire loan calculation locally in your browser. The amount, rate and term you enter never leave your device — nothing is uploaded, nothing is stored, and there is no account or sign-up that ties these figures to you. The results appear instantly because there is no network round trip, and the calculator works exactly the same offline as online. This local-only approach means you can model a sensitive borrowing decision in complete privacy, without registering your financial situation with any website. It is the convenience of an online calculator with the discretion of working it out on paper, which is the right standard for a tool that handles the numbers behind one of the bigger financial commitments most people make.",
+      },
+      {
+        heading: "An estimate to guide you, not a quote",
+        body: "It helps to be clear about what this calculator is and is not. It gives you a sound estimate of the principal-and-interest payment using the standard amortization formula, which is exactly the right tool for planning, budgeting and comparing offers. What it does not include are the extras that vary by loan and lender: things like origination fees, insurance, property taxes that may be bundled into a mortgage payment, or the effect of an introductory or variable rate that changes over time. Those depend on your specific lender and situation, so a real quote may differ. Treating the result as a reliable guide rather than a binding figure is the right way to use it — it tells you the core cost of the borrowing and lets you compare loans on a consistent basis, while you confirm the final details with the lender. Used that way, it is genuinely useful: it puts you in a far stronger position to understand and negotiate a loan than walking in with no numbers at all.",
+      },
+    ],
+    howTo: [
+      { name: "Enter the loan amount", text: "Type how much you plan to borrow." },
+      { name: "Add the interest rate and term", text: "Enter the annual interest rate and the length of the loan in years." },
+      { name: "Read your payment", text: "See the monthly payment, total repaid and total interest instantly." },
+      { name: "Compare options", text: "Adjust the inputs to see how amount, rate and term change the cost." },
+    ],
+    faq: [
+      { q: "What does the loan calculator work out?", a: "Your monthly payment, the total of all payments, and how much of that total is interest, using the standard amortization formula." },
+      { q: "Does it work for mortgages and car loans?", a: "Yes. Personal, auto and mortgage loans use the same underlying math, so it works for all of them." },
+      { q: "Does it include taxes, fees or insurance?", a: "No. It estimates principal and interest. Extras like fees, insurance and taxes vary by lender and aren't included." },
+      { q: "Are my figures uploaded anywhere?", a: "No. The calculation runs locally in your browser, so your numbers never leave your device." },
+      { q: "What if the interest rate is zero?", a: "It still works — with no interest, the payment is simply the amount divided by the number of months." },
+      { q: "Is it free?", a: "Yes. The loan calculator is completely free, with no account and no limits." },
+    ],
+  },
+
+  // ---------------------------------------------------------------------------
+  {
+    slug: "compound-interest-calculator",
+    category: "calculators",
+    name: "Compound Interest Calculator",
+    shortDescription: "Project savings growth with compounding and contributions.",
+    icon: "trending-up",
+    processing: "client",
+    keywords: ["compound interest calculator", "investment calculator", "savings growth calculator", "compound interest", "future value calculator"],
+    metaTitle: "Compound Interest Calculator — Project Growth Free | In1",
+    metaDescription:
+      "Calculate compound interest and project savings growth online for free. Add a starting amount, rate, term, compounding frequency and monthly contributions. Private, in your browser.",
+    h1: "Compound interest calculator",
+    intro:
+      "See how your savings or investments could grow over time with compound interest. Add a starting amount, interest rate, term, compounding frequency and optional monthly contributions to project the future value and the interest earned.",
+    sections: [
+      {
+        heading: "The power of compound interest",
+        body: "Compound interest is often called the most powerful force in finance, and for good reason: it is interest earned not just on your original money but on the interest that money has already earned. Over time this snowball effect can turn modest, steady saving into a surprisingly large sum, because each period's growth becomes the base for the next period's growth. The catch is that compounding is hard to picture in your head — the curve is not a straight line, and small changes in rate or time produce outsized differences decades later. This calculator makes the effect concrete. You enter a starting amount, an annual interest rate and a number of years, and it projects the future value, showing you the result that compounding produces rather than leaving you to guess. Seeing the number is genuinely motivating, and it makes the abstract idea of 'letting your money grow' into something specific you can plan around, compare and aim for.",
+      },
+      {
+        heading: "Add regular contributions",
+        body: "For most people, real wealth is not built from a single lump sum but from a starting amount plus steady contributions over many years, so this calculator lets you include a monthly contribution. This reflects how saving and investing actually work: you put money in regularly, and each deposit then compounds for the rest of the term. The effect of these ongoing contributions is enormous over long periods, often dwarfing the starting amount, and the calculator captures it so your projection matches a realistic saving plan rather than an unrealistic one-time deposit. You can see how much difference adding a little more each month makes, or how a consistent contribution over a long horizon builds up. This is exactly the kind of what-if that helps with real decisions — whether it is worth increasing a monthly transfer to a savings or investment account, or how much you would need to contribute to reach a target by a certain date.",
+      },
+      {
+        heading: "Compounding frequency and time horizon",
+        body: "Two factors quietly shape how much compound interest delivers: how often the interest compounds, and how long you leave the money to grow. This calculator lets you set both. You can choose whether interest compounds yearly, quarterly, monthly or daily, and see how more frequent compounding produces a slightly higher result for the same rate, because interest starts earning interest sooner. More importantly, you control the number of years, and adjusting it reveals the single biggest lever in compounding: time. Because growth accelerates, the difference between, say, twenty and thirty years is far larger than the difference between ten and twenty. Being able to slide the time horizon and watch the future value respond drives home why starting early matters so much, and why patience is rewarded. Seeing these factors interact — rate, frequency, contributions and especially time — turns the calculator into a tool for understanding how saving works, not just a box that prints one number.",
+      },
+      {
+        heading: "See growth versus what you put in",
+        body: "A projection is most useful when it separates the money you contributed from the money your investment earned, and this calculator does exactly that. Alongside the projected future value, it shows the total amount you invested — your starting sum plus all your contributions — and the interest earned, which is the difference between the two. This breakdown is illuminating because it reveals how much of your final balance is your own money versus growth that compounding generated for you. Early on, most of the balance is what you put in; over a long horizon, the earned interest can come to rival or exceed your contributions, which is compounding's whole promise made visible. Seeing the three figures together helps you appreciate the return your money is working to produce and keeps your expectations grounded in the actual contribution required. It is the difference between a single impressive-looking total and a genuine understanding of where that total comes from and what it took to build it.",
+      },
+      {
+        heading: "A projection, not a guarantee",
+        body: "It is worth being clear about what this calculator does. It projects growth using a fixed interest rate compounded over time, which is the right model for a savings account or for illustrating how compounding works. Real investments, however, do not deliver a smooth, fixed return: markets rise and fall, rates change, and actual results vary year to year. The calculator also does not account for taxes, fees or inflation, all of which affect what your money is really worth in the end. So the figure it produces is best treated as an illustration of the compounding principle and a planning aid, not a promise of a specific outcome. Used that way it is genuinely valuable — it helps you compare scenarios, set savings targets and understand the impact of rate, time and contributions — while you keep in mind that a real investment's path will be bumpier. Everything is calculated privately in your browser, so you can model your plans without sharing your financial details with anyone.",
+      },
+    ],
+    howTo: [
+      { name: "Enter your starting amount", text: "Add the initial sum you're investing or saving, and any monthly contribution." },
+      { name: "Set the rate and term", text: "Enter the annual interest rate and the number of years." },
+      { name: "Choose compounding frequency", text: "Pick yearly, quarterly, monthly or daily compounding." },
+      { name: "Read the projection", text: "See the future value, the total invested and the interest earned." },
+    ],
+    faq: [
+      { q: "What is compound interest?", a: "It's interest earned on both your original money and the interest it has already earned, which makes savings grow faster over time." },
+      { q: "Can I include monthly contributions?", a: "Yes. You can add a regular monthly contribution, which compounds along with your starting amount." },
+      { q: "Does compounding frequency matter?", a: "Yes. More frequent compounding produces a slightly higher result for the same rate, and you can choose yearly, quarterly, monthly or daily." },
+      { q: "Does it account for taxes or inflation?", a: "No. It projects growth at a fixed rate and doesn't include taxes, fees or inflation, so treat it as an illustration." },
+      { q: "Are my numbers uploaded anywhere?", a: "No. The calculation runs locally in your browser, so your figures never leave your device." },
+      { q: "Is it free?", a: "Yes. The compound interest calculator is completely free, with no account and no limits." },
+    ],
+  },
+
+  // ---------------------------------------------------------------------------
+  {
+    slug: "bmi-calculator",
+    category: "calculators",
+    name: "BMI Calculator",
+    shortDescription: "Calculate your Body Mass Index in metric or imperial.",
+    icon: "heart-pulse",
+    processing: "client",
+    keywords: ["bmi calculator", "body mass index", "calculate bmi", "bmi chart", "bmi metric imperial"],
+    metaTitle: "BMI Calculator — Body Mass Index Online Free | In1",
+    metaDescription:
+      "Calculate your Body Mass Index online for free in metric or imperial units. See your BMI and weight category instantly. Private — runs entirely in your browser.",
+    h1: "BMI calculator",
+    intro:
+      "Enter your height and weight in metric or imperial units to calculate your Body Mass Index and see which standard category it falls into. The calculation is instant and completely private.",
+    sections: [
+      {
+        heading: "What BMI is and how it is calculated",
+        body: "Body Mass Index, or BMI, is a simple number that relates your weight to your height, and it is the most widely used screening measure for whether a person's weight is in a healthy range for their height. The calculation is straightforward: in metric units it is your weight in kilograms divided by the square of your height in metres, and this calculator handles the equivalent formula for imperial units automatically. The result is a single figure that places you on a standard scale. BMI is popular because it requires only two measurements that anyone can obtain, needs no special equipment, and gives a quick, consistent indication that is useful for tracking changes over time and for comparing against widely published categories. This tool computes it for you in either unit system, so you do not have to remember the formula or convert between pounds, stones, kilograms, inches and centimetres yourself — you just enter your height and weight and read the number.",
+      },
+      {
+        heading: "See your category at a glance",
+        body: "A BMI number on its own means little without context, so this calculator also tells you which standard category your result falls into: underweight, normal weight, overweight, or obese, using the widely recognized thresholds. The category is colour-coded so you can take in your result at a glance rather than having to look up where your number sits on a chart. These categories come from the same internationally used ranges that health organizations and clinicians reference, which makes your result easy to interpret and to discuss. Seeing the band, not just the figure, turns an abstract number into something meaningful — it tells you immediately whether your weight is generally considered to be in a healthy range for your height or whether it sits above or below it. Because the category updates the instant you change your inputs, you can also see how a different weight would shift your classification, which is useful if you are setting a goal or tracking progress toward one.",
+      },
+      {
+        heading: "Metric and imperial, no conversion needed",
+        body: "Height and weight are measured differently around the world, and converting between systems by hand is exactly the kind of fiddly step that introduces errors. This calculator removes it. With a single toggle you can work entirely in metric — centimetres and kilograms — or entirely in imperial — inches and pounds — and the correct formula is applied automatically for whichever you choose. You never have to convert your height into metres or your weight into kilograms, or remember the multiplier that imperial BMI requires. This matters because using the wrong units or mishandling a conversion produces a BMI that is badly wrong, which could be alarming or falsely reassuring. By letting you enter your measurements in the units you actually know them in, the tool keeps the input natural and the result accurate. Whether you think of your height in feet and inches or in centimetres, you can use the calculator without any mental arithmetic, and trust that the number it gives you is computed correctly for the units you selected.",
+      },
+      {
+        heading: "Private by design — nothing is uploaded",
+        body: "Your height and weight are personal health information, and they deserve to be treated that way. In1 calculates your BMI entirely in your browser, so the measurements you enter never leave your device. Nothing is uploaded, nothing is stored, and there is no account or sign-up that links this data to you. The result appears instantly because there is no server involved, and the calculator works exactly the same offline as online. This local-only approach means you can check your BMI without registering sensitive health details with any website or wondering where that information might end up. It is a meaningful distinction for a health-related tool: many sites that look up such things transmit your data to a server, whereas here the entire calculation happens on your own machine and is forgotten the moment you close the tab. You get a quick, accurate result with the privacy that personal health figures warrant, which is the standard any tool handling this kind of information should meet.",
+      },
+      {
+        heading: "Understand BMI's limits",
+        body: "BMI is a useful, quick screening tool, but it is important to understand what it does not tell you. Because it considers only height and weight, it cannot distinguish muscle from fat, so a very muscular, athletic person may register as overweight despite having low body fat. It does not account for where fat is carried, for bone density, or for differences related to age, sex and ethnicity, all of which affect what a given BMI means for an individual. It is a population-level measure that works well for general guidance but is not a diagnosis and should not be treated as the final word on anyone's health. This calculator states that plainly alongside your result, because the responsible way to present BMI is with its caveats attached. Use it as one helpful indicator and a way to track changes over time, but for a genuine assessment of your health, a qualified healthcare professional who can consider the full picture is the right source. The number is a starting point for understanding, not a verdict.",
+      },
+    ],
+    howTo: [
+      { name: "Choose your units", text: "Switch between metric (cm, kg) and imperial (inches, lb)." },
+      { name: "Enter your height", text: "Type your height in the selected unit." },
+      { name: "Enter your weight", text: "Type your weight in the selected unit." },
+      { name: "Read your BMI", text: "See your BMI and its category instantly, with the limits of BMI noted." },
+    ],
+    faq: [
+      { q: "How is BMI calculated?", a: "It's your weight divided by the square of your height — in metric, kilograms over metres squared. The tool handles the imperial formula automatically." },
+      { q: "What are the BMI categories?", a: "The standard ranges are underweight, normal weight, overweight and obese, and the tool shows which one your result falls into." },
+      { q: "Can I use pounds and inches?", a: "Yes. Switch to imperial units and enter your height in inches and weight in pounds." },
+      { q: "Is BMI a diagnosis?", a: "No. BMI is a general screening tool that doesn't account for muscle, age or body composition, and it isn't a medical diagnosis." },
+      { q: "Is my health data uploaded anywhere?", a: "No. The calculation runs locally in your browser, so your measurements never leave your device." },
+      { q: "Is it free?", a: "Yes. The BMI calculator is completely free, with no account and no limits." },
+    ],
+  },
+
+  // ---------------------------------------------------------------------------
+  {
+    slug: "age-calculator",
+    category: "calculators",
+    name: "Age Calculator",
+    shortDescription: "Find an exact age in years, months and days from a birth date.",
+    icon: "cake",
+    processing: "client",
+    keywords: ["age calculator", "calculate age", "age from date of birth", "how old am i", "exact age calculator"],
+    metaTitle: "Age Calculator — Exact Age from Date of Birth Free | In1",
+    metaDescription:
+      "Calculate exact age from a date of birth online for free. See age in years, months and days, plus total months, weeks and days. Private — runs in your browser.",
+    h1: "Age calculator",
+    intro:
+      "Enter a date of birth to see the exact age today in years, months and days, along with the total number of months, weeks and days lived. Everything is calculated instantly in your browser.",
+    sections: [
+      {
+        heading: "Your exact age, down to the day",
+        body: "Most of the time we describe age in whole years, but there are plenty of situations where you need it exactly — to the day. This calculator takes a date of birth and works out precisely how old someone is right now, expressed in years, months and days. Calculating this by hand is genuinely awkward because months have different lengths and leap years complicate the arithmetic, which is why doing it in your head almost always produces an off-by-one error somewhere. The calculator handles all of that correctly, accounting for the varying number of days in each month and for leap years, so the result is accurate rather than approximate. You simply enter the birth date and immediately see the exact age. Whether you are filling in a form that asks for a precise age, settling a friendly argument about exactly how old someone is, or just curious, the answer is right there, calculated properly, without you having to count on your fingers or wrestle with a calendar.",
+      },
+      {
+        heading: "Total months, weeks and days lived",
+        body: "Beyond the standard years-months-days breakdown, this calculator also shows the totals: the complete number of months, weeks and days a person has been alive. These figures are surprisingly fun and occasionally useful. Seeing that you are tens of thousands of days old, or hundreds of months, reframes a familiar number in a way that can be genuinely striking. The total-days figure is also practical for any situation where a precise span matters — counting days toward a milestone, working out exact durations, or satisfying a requirement that is expressed in days rather than years. Because all of these totals are derived from the same accurate underlying calculation, they are consistent with each other and with the years-months-days result. They appear alongside the main figure, so a single entry of a birth date gives you the complete picture: the conventional age, and the larger numbers that put a whole life span into days and weeks. It is the kind of detail that turns a simple age lookup into something a little more interesting.",
+      },
+      {
+        heading: "Handles months and leap years correctly",
+        body: "The reason a dedicated tool beats mental math here is that calendar arithmetic is full of small traps. Months range from twenty-eight to thirty-one days, so 'one month' is not a fixed length, and subtracting dates naively gives wrong results whenever the day-of-month does not line up. Leap years add an extra day every four years, with their own exceptions, which throws off any simple day-counting. This calculator deals with all of it properly: when the current day of the month is earlier than the birth day, it borrows the correct number of days from the actual previous month, and it counts total days using real calendar dates so leap days are included automatically. The upshot is that the age it reports is genuinely exact, not a rough estimate that drifts by a day or two. You do not need to know or think about any of this complexity — you just get the right answer, which is precisely what you want from a tool whose whole job is to make a fiddly calculation effortless and reliable.",
+      },
+      {
+        heading: "Private by design — calculated in your browser",
+        body: "A date of birth is a piece of personal information, often treated as sensitive precisely because it is used to identify people. There is no reason to send it to a server just to count the time since then. In1 calculates the age entirely in your browser, so the birth date you enter never leaves your device. Nothing is uploaded, nothing is stored, and there is no account or sign-up. The result appears instantly because there is no network request, and the tool works exactly the same offline as online. This local-only approach means you can calculate your own age or someone else's without handing a date of birth to a website, which is a small but real privacy benefit given how often that particular piece of data is misused. The calculation is simple, but doing it locally is the responsible default: your information stays with you, the answer is immediate, and there is nothing tracking or retaining the dates you check.",
+      },
+      {
+        heading: "Who uses an age calculator?",
+        body: "The need turns up more often than you might think. Parents track a baby's age in weeks and months, which is how early development is commonly measured. People completing official forms, applications and registrations sometimes need to state an exact age or confirm one as of a specific date. HR and administrative staff verify ages for eligibility and records. Anyone planning a milestone birthday or anniversary likes to know the exact count of days. Teachers and coaches check ages against age-group cutoffs. People simply curious about exactly how old they, a friend, or a family member are reach for it to settle the question precisely. Even trivia and personal-record enthusiasts enjoy seeing their age expressed in total days. Because the calculator gives both the conventional years-months-days figure and the larger totals, accurately and instantly, it serves the practical need to know a precise age and the simple pleasure of seeing a lifetime measured in days — all without anyone's birth date leaving their own browser.",
+      },
+    ],
+    howTo: [
+      { name: "Enter the date of birth", text: "Pick or type the birth date." },
+      { name: "Read the exact age", text: "See the age today in years, months and days." },
+      { name: "Check the totals", text: "See the total months, weeks and days lived as well." },
+      { name: "Try another date", text: "Change the date to calculate a different age instantly." },
+    ],
+    faq: [
+      { q: "What does the age calculator show?", a: "The exact age today in years, months and days, plus the total number of months, weeks and days lived." },
+      { q: "Does it handle leap years?", a: "Yes. It counts using real calendar dates, so leap years and the varying lengths of months are handled correctly." },
+      { q: "Can I calculate age as of a past date?", a: "It calculates age as of today. For the span between any two dates, the date difference calculator is the right tool." },
+      { q: "Is the date of birth uploaded anywhere?", a: "No. The calculation runs locally in your browser, so the birth date never leaves your device." },
+      { q: "Why is the day count useful?", a: "An exact total of days is handy for milestones, precise durations, or any requirement expressed in days rather than years." },
+      { q: "Is it free?", a: "Yes. The age calculator is completely free, with no account and no limits." },
+    ],
+  },
+
+  // ---------------------------------------------------------------------------
+  {
+    slug: "date-difference-calculator",
+    category: "calculators",
+    name: "Date Difference Calculator",
+    shortDescription: "Count the time between two dates in years, months and days.",
+    icon: "calendar-days",
+    processing: "client",
+    keywords: ["date difference calculator", "days between dates", "date duration calculator", "time between dates", "days calculator"],
+    metaTitle: "Date Difference Calculator — Days Between Dates Free | In1",
+    metaDescription:
+      "Calculate the difference between two dates online for free. See the span in years, months and days, plus total months, weeks and days. Private, runs in your browser.",
+    h1: "Date difference calculator",
+    intro:
+      "Pick a start and end date to see exactly how much time lies between them — in years, months and days, plus the totals in months, weeks and days. The calculation is instant and private.",
+    sections: [
+      {
+        heading: "Measure the time between any two dates",
+        body: "Working out how much time separates two dates is one of those tasks that sounds trivial but is genuinely error-prone to do by hand. You have to account for the different lengths of months, for leap years, and for the awkward cases where the day of the month does not line up between the start and the end. This calculator removes all of that effort. You choose a start date and an end date, and it tells you exactly how much time lies between them, expressed in years, months and days. It does not matter which date you put first — if you happen to enter them in the wrong order, the calculator simply measures the span between them rather than complaining or returning a negative result. The answer appears instantly and is calculated correctly using real calendar dates, so you can rely on it for anything from a casual curiosity to a calculation that actually matters. No counting on a calendar, no mental arithmetic, no off-by-one mistakes.",
+      },
+      {
+        heading: "Years and months, plus exact totals",
+        body: "Different situations call for the duration in different forms, so this calculator gives you several at once. The primary result breaks the span into years, months and days, which is the most natural way to describe a long period — the way you would say someone has worked somewhere for 'three years and two months'. Alongside it, the calculator shows the totals: the complete number of months, the number of weeks, and the exact number of days between the two dates. The total-days figure in particular is invaluable whenever a duration needs to be expressed precisely — for deadlines, notice periods, contract terms, or any calculation that is counted in days. Having all of these forms available from a single pair of dates means you do not have to convert between them yourself or run the calculation more than once. Whether you need the human-friendly years-and-months description or the precise day count, both are right there, consistent with each other and ready to use immediately.",
+      },
+      {
+        heading: "Accurate calendar math you can trust",
+        body: "The value of a dedicated calculator is that it gets the tricky details right, and date arithmetic has plenty of them. Months are not a uniform length, so 'one month later' lands on a different number of days depending on which month it is. Leap years insert an extra day on a schedule with its own exceptions. Subtracting dates without care produces results that are subtly wrong, especially across month and year boundaries. This calculator handles all of it by working with actual calendar dates rather than rough averages: it borrows the correct number of days from the real preceding month when the day-of-month does not line up, and it counts total days using true date values so every leap day is included automatically. The result is a difference you can trust to be exact, not an approximation that drifts. You never have to think about any of this complexity — the tool absorbs it and simply gives you the right answer, which is the entire point of using a calculator for something that is deceptively easy to get wrong.",
+      },
+      {
+        heading: "Private by design — calculated in your browser",
+        body: "The dates you measure between can carry context you would rather keep private — the timing of a contract, a medical event, a legal deadline, a personal milestone. There is no reason any of that should be sent to a server to count the days. In1 performs the entire calculation in your browser, so the dates you enter never leave your device. Nothing is uploaded, nothing is stored, and there is no account or sign-up. The result appears the instant both dates are set, with no network request, and the calculator works exactly the same offline as online. This local-only approach means you can work out a sensitive duration without sharing the underlying dates with any website. The math is simple, but doing it on your own machine is the right default: it keeps your information with you, makes the result immediate, and ensures nothing is recording the dates you check. Quick, accurate and private is exactly what a date calculator should be.",
+      },
+      {
+        heading: "Who uses a date difference calculator?",
+        body: "The uses are remarkably varied. Professionals calculate notice periods, contract durations, project timelines and the exact number of days until or since a deadline. HR staff work out lengths of service and tenure. People in legal and financial roles count days for terms, deadlines and interest periods where precision genuinely matters. Travelers count the days of a trip or the time until departure. Event planners measure the run-up to a date and the gap between milestones. Individuals track the time since a significant event, count down to a wedding or a birthday, or work out how long ago something happened. Students and researchers measure intervals in data. Anyone who has ever tried to count days across a couple of months on a calendar and lost track knows how easy it is to get wrong. A calculator that takes two dates and returns the exact span in several forms — instantly and privately — turns that fiddly, mistake-prone task into a single reliable step.",
+      },
+    ],
+    howTo: [
+      { name: "Pick the start date", text: "Choose or type the first date." },
+      { name: "Pick the end date", text: "Choose or type the second date; order doesn't matter." },
+      { name: "Read the difference", text: "See the span in years, months and days." },
+      { name: "Check the totals", text: "See the total months, weeks and days between the dates." },
+    ],
+    faq: [
+      { q: "What does it calculate?", a: "The time between two dates in years, months and days, plus the total months, weeks and days." },
+      { q: "Does the order of the dates matter?", a: "No. If you enter them in either order, the calculator measures the span between them." },
+      { q: "Does it handle leap years and month lengths?", a: "Yes. It uses real calendar dates, so leap years and varying month lengths are handled correctly." },
+      { q: "Are my dates uploaded anywhere?", a: "No. The calculation runs locally in your browser, so your dates never leave your device." },
+      { q: "Can it tell me the exact number of days?", a: "Yes. Alongside years and months, it shows the exact total number of days between the two dates." },
+      { q: "Is it free?", a: "Yes. The date difference calculator is completely free, with no account and no limits." },
+    ],
+  },
+
+  // ---------------------------------------------------------------------------
+  {
+    slug: "tip-calculator",
+    category: "calculators",
+    name: "Tip Calculator",
+    shortDescription: "Work out the tip and split the bill between any number of people.",
+    icon: "receipt",
+    processing: "client",
+    keywords: ["tip calculator", "gratuity calculator", "split the bill", "tip and split calculator", "how much to tip"],
+    metaTitle: "Tip Calculator — Work Out Tips & Split Bills Free | In1",
+    metaDescription:
+      "Calculate the tip and split a bill online for free. Choose a tip percentage, see the tip and total, and divide it fairly between any number of people. Instant, in your browser.",
+    h1: "Tip calculator",
+    intro:
+      "Enter your bill, pick a tip percentage and split it between any number of people. See the tip amount, the total, and exactly how much each person owes — calculated instantly in your browser.",
+    sections: [
+      {
+        heading: "Tip and split without the awkward maths",
+        body: "Working out a tip and splitting a bill at the end of a meal is a classic moment of fumbling mental arithmetic, usually under a little social pressure with everyone waiting. This calculator takes care of it instantly. You enter the bill amount, choose how generous a tip you want to leave, and it shows you the tip in money, the new total including the tip, and — if you are dining with others — exactly how much each person needs to contribute. There is no working it out on a napkin, no rounding errors, and no one quietly underpaying because the division was guessed rather than calculated. Because everything updates the moment you change a number, you can adjust the tip up or down and watch the per-person figure respond, settling on an amount that feels right. It turns the slightly stressful ritual of dividing a restaurant bill into a two-second task, so you can pay and get on with your evening.",
+      },
+      {
+        heading: "Choose any tip percentage",
+        body: "Tipping norms vary by country, by service and by how you feel about the meal, so the calculator gives you flexibility rather than locking you into one rate. Quick preset buttons cover the percentages people most commonly use, so a single tap sets a standard tip. But you can also type any custom percentage when you want something specific — a little extra for excellent service, a lower amount where a service charge is already included, or whatever matches the local convention where you are. The tip and the total recalculate instantly as you change the percentage, so it is easy to see the difference a few points makes and choose an amount you are comfortable with. This matters because the 'right' tip is genuinely situational, and a tool that insisted on one figure would be useless half the time. By making both quick presets and free entry available, the calculator fits a fast standard tip and a considered custom one equally well, wherever you happen to be eating.",
+      },
+      {
+        heading: "Split fairly between any group",
+        body: "Splitting the bill is where the arithmetic usually gets messy, especially once a tip is added on top, and that is exactly what this calculator makes effortless. You enter how many people are sharing the cost, and it divides the total — bill plus tip — evenly between them, showing the precise amount each person owes, including their share of the tip. No more dividing a slightly odd number by an awkward count in your head and hoping it comes out fair. Whether it is two people splitting a dinner or a larger group sharing a big table, everyone pays their correct share. The per-person figure also breaks out how much of each share is tip, so the split is transparent and nobody has to wonder how the number was reached. This is the part of the calculation people most often get wrong or argue about, and having it computed exactly removes both the friction and the small unfairnesses that creep in when a group tries to divide a bill by guesswork.",
+      },
+      {
+        heading: "Instant, private and free",
+        body: "A tip calculator should be quick to reach for and ask nothing of you, and that is how this one is built. It runs entirely in your browser, so the figures you enter stay on your own device — nothing is uploaded, nothing is stored, and there is no account or sign-up. The results appear the instant you type, with no network request, which means it works just as well offline as online, including when you are sitting in a restaurant with patchy reception and no signal to spare. There are no ads-laden pop-ups to fight through and no limits on how often you use it. Because it is fast, local and free, it is the kind of tool you can pull up on your phone the moment the bill arrives and have an answer before anyone has finished reaching for their wallet. Simple, private and immediate is precisely what you want from something you use in a brief, slightly hurried moment at the end of a meal.",
+      },
+      {
+        heading: "More than just restaurants",
+        body: "While splitting a restaurant bill is the obvious use, the same calculation applies in plenty of other situations. People use it to tip for food delivery, taxis and rideshares, hairdressers, tour guides, hotel staff and any service where gratuity is customary. The split function is just as handy beyond tipping: dividing any shared cost evenly among a group — a group gift, a shared taxi, a utility bill, the cost of a shared purchase — is the same arithmetic of taking a total and splitting it fairly. Because the tool lets you set a tip of zero, it works equally well as a plain bill-splitter when no gratuity is involved. This versatility means it is not a single-purpose novelty but a genuinely useful everyday calculator for any moment when money needs to be divided among people, with or without a tip on top. Keeping it on hand saves the recurring small hassle of working out shares and gratuities by guesswork, wherever and whenever the situation comes up.",
+      },
+    ],
+    howTo: [
+      { name: "Enter the bill", text: "Type the total amount of the bill before tip." },
+      { name: "Choose a tip", text: "Tap a preset percentage or enter your own." },
+      { name: "Set the group size", text: "Enter how many people are splitting the bill." },
+      { name: "See who owes what", text: "Read the tip, the total, and the amount per person instantly." },
+    ],
+    faq: [
+      { q: "What does the tip calculator show?", a: "The tip amount, the total including tip, and — when you split it — how much each person owes, including their share of the tip." },
+      { q: "Can I use a custom tip percentage?", a: "Yes. Tap a preset or type any percentage you like, and the figures update instantly." },
+      { q: "Can it split between several people?", a: "Yes. Enter the number of people and the total is divided evenly, showing each person's share." },
+      { q: "Does it work offline?", a: "Yes. It runs entirely in your browser, so it works without a connection — handy in a restaurant." },
+      { q: "Are my amounts uploaded anywhere?", a: "No. The calculation runs locally in your browser, so your figures never leave your device." },
+      { q: "Is it free?", a: "Yes. The tip calculator is completely free, with no account and no limits." },
+    ],
+  },
+
+  // ---------------------------------------------------------------------------
+  {
+    slug: "discount-calculator",
+    category: "calculators",
+    name: "Discount Calculator",
+    shortDescription: "Find the sale price and how much you save on any discount.",
+    icon: "badge-percent",
+    processing: "client",
+    keywords: ["discount calculator", "sale price calculator", "percent off calculator", "how much will i save", "discount price"],
+    metaTitle: "Discount Calculator — Sale Price & Savings Free | In1",
+    metaDescription:
+      "Calculate the sale price and how much you save on a discount online for free. Enter a price and percent off to see the final price instantly. Private, runs in your browser.",
+    h1: "Discount calculator",
+    intro:
+      "Enter an original price and a discount percentage to instantly see the final sale price and exactly how much you save. Quick presets cover the most common discounts, and everything is calculated in your browser.",
+    sections: [
+      {
+        heading: "Know the real sale price instantly",
+        body: "A 'percent off' sticker tells you the discount but not the thing you actually want to know: what you will pay. Working that out in your head is doable for round numbers but fiddly for the rest, and stores are not shy about pricing things at amounts that make the mental math harder. This calculator gives you the answer immediately. You enter the original price and the discount percentage, and it shows the final price you will pay along with the amount you save. No guessing, no rough estimates, no being caught out at the register when the total is higher than you assumed. Because the result updates the moment you change a number, you can check a price the instant you see a tag, compare what different discounts would cost, or work out whether a deal genuinely brings something into your budget. It turns the vague promise of a percentage off into the concrete number that actually matters for your decision.",
+      },
+      {
+        heading: "See how much you actually save",
+        body: "The flip side of the final price is the saving, and this calculator shows that too, because the amount you keep in your pocket is often the more motivating figure. Seeing that a discount saves you a specific sum of money — not just a percentage — makes the value of a deal tangible and helps you judge whether it is worth acting on. A big percentage off a small item might save very little, while a modest percentage off an expensive one can be substantial, and the money figure makes that obvious in a way the percentage alone does not. Having both the final price and the saving side by side gives you the complete picture of a discount: what you pay and what you avoid paying. This is exactly what you need to make a quick, sensible call on whether a sale is a real opportunity or just a number designed to look appealing, and it takes the calculation out of the realm of optimistic guesswork.",
+      },
+      {
+        heading: "Quick presets and custom discounts",
+        body: "Most discounts cluster around a handful of common percentages, so the calculator includes quick preset buttons for the ones you see most often — a single tap sets a typical sale discount. But sales come in every size, so you can also type any custom percentage when you need to, whether it is an unusual store-wide figure, a staff discount, a clearance reduction or a coupon amount. The final price and saving recalculate instantly whichever way you set the discount, so it is just as fast to check a standard sale as an oddly specific one. This combination keeps the tool quick for the common cases without ever boxing you in when the number is unusual. It also makes it easy to compare: tap between a few preset discounts to see how the final price shifts, or type in the exact percentage from a coupon to confirm what it really brings the price down to. Either way, the answer is one tap or a few keystrokes away.",
+      },
+      {
+        heading: "Instant, private and free",
+        body: "A discount calculator is something you reach for in the moment — standing in a shop, browsing online, weighing up a deal — so it needs to be fast and frictionless. This one runs entirely in your browser, so the prices you enter stay on your own device, with nothing uploaded, nothing stored, and no account or sign-up. The result appears instantly because there is no server involved, which also means it works perfectly offline, including in a shop with no signal. There are no limits and no clutter standing between you and the answer. Because it is local, immediate and free, you can pull it up on your phone the second you spot a sale and know in a moment exactly what something will cost and what you will save. For a tool whose whole value is giving you a quick, honest number at the point of decision, being fast, private and always available is precisely the right design.",
+      },
+      {
+        heading: "Shop smarter with the numbers in hand",
+        body: "Beyond a single price check, a discount calculator helps you become a sharper shopper. By making the real cost and saving of any deal instantly visible, it lets you cut through marketing that leans on big-sounding percentages, compare offers on an equal footing, and decide based on what you will actually pay rather than how the discount is framed. You can quickly check whether stacking a coupon on a sale crosses a threshold that matters to you, whether a larger discount on a pricier alternative beats a smaller one on a cheaper item, or simply whether a tempting sale fits your budget. Retailers design discounts to feel like opportunities; having the exact numbers turns that feeling into a fact you can verify. It is a small habit that adds up over time, helping you avoid overspending on deals that are less generous than they appear and recognise the ones that genuinely are. The calculator gives you that clarity in seconds, every time you need it.",
+      },
+    ],
+    howTo: [
+      { name: "Enter the original price", text: "Type the price before the discount." },
+      { name: "Choose the discount", text: "Tap a preset percentage or enter your own." },
+      { name: "See the final price", text: "Read the sale price you'll pay instantly." },
+      { name: "Check your saving", text: "See exactly how much money the discount saves you." },
+    ],
+    faq: [
+      { q: "What does the discount calculator show?", a: "The final sale price after the discount and the exact amount of money you save." },
+      { q: "Can I enter any discount percentage?", a: "Yes. Use a preset for common discounts or type any custom percentage you need." },
+      { q: "Does it work for coupons and clearance prices?", a: "Yes. Enter the exact percentage off and it shows what the price comes down to and how much you save." },
+      { q: "Does it work offline?", a: "Yes. It runs entirely in your browser, so you can use it in a shop with no signal." },
+      { q: "Are the prices uploaded anywhere?", a: "No. The calculation runs locally in your browser, so your figures never leave your device." },
+      { q: "Is it free?", a: "Yes. The discount calculator is completely free, with no account and no limits." },
     ],
   },
 ];

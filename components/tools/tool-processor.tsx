@@ -175,6 +175,29 @@ const WifiQrCodeGeneratorTool = dynamic(
   { ssr: false, loading },
 );
 const VcardQrCodeTool = dynamic(() => import("./vcard-qr-code/vcard-qr-code-tool"), { ssr: false, loading });
+const PercentageCalculatorTool = dynamic(
+  () => import("./percentage-calculator/percentage-calculator-tool"),
+  { ssr: false, loading },
+);
+const LoanCalculatorTool = dynamic(
+  () => import("./loan-calculator/loan-calculator-tool"),
+  { ssr: false, loading },
+);
+const CompoundInterestCalculatorTool = dynamic(
+  () => import("./compound-interest-calculator/compound-interest-calculator-tool"),
+  { ssr: false, loading },
+);
+const BmiCalculatorTool = dynamic(() => import("./bmi-calculator/bmi-calculator-tool"), { ssr: false, loading });
+const AgeCalculatorTool = dynamic(() => import("./age-calculator/age-calculator-tool"), { ssr: false, loading });
+const DateDifferenceCalculatorTool = dynamic(
+  () => import("./date-difference-calculator/date-difference-calculator-tool"),
+  { ssr: false, loading },
+);
+const TipCalculatorTool = dynamic(() => import("./tip-calculator/tip-calculator-tool"), { ssr: false, loading });
+const DiscountCalculatorTool = dynamic(
+  () => import("./discount-calculator/discount-calculator-tool"),
+  { ssr: false, loading },
+);
 
 export function ToolProcessor({ tool }: { tool: Tool }) {
   if (tool.comingSoon) {
@@ -292,6 +315,22 @@ export function ToolProcessor({ tool }: { tool: Tool }) {
       return <WifiQrCodeGeneratorTool />;
     case "vcard-qr-code":
       return <VcardQrCodeTool />;
+    case "percentage-calculator":
+      return <PercentageCalculatorTool />;
+    case "loan-calculator":
+      return <LoanCalculatorTool />;
+    case "compound-interest-calculator":
+      return <CompoundInterestCalculatorTool />;
+    case "bmi-calculator":
+      return <BmiCalculatorTool />;
+    case "age-calculator":
+      return <AgeCalculatorTool />;
+    case "date-difference-calculator":
+      return <DateDifferenceCalculatorTool />;
+    case "tip-calculator":
+      return <TipCalculatorTool />;
+    case "discount-calculator":
+      return <DiscountCalculatorTool />;
     default:
       return (
         <div className="rounded-xl border border-dashed border-border bg-muted/30 py-16 text-center text-sm text-muted-foreground">
