@@ -32,6 +32,11 @@ import {
   Video,
   Clapperboard,
   ScissorsLineDashed,
+  LetterText,
+  WrapText,
+  CopyMinus,
+  FlipHorizontal2,
+  Repeat,
   type LucideIcon,
 } from "lucide-react";
 
@@ -74,6 +79,11 @@ export const iconMap = {
   video: Video,
   clapperboard: Clapperboard,
   "scissors-line-dashed": ScissorsLineDashed,
+  "letter-text": LetterText,
+  "wrap-text": WrapText,
+  "copy-minus": CopyMinus,
+  "flip-horizontal-2": FlipHorizontal2,
+  repeat: Repeat,
 } satisfies Record<string, LucideIcon>;
 
 export type IconName = keyof typeof iconMap;

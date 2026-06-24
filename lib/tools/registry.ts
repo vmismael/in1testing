@@ -1538,6 +1538,271 @@ export const tools: Tool[] = [
       { q: "Is there a size limit?", a: "Yes. Because processing happens in memory on your device, large videos are limited; short clips work best for GIFs anyway." },
     ],
   },
+
+  // ---------------------------------------------------------------------------
+  {
+    slug: "character-counter",
+    category: "text",
+    name: "Character Counter",
+    shortDescription: "Count characters, words and lines live, with and without spaces.",
+    icon: "letter-text",
+    processing: "client",
+    keywords: ["character counter", "count characters", "letter counter", "character count online", "characters with spaces"],
+    metaTitle: "Character Counter — Count Characters Online Free | In1",
+    metaDescription:
+      "Free online character counter. Count characters with and without spaces, plus words, lines and sentences, live as you type. Private, in your browser, no sign-up.",
+    h1: "Character counter",
+    intro:
+      "Paste or type your text and instantly see the exact character count — both with and without spaces — alongside words, lines and sentences. Every figure updates live as you write, and nothing is ever uploaded.",
+    sections: [
+      {
+        heading: "Count characters with and without spaces",
+        body: "Different platforms count length in different ways, and getting it wrong means rejected forms or cut-off posts. In1 shows you both totals at once: the full character count, which includes every space, tab and line break, and the character count without spaces, which many academic and pricing rules use instead. As you type or paste, both numbers refresh on every keystroke, so you never have to guess which definition a given limit follows. This matters because a tweet, an SMS, a meta description and a college essay can all measure the same paragraph differently. Seeing the two figures side by side lets you match whichever rule applies without recounting by hand or pasting your text into another program. It also helps when you are translating a length requirement between tools that disagree, since you can read off the exact number each one expects rather than estimating and hoping it fits inside the cap.",
+      },
+      {
+        heading: "Stay inside strict character limits",
+        body: "So much of modern writing is governed by hard character ceilings. Search engine title tags get truncated past roughly sixty characters, meta descriptions past about one hundred and sixty, and social platforms each enforce their own caps on posts, captions and bios. Text messages split into multiple parts once they cross a threshold, and marketplace listings often reject titles that run too long. With a precise character counter visible as you write, you can compose right up to the edge of any limit and stop with confidence instead of submitting and discovering the platform chopped off your final words. This is especially valuable for SEO and ad copy, where every character is a paid or hard-won opportunity and an overflow silently loses the words meant to earn the click. The live total turns a frustrating cycle of write, submit, get rejected, and trim into a single confident pass.",
+      },
+      {
+        heading: "More than characters — words, lines and sentences too",
+        body: "A character counter is most useful when it gives you the surrounding context, so In1 reports words, lines and sentences along with the two character totals. The word count helps with essays, articles and anything billed or limited per word. The line count is handy for code snippets, address blocks, lists and poetry, where the number of lines matters as much as the number of characters. The sentence count offers a quick readability signal: a long passage made of very few sentences hints at run-on constructions, while a flurry of short sentences can read as choppy. Because all of these figures update together in real time, you get a complete picture of your text's shape in a single glance, without switching between separate counters or doing any math yourself. It is the difference between knowing only how long your text is and understanding how it is actually built.",
+      },
+      {
+        heading: "Private by design — nothing is uploaded",
+        body: "Your text can be confidential: an unpublished draft, a client's brief, a password hint or a personal message you would rather not share. In1 counts everything locally in your browser using plain JavaScript, so not a single character is sent to a server. There is no upload, no account and no stored history. You can paste an entire document and the counting still happens instantly on your own device, then disappears the moment you close the tab. This local-only design is not only safer, it is also what makes the tool so fast: there is no request travelling to a server and back, no spinner and no failure if your connection drops. Counting works exactly the same offline as online, and a long report is handled just as smoothly as a single line, which makes it a dependable tool whether you are on a train, behind a firewall or simply value your privacy.",
+      },
+      {
+        heading: "Who uses a character counter?",
+        body: "The audience is broad because almost everyone writes to a constraint. SEO specialists and marketers check titles, descriptions and ad copy against platform limits. Social media managers fit captions, bios and posts inside strict ceilings across networks that each count differently. Students confirm essays and abstracts meet exact character or word requirements. Developers measure code, identifiers and database fields that have length restrictions. UX writers keep button labels and microcopy short enough to display cleanly. Translators and editors estimate workload, which is frequently quoted per character or per word. Even casual users lean on it to keep a message concise or to make sure a forum post fits a length rule. Whatever you are writing, watching the character count move as you edit lets you shape the text to exactly the right size, so the finished piece reads the way you intended and satisfies whatever requirement it has to meet. The same tool serves a quick proofreading pass, a final length check before publishing, and the everyday habit of trimming a message until it is as tight as it can be. Because it asks nothing of you beyond pasting your text, it slots into any workflow without friction, and the instant feedback means you spend your attention on the words themselves rather than on counting them.",
+      },
+    ],
+    howTo: [
+      { name: "Add your text", text: "Type directly into the box, or paste text copied from anywhere." },
+      { name: "Read the live counts", text: "Characters with and without spaces, words, lines and sentences update instantly." },
+      { name: "Edit toward your limit", text: "Trim or expand the text while watching the character count approach your target." },
+      { name: "Copy when you're done", text: "Copy the finished text with one click and paste it wherever you need it." },
+    ],
+    faq: [
+      { q: "Does it count characters with and without spaces?", a: "Yes. Both totals are shown at once, so you can match limits that include spaces and ones that don't." },
+      { q: "Is the character counter free?", a: "Yes. Counting characters on In1 is completely free, with no account and no limits." },
+      { q: "Is my text uploaded anywhere?", a: "No. All counting happens locally in your browser, so your text never leaves your device." },
+      { q: "Do spaces and line breaks count as characters?", a: "In the full total, yes — every space, tab and line break is one character. The second total excludes all whitespace." },
+      { q: "Is there a length limit?", a: "There is no fixed limit. Because counting runs on your own device, you can analyze anything from a sentence to a full document." },
+      { q: "Does it work on mobile?", a: "Yes. The tool runs in any modern phone or tablet browser with nothing to install." },
+    ],
+  },
+
+  // ---------------------------------------------------------------------------
+  {
+    slug: "remove-line-breaks",
+    category: "text",
+    name: "Remove Line Breaks",
+    shortDescription: "Strip or normalize line breaks while keeping paragraphs intact.",
+    icon: "wrap-text",
+    processing: "client",
+    keywords: ["remove line breaks", "delete line breaks", "remove paragraph breaks", "strip newlines", "remove hard returns"],
+    metaTitle: "Remove Line Breaks — Strip Newlines Online Free | In1",
+    metaDescription:
+      "Remove line breaks from text online for free. Replace newlines with spaces, delete them entirely, or flatten paragraphs while keeping them separate. Private, in your browser.",
+    h1: "Remove line breaks from text",
+    intro:
+      "Paste text that is broken across many lines and turn it back into clean, flowing paragraphs. Replace line breaks with spaces, remove them completely, or flatten each paragraph to a single line while keeping paragraphs apart — all in your browser.",
+    sections: [
+      {
+        heading: "Fix text that copied with broken lines",
+        body: "Copying text from a PDF, an email, a code block or a column of justified text often drags along a hard line break at the end of every visible row. The result is a paragraph chopped into dozens of short, ragged lines that will not reflow when you paste it elsewhere. Remove Line Breaks fixes this in one step. It detects the newline characters that were baked into the text and removes them, joining the fragments back into continuous prose. Instead of pressing delete at the end of each line by hand — a tedious, error-prone chore on a long passage — you paste the text once and get clean output instantly. This is one of the most common text-cleanup tasks there is, and doing it manually on anything longer than a few lines is exactly the kind of repetitive work a tool should handle for you in a fraction of a second.",
+      },
+      {
+        heading: "Three ways to handle your breaks",
+        body: "Not every job wants the same treatment, so the tool gives you three clear modes. 'Replace with spaces' swaps each line break for a single space, which is what you usually want when reflowing a broken paragraph into one continuous block of text. 'Remove completely' deletes the breaks with nothing in their place, useful for stitching together fragments like a long URL, a serial number or a string that was wrapped across lines and should have no gaps at all. 'Keep paragraphs' is the smart option for documents: it flattens the lines inside each paragraph but preserves the blank line between paragraphs, so a multi-section article stays readable instead of collapsing into one giant wall of text. You can switch between the modes and watch the result update immediately, picking whichever output matches what you are pasting the text into next.",
+      },
+      {
+        heading: "Clean spacing, not just line breaks",
+        body: "Removing line breaks alone can leave behind a different mess: double spaces, stray tabs and leading or trailing whitespace where the broken lines used to meet. In1 tidies that up as part of the same pass. When it joins lines, it collapses the runs of extra spaces and tabs that tend to accumulate at the seams down to single spaces, and it trims whitespace from the ends, so the output reads as if it had been typed cleanly in the first place. In the 'Keep paragraphs' mode it also drops empty stretches so you do not end up with three or four blank lines between sections. The goal is text you can paste straight into a document, a form, a chat message or a content management system without a second round of find-and-replace to fix the spacing the line breaks left behind. That single combined pass — breaks handled and spacing normalized together — is what separates a genuinely useful cleanup from one that simply trades one formatting problem for another.",
+      },
+      {
+        heading: "Private and instant — nothing leaves your browser",
+        body: "The text you are cleaning up might be a draft contract, a private email thread, internal notes or research you have not published. In1 processes everything locally in your browser with plain JavaScript, so your content is never uploaded to a server. There is no account to create, no file to transfer and no stored copy left behind — when you close the tab, the text is gone. This local approach also makes the tool genuinely instant: there is no waiting for a request to travel to a server and return, no progress bar and no failure if your connection is slow or offline. Whether you paste a single sentence or a long report, the line breaks are removed the moment you make a change. It is a fast, dependable way to reformat text without trusting it to a third-party service or worrying about where it ends up.",
+      },
+      {
+        heading: "Common uses for removing line breaks",
+        body: "People reach for this tool constantly once they know it exists. Writers and editors paste text out of PDFs and ebooks, where every line ends with a hard return, and convert it back into flowing paragraphs they can actually edit. Developers and analysts flatten data and log lines into a single string, or clean up text that wrapped awkwardly when it was copied. Office workers fix email signatures, addresses and quotes that arrived broken across lines before dropping them into a document or spreadsheet. Marketers and social media managers turn formatted blurbs into single-line text that fits a field that does not accept line breaks. Students reflow quotations and notes copied from sources. Anyone who has ever pasted a paragraph and watched it arrive as a jagged staircase of short lines has a use for a fast, private way to put it back together. Customer support agents reformat pasted ticket text before replying, translators clean source material so it flows in their editor, and researchers tidy quotations pulled from articles and reports. The task is small but relentless, surfacing any time text crosses from one program to another, and having a dependable one-click fix means you stop treating broken line breaks as an unavoidable annoyance and start handling them in a single instant pass.",
+      },
+    ],
+    howTo: [
+      { name: "Paste your text", text: "Drop in the text whose line breaks you want to remove or change." },
+      { name: "Choose a mode", text: "Pick replace-with-spaces, remove-completely, or keep-paragraphs depending on your goal." },
+      { name: "Review the result", text: "The cleaned text updates instantly, with extra spaces collapsed and ends trimmed." },
+      { name: "Copy it out", text: "Copy the result with one click and paste it wherever you need clean text." },
+    ],
+    faq: [
+      { q: "Can I keep my paragraphs separate?", a: "Yes. The 'Keep paragraphs' mode flattens the lines inside each paragraph but preserves the blank line between paragraphs." },
+      { q: "Does it remove double spaces too?", a: "Yes. When joining lines it collapses runs of extra spaces and tabs into single spaces and trims the ends." },
+      { q: "Is my text uploaded anywhere?", a: "No. Everything runs locally in your browser, so your text never leaves your device." },
+      { q: "What's the difference between the modes?", a: "Replace-with-spaces inserts a space where each break was, remove-completely deletes breaks with nothing in their place, and keep-paragraphs preserves paragraph gaps." },
+      { q: "Is it free?", a: "Yes. The tool is completely free, with no sign-up and no limits on how much text you can clean." },
+      { q: "Will it work on a long document?", a: "Yes. Because processing is local and instant, it handles anything from a sentence to a full document." },
+    ],
+  },
+
+  // ---------------------------------------------------------------------------
+  {
+    slug: "remove-duplicate-lines",
+    category: "text",
+    name: "Remove Duplicate Lines",
+    shortDescription: "Delete repeated lines from a list, with optional sorting and case rules.",
+    icon: "copy-minus",
+    processing: "client",
+    keywords: ["remove duplicate lines", "delete duplicate lines", "dedupe list", "remove duplicates text", "unique lines"],
+    metaTitle: "Remove Duplicate Lines — Dedupe a List Online Free | In1",
+    metaDescription:
+      "Remove duplicate lines from any list online for free. Keep only unique lines, ignore case, trim whitespace and sort A→Z. Private, runs in your browser, no sign-up.",
+    h1: "Remove duplicate lines",
+    intro:
+      "Paste a list and instantly get back only the unique lines, with the duplicates removed. Choose whether to ignore case, trim whitespace and sort the result alphabetically — and see exactly how many duplicates were dropped.",
+    sections: [
+      {
+        heading: "Turn a messy list into a clean, unique one",
+        body: "Lists pile up duplicates almost as fast as you build them: email addresses merged from several sources, keywords gathered from different tools, log lines, URLs, product codes or names compiled by more than one person. Scanning a long list by eye to find and delete the repeats is slow and unreliable, and a single missed duplicate can throw off a count, a mail merge or an import. Remove Duplicate Lines does it in one pass. It reads your list line by line, keeps the first occurrence of each unique line and discards every later repeat, then shows you the cleaned result along with a count of how many duplicates it removed. What would take many minutes of careful manual checking on a few hundred lines happens the instant you paste, so you can trust that the list you carry forward genuinely contains each item only once.",
+      },
+      {
+        heading: "Control how duplicates are matched",
+        body: "Whether two lines count as 'the same' depends on the job, so the tool gives you switches to define it. 'Ignore case' treats Apple, apple and APPLE as one entry, which is what you usually want for things like email addresses and tags where capitalization is not meaningful. 'Trim whitespace' removes leading and trailing spaces before comparing, so a line that picked up a stray space when it was copied is still recognized as a duplicate rather than slipping through as unique. Leaving these switches off gives you a strict, exact match where even a difference in capitalization or a trailing space keeps both lines. Because the result updates the moment you toggle a switch, you can see immediately how many more or fewer duplicates each rule catches and choose the combination that fits your data, instead of committing to one interpretation and hoping it was right.",
+      },
+      {
+        heading: "Sort and tidy in the same step",
+        body: "Deduplicating is often only half of what you actually want. In1 lets you sort the unique lines alphabetically from A to Z in the same operation, which turns a chaotic pile into an ordered reference you can scan, compare or hand off. It can also trim whitespace from each line as it goes, so the output is not just unique but clean. If you prefer to preserve the original sequence — for example when the order carries meaning, like a ranked list or a sequence of events — simply leave sorting off and the tool keeps your lines in the order they first appeared. Either way you get a count of removed duplicates, which is a useful sanity check: it confirms the tool did something, and it can reveal just how much repetition was hiding in a list that looked fine at a glance. Sorting and trimming in the same step also means the output is ready to use immediately, with no follow-up pass to alphabetize or strip stray spaces before you import or share it.",
+      },
+      {
+        heading: "Private by design — your list stays on your device",
+        body: "The lists people deduplicate are frequently sensitive: customer emails, subscriber exports, internal inventories, gathered leads or research data. In1 processes everything locally in your browser using plain JavaScript, so your list is never uploaded to a server, stored or logged. There is no account, no file transfer and nothing left behind once you close the tab. This matters for privacy and compliance — a list of personal email addresses should not be pasted into a random website that ships it off to who-knows-where — and it also makes the tool fast and reliable. There is no upload step, no waiting and no failure if your connection drops; the deduplication happens instantly on your own machine. You get the convenience of an online tool with the privacy of a local one, which is exactly what handling other people's data responsibly calls for.",
+      },
+      {
+        heading: "Who removes duplicate lines, and why",
+        body: "The use cases span far beyond programmers. Marketers and salespeople clean merged contact lists before importing them, so the same person is not emailed twice and the count is accurate. SEO specialists dedupe keyword lists gathered from several research tools. Developers and data analysts strip repeats out of log files, query results, configuration lists and seed data. Office workers tidy up inventories, attendee lists and survey responses pasted together from multiple spreadsheets. Writers and researchers compile references and citations from different documents and remove the inevitable overlaps. Even casual users clean up a list of links, names or to-dos that grew duplicates over time. Any time information from more than one source gets combined, repeats creep in — and a fast, private tool that keeps only the unique lines, optionally sorted and trimmed, saves the tedium of hunting them down by hand. Teachers consolidate class rosters, event organizers merge sign-up sheets, and community managers clean lists of usernames before running a giveaway. The count of removed duplicates doubles as a quick audit, telling you at a glance how much overlap two sources actually had. Once you have used a deduplicator, going back to scrolling a list and deleting repeats by eye feels needlessly slow and risky.",
+      },
+    ],
+    howTo: [
+      { name: "Paste your list", text: "Drop in your list with one item per line." },
+      { name: "Set the matching rules", text: "Toggle ignore-case and trim-whitespace to control when two lines count as duplicates." },
+      { name: "Sort if you want", text: "Turn on A→Z sorting, or leave it off to keep the original order." },
+      { name: "Copy the unique lines", text: "Copy the deduplicated result, with the count of removed duplicates shown above it." },
+    ],
+    faq: [
+      { q: "Does it keep the original order?", a: "By default, yes — it keeps the first occurrence of each line in order. Turn on sorting if you want the result alphabetized instead." },
+      { q: "Can it ignore capitalization?", a: "Yes. Turn on 'Ignore case' to treat lines that differ only in capitalization as duplicates." },
+      { q: "How are duplicates counted?", a: "The tool shows how many lines it removed — the difference between your input line count and the number of unique lines kept." },
+      { q: "Is my list uploaded anywhere?", a: "No. Everything runs locally in your browser, so your list never leaves your device." },
+      { q: "Can it handle whitespace differences?", a: "Yes. Turn on 'Trim whitespace' so lines that differ only by leading or trailing spaces are matched as duplicates." },
+      { q: "Is there a limit on list size?", a: "There is no fixed limit. Because processing is local, large lists are handled quickly on your own device." },
+    ],
+  },
+
+  // ---------------------------------------------------------------------------
+  {
+    slug: "reverse-text",
+    category: "text",
+    name: "Reverse Text",
+    shortDescription: "Reverse characters, flip word order, or flip the order of lines.",
+    icon: "flip-horizontal-2",
+    processing: "client",
+    keywords: ["reverse text", "backwards text", "reverse string", "flip text", "reverse words"],
+    metaTitle: "Reverse Text — Flip Text Backwards Online Free | In1",
+    metaDescription:
+      "Reverse text online for free. Flip characters to write backwards, reverse the order of words, or reverse the order of lines. Instant, private, runs in your browser.",
+    h1: "Reverse text",
+    intro:
+      "Paste any text and flip it instantly. Reverse the characters to write backwards, reverse the order of the words in a sentence, or reverse the order of the lines in a list — three modes, updated live, all in your browser.",
+    sections: [
+      {
+        heading: "Three kinds of reversal in one tool",
+        body: "'Reverse text' can mean three different things, and In1 handles all of them so you do not have to find a separate tool for each. 'Reverse characters' turns the whole string back to front, so the last character becomes the first — this is the classic backwards text that reads from right to left. 'Reverse word order' keeps each word spelled normally but flips their sequence, so 'the quick brown fox' becomes 'fox brown quick the', which is handy for reordering lists or experimenting with sentence structure. 'Reverse line order' leaves every line untouched but flips the top-to-bottom sequence, turning a list that runs first-to-last into one that runs last-to-first. You pick the mode with a single click and the output updates immediately, so it is easy to try each one against the same text and see exactly which kind of reversal you actually need.",
+      },
+      {
+        heading: "Reverse a list without retyping it",
+        body: "One of the most practical uses is flipping the order of lines in a list. Maybe you have a chronological log that you want to read newest-first, a ranked list you want to see from the bottom up, or steps you want to walk through in reverse. Retyping or cut-and-pasting each line by hand to reverse the order is slow and easy to get wrong, especially on a long list. The line-reversal mode does it in an instant: every line keeps its exact content, only the sequence flips. Combined with the word-order mode, you can also restructure sentences and short phrases quickly — useful when you are reformatting data that was entered in the wrong direction, or simply exploring how a line reads when its parts are rearranged. It is a small task that comes up surprisingly often, and doing it by hand is exactly the kind of busywork worth skipping.",
+      },
+      {
+        heading: "Backwards text for fun and for puzzles",
+        body: "Reversing characters has a playful side too. People write backwards text for social media bios and usernames to stand out, create simple puzzles and riddles where the answer reads in reverse, test how a palindrome holds up, or generate mirror-style text for a bit of fun. Designers occasionally need reversed strings as a starting point for mirrored or flipped typographic effects. Teachers and parents use backwards words in spelling and reading games. Because the reversal is exact and instant, you can paste a word or a whole sentence and immediately see it flipped, then copy it straight into wherever you are using it. It is a lightweight, no-friction way to produce backwards text on demand without installing anything or wading through ads and pop-ups, and it works the same on a phone as it does on a computer.",
+      },
+      {
+        heading: "Instant, private and free",
+        body: "Whatever you are reversing — a private note, a list of data or just a word you are playing with — In1 does it entirely in your browser using plain JavaScript. Nothing is uploaded, nothing is stored and there is no account to create. The reversal happens the moment you type or change the mode, with no request travelling to a server and no waiting, so it works just as well offline as online. Unicode text is handled with care, so characters made of multiple code points are not garbled when the string is flipped. There are no limits on how much text you can reverse and no watermark or sign-up wall between you and the result. When you are done, one click copies the output so you can paste it wherever you need. It is a fast, free utility that respects your privacy and gets out of your way.",
+      },
+      {
+        heading: "Who uses a text reverser?",
+        body: "The audience is a mix of the practical and the playful. Social media users create eye-catching backwards bios, captions and handles. Puzzle makers and teachers build reverse-reading games and spelling exercises. Writers and editors flip word order to experiment with phrasing or to fix text that was entered in the wrong sequence. Data wranglers reverse the order of lines to read logs newest-first or to flip a list without retyping it. Developers reach for it to quickly check a reversal by hand instead of writing throwaway code. Language learners reverse words and sentences as a study aid. And plenty of people simply land here out of curiosity to see their name or a phrase written backwards. Because the tool covers character, word and line reversal in one place and runs instantly in the browser, it serves all of these needs without anyone having to hunt for a more specific utility. Musicians and poets flip lines to hear a verse from a new angle, and brand designers reverse a wordmark as a starting point for a mirrored logo treatment. Even debugging benefits: reversing a string by hand is a quick way to sanity-check an algorithm or confirm how a value is stored. Three distinct reversals, one field and an instant result keep all of that in a single place.",
+      },
+    ],
+    howTo: [
+      { name: "Paste your text", text: "Type or paste the text you want to reverse." },
+      { name: "Pick a reversal mode", text: "Choose to reverse characters, reverse the word order, or reverse the line order." },
+      { name: "See it flip instantly", text: "The reversed text appears immediately and updates as you switch modes or edit." },
+      { name: "Copy the result", text: "Copy the reversed text with one click and use it wherever you need." },
+    ],
+    faq: [
+      { q: "What's the difference between the modes?", a: "Reverse characters flips the whole string back to front, reverse word order flips the sequence of words, and reverse line order flips the sequence of lines." },
+      { q: "Does it handle emoji and accented characters?", a: "Yes. Reversal is done by Unicode code points grouped sensibly, so most emoji and accented letters are not garbled." },
+      { q: "Is my text uploaded anywhere?", a: "No. Everything runs locally in your browser, so your text never leaves your device." },
+      { q: "Can it reverse the order of a list?", a: "Yes. Use the reverse-line-order mode to flip a list from first-to-last into last-to-first without retyping it." },
+      { q: "Is it free?", a: "Yes. Reversing text on In1 is completely free, with no account and no limits." },
+      { q: "Does it work on mobile?", a: "Yes. It runs in any modern phone or tablet browser with nothing to install." },
+    ],
+  },
+
+  // ---------------------------------------------------------------------------
+  {
+    slug: "text-repeater",
+    category: "text",
+    name: "Text Repeater",
+    shortDescription: "Repeat any text a set number of times, with a separator you choose.",
+    icon: "repeat",
+    processing: "client",
+    keywords: ["text repeater", "repeat text", "repeat text generator", "copy text multiple times", "duplicate text"],
+    metaTitle: "Text Repeater — Repeat Text Multiple Times Online Free | In1",
+    metaDescription:
+      "Repeat any text as many times as you want online for free. Choose the number of repeats and a separator — new line, space, comma or none. Instant, private, in your browser.",
+    h1: "Text repeater",
+    intro:
+      "Type a word, phrase or block of text, choose how many times to repeat it and how to separate the copies, and get the full result instantly. Everything runs in your browser, with no limits and nothing uploaded.",
+    sections: [
+      {
+        heading: "Repeat text exactly as many times as you need",
+        body: "Sometimes you need the same text over and over: a placeholder repeated to fill a layout, a line duplicated dozens of times for a test, or a phrase multiplied for an effect. Doing it by hand means copying and pasting again and again, losing count and ending up with one too few or one too many. Text Repeater removes the guesswork. You enter your text, set the exact number of repetitions and the tool builds the full output in a single step, so you get precisely the count you asked for every time. Whether you need a handful of copies or several thousand, the result is generated instantly and is ready to copy in one click. It turns a tedious, easy-to-miscount manual chore into a reliable operation you can trust to produce exactly the right number of repeats without you having to check.",
+      },
+      {
+        heading: "Choose how the copies are separated",
+        body: "How the repeated copies should be joined depends entirely on what you are doing with them, so the tool lets you pick a separator. 'New line' puts each copy on its own line, which is ideal for building lists, test data or anything that should stack vertically. 'Space' keeps everything on one line with a gap between copies, good for filler text and inline repetition. 'Comma' joins the copies into a comma-separated sequence, handy when you need a quick CSV-style row or a delimited string. 'None' glues the copies together with nothing in between, useful for repeating a single character or symbol into a solid run. Because you can switch the separator and watch the output change immediately, it is easy to match the exact format the next step expects, instead of generating the repeats and then reformatting them by hand afterward.",
+      },
+      {
+        heading: "Generate placeholder and test data fast",
+        body: "Repeated text is a quick way to produce the filler and test data that development and design constantly need. Front-end developers repeat a line to see how a container handles overflow, how a list scrolls, or how a layout copes with far more content than usual. Designers drop in repeated placeholder text to mock up how a component looks when it is full. QA testers paste a string repeated hundreds of times to probe length limits, wrapping behavior and performance. Writers and marketers use repetition for stylistic effect in posts and messages. Because the tool can produce a large number of copies at once with the separator already correct, you skip the fiddly cycle of copy, paste, copy, paste and instead generate the whole block in one go. A sensible upper limit keeps the output manageable and the browser responsive even when you ask for a very large number of repeats, so you can lean on it for serious load and length testing without freezing the tab or losing the result you just generated.",
+      },
+      {
+        heading: "Instant, private and free",
+        body: "Text Repeater runs entirely in your browser using plain JavaScript, so whatever you repeat — a harmless placeholder or something you would rather keep private — never leaves your device. There is no upload, no account and no stored history. The output is built the moment you change the text, the count or the separator, with no server round trip, so it works the same offline as online and there is no waiting or progress bar. There is no watermark and no sign-up wall, and you can generate as many repeats as the limit allows as often as you like. When the result is ready, a single click copies the whole thing so you can paste it straight into your editor, your test, your design tool or your message. It is a small utility, but a fast and dependable one that respects your privacy and does exactly what it says.",
+      },
+      {
+        heading: "Common uses for a text repeater",
+        body: "People reach for a text repeater more often than you might expect. Developers and testers generate repeated strings and lines to stress-test inputs, fill containers and check how layouts handle overflow. Designers build quick placeholder content to preview full states. Social media users and gamers repeat words, emoji or symbols for emphasis or effect in posts and chats. Teachers and students create repeated practice lines or patterned text for exercises. Office workers duplicate a template line a set number of times to seed a document or spreadsheet. Anyone who has ever needed the same text multiplied — and tried to do it by holding down paste while counting in their head — benefits from a tool that produces the exact number of copies, in the exact format, in a single instant click. Database and spreadsheet users seed columns with a repeated value before editing individual rows, and localizers generate repeated keys to scaffold a translation file. Even simple pranks and chat effects rely on it. The combination of an exact count, a chosen separator and an instant copy is what turns a fiddly manual loop into a one-step action you never have to think about twice.",
+      },
+    ],
+    howTo: [
+      { name: "Enter your text", text: "Type or paste the word, phrase or block you want to repeat." },
+      { name: "Set the count", text: "Choose how many times to repeat it, up to the maximum allowed." },
+      { name: "Pick a separator", text: "Separate the copies with a new line, a space, a comma, or nothing at all." },
+      { name: "Copy the result", text: "The full repeated text is generated instantly — copy it with one click." },
+    ],
+    faq: [
+      { q: "How many times can I repeat the text?", a: "You can repeat text up to a generous maximum that keeps the output manageable and your browser responsive." },
+      { q: "Can I put each copy on its own line?", a: "Yes. Choose the new-line separator and every repeat appears on a separate line." },
+      { q: "Is my text uploaded anywhere?", a: "No. Everything runs locally in your browser, so your text never leaves your device." },
+      { q: "Can I repeat a whole paragraph, not just a word?", a: "Yes. You can repeat anything from a single character to a multi-line block of text." },
+      { q: "Is it free?", a: "Yes. The text repeater is completely free, with no account and no sign-up." },
+      { q: "Does it work on mobile?", a: "Yes. It runs in any modern phone or tablet browser with nothing to install." },
+    ],
+  },
 ];
 
 // --- Helpers -----------------------------------------------------------------

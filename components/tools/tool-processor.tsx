@@ -99,6 +99,26 @@ const VideoConverterTool = dynamic(
   { ssr: false, loading },
 );
 const VideoToGifTool = dynamic(() => import("./video-to-gif/video-to-gif-tool"), { ssr: false, loading });
+const CharacterCounterTool = dynamic(
+  () => import("./character-counter/character-counter-tool"),
+  { ssr: false, loading },
+);
+const RemoveLineBreaksTool = dynamic(
+  () => import("./remove-line-breaks/remove-line-breaks-tool"),
+  { ssr: false, loading },
+);
+const RemoveDuplicateLinesTool = dynamic(
+  () => import("./remove-duplicate-lines/remove-duplicate-lines-tool"),
+  { ssr: false, loading },
+);
+const ReverseTextTool = dynamic(
+  () => import("./reverse-text/reverse-text-tool"),
+  { ssr: false, loading },
+);
+const TextRepeaterTool = dynamic(
+  () => import("./text-repeater/text-repeater-tool"),
+  { ssr: false, loading },
+);
 
 export function ToolProcessor({ tool }: { tool: Tool }) {
   if (tool.comingSoon) {
@@ -166,6 +186,16 @@ export function ToolProcessor({ tool }: { tool: Tool }) {
       return <VideoConverterTool tool={tool} />;
     case "video-to-gif":
       return <VideoToGifTool tool={tool} />;
+    case "character-counter":
+      return <CharacterCounterTool />;
+    case "remove-line-breaks":
+      return <RemoveLineBreaksTool />;
+    case "remove-duplicate-lines":
+      return <RemoveDuplicateLinesTool />;
+    case "reverse-text":
+      return <ReverseTextTool />;
+    case "text-repeater":
+      return <TextRepeaterTool />;
     default:
       return (
         <div className="rounded-xl border border-dashed border-border bg-muted/30 py-16 text-center text-sm text-muted-foreground">
