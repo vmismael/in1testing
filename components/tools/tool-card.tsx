@@ -8,7 +8,7 @@ export function ToolCard({ tool }: { tool: Tool }) {
   return (
     <Link
       href={`/${tool.slug}`}
-      className="group flex flex-col gap-3 rounded-xl border border-border bg-card p-5 transition-colors hover:border-primary/40 hover:bg-muted/40"
+      className="group flex h-full flex-col gap-3 rounded-xl border border-border bg-card p-5 transition-colors hover:border-primary/40 hover:bg-muted/40"
     >
       <div className="flex items-center justify-between">
         <span className="flex size-10 items-center justify-center rounded-lg bg-primary/10 text-primary">

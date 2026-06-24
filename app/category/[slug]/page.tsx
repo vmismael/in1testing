@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ChevronRight } from "lucide-react";
 import { ToolCard } from "@/components/tools/tool-card";
+import { Reveal } from "@/components/reveal";
 import { Icon } from "@/components/icons";
 import { categories, getToolsByCategory } from "@/lib/tools/registry";
 import { siteConfig } from "@/lib/site";
@@ -66,8 +67,10 @@ export default async function CategoryPage({ params }: PageProps) {
 
       {tools.length > 0 ? (
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {tools.map((tool) => (
-            <ToolCard key={tool.slug} tool={tool} />
+          {tools.map((tool, i) => (
+            <Reveal key={tool.slug} delay={(i % 3) * 80} className="h-full">
+              <ToolCard tool={tool} />
+            </Reveal>
           ))}
         </div>
       ) : (
