@@ -61,6 +61,14 @@ import {
   CalendarDays,
   Receipt,
   BadgePercent,
+  Shapes,
+  ImagePlus,
+  ImageOff,
+  Pipette,
+  SwatchBook,
+  Smile,
+  LayoutTemplate,
+  AppWindow,
   type LucideIcon,
 } from "lucide-react";
 
@@ -132,6 +140,14 @@ export const iconMap = {
   "calendar-days": CalendarDays,
   receipt: Receipt,
   "badge-percent": BadgePercent,
+  shapes: Shapes,
+  "image-plus": ImagePlus,
+  "image-off": ImageOff,
+  pipette: Pipette,
+  "swatch-book": SwatchBook,
+  smile: Smile,
+  "layout-template": LayoutTemplate,
+  "app-window": AppWindow,
 } satisfies Record<string, LucideIcon>;
 
 export type IconName = keyof typeof iconMap;

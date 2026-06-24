@@ -198,6 +198,37 @@ const DiscountCalculatorTool = dynamic(
   () => import("./discount-calculator/discount-calculator-tool"),
   { ssr: false, loading },
 );
+const ImageFormatConvert = dynamic(
+  () => import("./image-format-convert/image-format-convert"),
+  { ssr: false, loading },
+);
+const SvgToPngTool = dynamic(() => import("./svg-to-png/svg-to-png-tool"), { ssr: false, loading });
+const ImageToBase64Tool = dynamic(
+  () => import("./image-to-base64/image-to-base64-tool"),
+  { ssr: false, loading },
+);
+const Base64ToImageTool = dynamic(
+  () => import("./base64-to-image/base64-to-image-tool"),
+  { ssr: false, loading },
+);
+const ExifRemoverTool = dynamic(() => import("./exif-remover/exif-remover-tool"), { ssr: false, loading });
+const ImageColorPickerTool = dynamic(
+  () => import("./image-color-picker/image-color-picker-tool"),
+  { ssr: false, loading },
+);
+const ColorPaletteExtractorTool = dynamic(
+  () => import("./color-palette-extractor/color-palette-extractor-tool"),
+  { ssr: false, loading },
+);
+const MemeGeneratorTool = dynamic(() => import("./meme-generator/meme-generator-tool"), { ssr: false, loading });
+const OgImageGeneratorTool = dynamic(
+  () => import("./og-image-generator/og-image-generator-tool"),
+  { ssr: false, loading },
+);
+const FaviconGeneratorTool = dynamic(
+  () => import("./favicon-generator/favicon-generator-tool"),
+  { ssr: false, loading },
+);
 
 export function ToolProcessor({ tool }: { tool: Tool }) {
   if (tool.comingSoon) {
@@ -331,6 +362,31 @@ export function ToolProcessor({ tool }: { tool: Tool }) {
       return <TipCalculatorTool />;
     case "discount-calculator":
       return <DiscountCalculatorTool />;
+    case "webp-to-png":
+    case "jpg-to-png":
+      return <ImageFormatConvert tool={tool} to="image/png" />;
+    case "png-to-jpg":
+      return <ImageFormatConvert tool={tool} to="image/jpeg" />;
+    case "svg-to-png":
+      return <SvgToPngTool tool={tool} />;
+    case "image-to-base64":
+      return <ImageToBase64Tool tool={tool} />;
+    case "base64-to-image":
+      return <Base64ToImageTool />;
+    case "exif-remover":
+      return <ExifRemoverTool tool={tool} />;
+    case "image-color-picker":
+      return <ImageColorPickerTool tool={tool} />;
+    case "color-palette-extractor":
+      return <ColorPaletteExtractorTool tool={tool} />;
+    case "meme-generator":
+      return <MemeGeneratorTool tool={tool} />;
+    case "og-image-generator":
+      return <OgImageGeneratorTool />;
+    case "favicon-generator":
+      return <FaviconGeneratorTool tool={tool} />;
+    case "screenshot-to-pdf":
+      return <ImageToPdfTool tool={tool} />;
     default:
       return (
         <div className="rounded-xl border border-dashed border-border bg-muted/30 py-16 text-center text-sm text-muted-foreground">

@@ -3288,6 +3288,717 @@ export const tools: Tool[] = [
       { q: "Is it free?", a: "Yes. The discount calculator is completely free, with no account and no limits." },
     ],
   },
+
+  // ---------------------------------------------------------------------------
+  {
+    slug: "webp-to-png",
+    category: "image",
+    name: "WebP to PNG",
+    shortDescription: "Convert WebP images to widely compatible PNG files.",
+    icon: "file-image",
+    processing: "client",
+    accept: ["image/webp"],
+    multiple: false,
+    keywords: ["webp to png", "convert webp to png", "webp converter", "change webp to png", "webp to png online"],
+    metaTitle: "WebP to PNG — Convert WebP Images Online Free | In1",
+    metaDescription:
+      "Convert WebP images to PNG online for free. Restore wide compatibility with one click, keeping full quality and transparency. Private — runs in your browser.",
+    h1: "WebP to PNG converter",
+    intro:
+      "Convert WebP images into universally supported PNG files in your browser. Drop in a WebP, click convert, and download a lossless PNG that opens anywhere — with nothing uploaded.",
+    sections: [
+      {
+        heading: "Make WebP images open everywhere",
+        body: "WebP is a modern image format that produces small files, which is why it has become common on the web. The downside is compatibility: plenty of older programs, image editors, document tools and devices still cannot open a WebP file, so an image saved from a website in this format can be frustratingly unusable when you try to drop it into a presentation, a design tool or an email. Converting it to PNG solves the problem instantly, because PNG is one of the most universally supported image formats in existence — virtually every application, operating system and device handles it without complaint. This tool takes your WebP and produces a clean PNG you can use anywhere, removing the friction of a format that looks great online but causes trouble the moment you need it elsewhere. You keep the image; you just get it in a form that every tool you rely on actually understands, which is often exactly what you need after saving a picture from the web.",
+      },
+      {
+        heading: "Lossless conversion that preserves transparency",
+        body: "PNG is a lossless format, which means converting your WebP to PNG does not throw away image quality the way saving to a lossy format would. Every pixel is preserved exactly as it appears in the source, so the PNG looks identical to the original WebP at full fidelity. Just as importantly, transparency is carried over. WebP images frequently use an alpha channel for transparent backgrounds — think logos, icons and graphics meant to sit on top of other content — and PNG fully supports transparency too, so those see-through areas remain see-through in the converted file rather than being filled with an unwanted solid color. This makes the converter safe to use for graphics where the transparent background matters, not just for flat photographs. You get a faithful, full-quality PNG that behaves exactly like the WebP did, only in a format that every tool can open, with the transparency intact for compositing wherever you place it.",
+      },
+      {
+        heading: "Private by design — converted in your browser",
+        body: "The images you convert might be anything: screenshots, product graphics, photos, designs or assets pulled from your own work. There is no reason to upload them to a server just to change the format. In1 performs the entire WebP-to-PNG conversion locally in your browser, decoding the WebP and re-encoding it as a PNG entirely on your own device. Nothing is uploaded, nothing is stored, and there is no account or sign-up. Because there is no upload-and-wait round trip, the conversion is fast — there is no progress bar because there is nothing being transmitted — and it works exactly the same offline as online. This local-only approach matters for anyone working with images they would rather not hand to a third-party service, whether for privacy, confidentiality or simply principle. You get the convenience of an instant online converter with the assurance that your image never leaves your computer, which is the right default for a tool that handles your files.",
+      },
+      {
+        heading: "Fast, free and unlimited",
+        body: "There is no account to create, no email to hand over and no watermark stamped across your converted image. You can convert as many WebP files as you like, as often as you like, and the output is a clean PNG with nothing added or taken away. Because the work happens on your own device rather than a server, there are no per-file fees, no daily caps and no queue to wait in. The whole process is a matter of dropping in a file, clicking once and downloading the result, so a conversion takes seconds. This makes the tool equally suited to a one-off — you saved a single WebP and just need it as a PNG right now — and to working through a series of images one after another. It is the kind of simple, frictionless utility that should exist for such a common task: free, immediate, private and without the artificial limits that paid converters tend to impose on something this straightforward.",
+      },
+      {
+        heading: "Who converts WebP to PNG?",
+        body: "The need comes up constantly now that WebP is so widespread online. People save an image from a website only to find it is a WebP their editor or document tool will not open, and they convert it to PNG to actually use it. Designers and marketers receive or download WebP assets and need PNGs for tools and workflows that expect them. Office workers drop images into presentations and documents that handle PNG reliably but stumble on WebP. Developers convert WebP graphics to PNG for environments or older systems that lack WebP support. Social media users and content creators turn saved WebP images into PNGs so they upload cleanly everywhere. Anyone who has ever right-clicked an image, saved it, and then been unable to open or use the resulting WebP file has a use for a quick, private converter. Because PNG is supported essentially everywhere, converting to it is the reliable way to make a WebP image just work, and this tool does that in a single click.",
+      },
+    ],
+    howTo: [
+      { name: "Add your WebP", text: "Drag a WebP image into the drop area, or click to browse for one." },
+      { name: "Convert", text: "Click convert and the image is re-encoded as a PNG in your browser." },
+      { name: "Check the preview", text: "See the converted PNG, with transparency preserved." },
+      { name: "Download", text: "Download the PNG, ready to use in any tool that supports it." },
+    ],
+    faq: [
+      { q: "Does the conversion lose quality?", a: "No. PNG is lossless, so the converted image preserves every pixel of the original WebP at full fidelity." },
+      { q: "Is transparency preserved?", a: "Yes. PNG supports an alpha channel, so transparent areas in the WebP stay transparent in the PNG." },
+      { q: "Are my images uploaded anywhere?", a: "No. The conversion runs locally in your browser, so your image never leaves your device." },
+      { q: "Is there a limit on how many I can convert?", a: "No. You can convert as many WebP files as you like, free and without watermarks." },
+      { q: "Why convert WebP to PNG?", a: "PNG is supported almost everywhere, so converting fixes cases where a program, device or document tool can't open WebP." },
+      { q: "Is it free?", a: "Yes. The WebP to PNG converter is completely free, with no account and no limits." },
+    ],
+  },
+
+  // ---------------------------------------------------------------------------
+  {
+    slug: "png-to-jpg",
+    category: "image",
+    name: "PNG to JPG",
+    shortDescription: "Convert PNG images to smaller JPG files with a quality control.",
+    icon: "image-down",
+    processing: "client",
+    accept: ["image/png"],
+    multiple: false,
+    keywords: ["png to jpg", "png to jpeg", "convert png to jpg", "png jpg converter", "change png to jpg"],
+    metaTitle: "PNG to JPG — Convert PNG Images Online Free | In1",
+    metaDescription:
+      "Convert PNG images to JPG online for free. Shrink file size with an adjustable quality, ideal for photos and sharing. Private — runs entirely in your browser.",
+    h1: "PNG to JPG converter",
+    intro:
+      "Turn PNG images into smaller JPG files right in your browser. Choose a quality level to balance size against fidelity, then download a lightweight JPG — with your image never leaving your device.",
+    sections: [
+      {
+        heading: "Smaller files for photos and sharing",
+        body: "PNG is excellent for graphics, screenshots and anything with sharp edges or transparency, but it is a poor choice for photographs, where it produces files far larger than they need to be. JPG is the format built for photographic images: it compresses them dramatically while keeping them looking good, which is why it is the default for cameras, photo sharing and the web. Converting a PNG photo to JPG can cut the file size by a large margin, making it faster to upload, easier to email, and lighter on storage. This tool does that conversion in your browser, taking a PNG and re-encoding it as a JPG at a quality you choose. If you have a heavy PNG photo that is slow to send or that exceeds an upload limit, turning it into a JPG is usually the quickest way to bring it down to a sensible size without any visible loss in quality, and you can do it here in a couple of clicks.",
+      },
+      {
+        heading: "Control quality with a single slider",
+        body: "JPG compression is a trade-off between file size and visual fidelity, and the right balance depends on what the image is for, so this converter puts that choice in your hands with a quality slider. Set it high and the JPG is nearly indistinguishable from the original while still being much smaller than the PNG; set it lower and the file shrinks further, which is perfect for thumbnails, previews or situations where a tiny file matters more than pixel-perfect detail. Because you can see the resulting file size after converting, you can find the sweet spot for your particular image rather than accepting whatever a one-size-fits-all converter decides. For most photos a high-to-mid setting removes the bulk of the weight with no perceptible difference, and the slider lets you push further when you need to. This control is what makes the tool genuinely useful rather than a blunt instrument: you decide how aggressively to compress, image by image.",
+      },
+      {
+        heading: "How transparency is handled",
+        body: "There is one important difference between PNG and JPG to be aware of: JPG does not support transparency. PNG images often have transparent areas — a logo with no background, an icon, a cut-out graphic — and since JPG cannot store transparency, those areas have to be filled with a solid color when you convert. This tool fills transparent regions with white, which is the most common and sensible default and works well for the vast majority of cases. It means a transparent PNG becomes a JPG with a clean white background rather than a strange or unexpected one. For photographs, which have no transparency to begin with, this makes no difference at all. It is worth knowing about mainly for graphics: if preserving transparency is essential, PNG or WebP is the format to keep, but if you are converting a photo or are happy with a white background, JPG gives you a much smaller file. The tool handles the fill automatically so you do not have to think about it.",
+      },
+      {
+        heading: "Private by design — converted in your browser",
+        body: "Whether you are converting personal photos, work images or screenshots, there is no reason to upload them to a server just to change the format and size. In1 performs the entire PNG-to-JPG conversion locally in your browser, decoding the PNG and re-encoding it as a JPG entirely on your own device. Nothing is uploaded, nothing is stored, and there is no account or sign-up. Because there is no upload step, the conversion is fast and works exactly the same offline as online — there is no waiting for a file to travel to a server and back. This local-only approach is especially reassuring for photos, which are often personal, and for work images that may be confidential. You get the convenience of an instant online converter with the privacy of doing the conversion on your own computer, so the image you are shrinking never leaves your device. For a tool that handles your pictures, that is exactly the standard it should meet.",
+      },
+      {
+        heading: "Who converts PNG to JPG?",
+        body: "The use case is everywhere photos meet size limits. People convert heavy PNG photos to JPG to email them, upload them to sites with file-size caps, or attach them to forms that reject large files. Online sellers shrink product images so listings load quickly and stay within marketplace limits. Bloggers and site owners convert PNG photos to JPG to speed up their pages and improve load times. Students and office workers reduce screenshots and images so documents and submissions slip under attachment limits. Social media users convert images so they upload faster. Anyone who has tried to send or upload a PNG photo and been told it is too large has a use for a quick converter that brings the size down. Because JPG is the right format for photographic content and is supported everywhere, converting to it — with control over the quality — is the standard way to make a bulky image manageable, and this tool does it instantly and privately in the browser.",
+      },
+    ],
+    howTo: [
+      { name: "Add your PNG", text: "Drag a PNG image into the drop area, or click to browse for one." },
+      { name: "Set the quality", text: "Use the quality slider to balance file size against fidelity." },
+      { name: "Convert", text: "Click convert and the image is re-encoded as a JPG in your browser." },
+      { name: "Download", text: "Download the smaller JPG, and compare it against the original size." },
+    ],
+    faq: [
+      { q: "Why convert PNG to JPG?", a: "JPG produces much smaller files for photographs, making them faster to upload, email and store." },
+      { q: "Can I control the quality?", a: "Yes. A quality slider lets you balance file size against visual fidelity for each image." },
+      { q: "What happens to transparency?", a: "JPG doesn't support transparency, so transparent areas are filled with white during conversion." },
+      { q: "Are my images uploaded anywhere?", a: "No. The conversion runs locally in your browser, so your image never leaves your device." },
+      { q: "Will the image lose quality?", a: "JPG is lossy, but at a high quality setting the difference is usually imperceptible while the file is much smaller." },
+      { q: "Is it free?", a: "Yes. The PNG to JPG converter is completely free, with no account and no limits." },
+    ],
+  },
+
+  // ---------------------------------------------------------------------------
+  {
+    slug: "jpg-to-png",
+    category: "image",
+    name: "JPG to PNG",
+    shortDescription: "Convert JPG photos to lossless PNG files in your browser.",
+    icon: "images",
+    processing: "client",
+    accept: ["image/jpeg"],
+    multiple: false,
+    keywords: ["jpg to png", "jpeg to png", "convert jpg to png", "jpg png converter", "change jpg to png"],
+    metaTitle: "JPG to PNG — Convert JPG Images Online Free | In1",
+    metaDescription:
+      "Convert JPG images to PNG online for free. Get a lossless PNG ready for editing, graphics and transparency workflows. Private — runs entirely in your browser.",
+    h1: "JPG to PNG converter",
+    intro:
+      "Convert JPG photos into lossless PNG files in your browser. Drop in a JPG, click convert, and download a PNG suited to editing and graphics work — with nothing uploaded.",
+    sections: [
+      {
+        heading: "When you need PNG instead of JPG",
+        body: "JPG is the right format for photographs, but there are plenty of situations where you specifically need a PNG instead, and converting is the way to get there. PNG is lossless, so it is the preferred format whenever an image will be edited repeatedly — each time you save a JPG it loses a little more quality, whereas a PNG can be opened and re-saved without degrading. PNG is also the format many design tools, graphics workflows and applications expect, and it is required when you need crisp edges or plan to add transparency. Converting a JPG to PNG gives you a version that is ready for this kind of work: an editing-friendly, lossless file that will not accumulate compression artifacts as you work on it. This tool does the conversion in your browser, taking your JPG and producing a clean PNG, so you can move a photographic image into a workflow that calls for PNG without hunting for software or uploading your picture anywhere.",
+      },
+      {
+        heading: "Lossless from this point forward",
+        body: "It is worth being clear about what converting a JPG to PNG does and does not do. It cannot recover detail that JPG compression already discarded — that information is gone from the source — but it does stop any further loss from happening. Once your image is a PNG, you can edit it, annotate it, crop it and re-save it as many times as you like without the cumulative quality loss that repeated JPG saving causes. This is the real value of the conversion: it gives you a lossless container so that all your subsequent work preserves the image exactly. For anyone doing iterative editing — touching up a photo, adding graphics or text, making repeated adjustments — starting from a PNG is the sensible choice, and converting your JPG up front means every save after that keeps full fidelity. The PNG will be larger than the JPG, which is the natural cost of lossless storage, but in exchange you get an image that no longer degrades each time you work on it.",
+      },
+      {
+        heading: "Ready for transparency and graphics work",
+        body: "One of the main reasons to convert a JPG to PNG is to prepare it for work that JPG simply cannot support. PNG has an alpha channel, which means transparency, so once your image is a PNG you can erase a background, cut out a subject, or composite it cleanly over other content — none of which is possible while it remains a JPG. Even before you add transparency, PNG is the format graphics and design tools tend to favour, and it handles sharp lines, text and flat areas of color without the blocky artifacts JPG can introduce. Converting to PNG is therefore the first step in a lot of common image tasks: turning a photo into an asset you can edit freely, preparing an image for a logo or icon workflow, or simply getting a file into the format a particular tool requires. This converter gives you that PNG instantly, so the image is ready for whatever editing or compositing you have in mind.",
+      },
+      {
+        heading: "Private by design — converted in your browser",
+        body: "Your images are your own, and converting one should not mean sending it to someone else's server. In1 performs the entire JPG-to-PNG conversion locally in your browser, decoding the JPG and re-encoding it as a PNG entirely on your device. Nothing is uploaded, nothing is stored, and there is no account or sign-up. Because there is no upload-and-wait round trip, the conversion is immediate and works exactly the same offline as online. This local-only approach matters whenever the image is personal or confidential — a private photo, a work asset, a screenshot of something sensitive — because it guarantees the picture never leaves your computer just to change its format. You get the convenience of an instant online converter with the privacy of doing the work yourself, which is the right default for any tool that handles your files. Convert as many JPGs as you like, free, with no watermark and no limits, knowing each one stays entirely on your own machine.",
+      },
+      {
+        heading: "Who converts JPG to PNG?",
+        body: "The need arises across creative and everyday work. Designers convert JPG photos to PNG to edit them losslessly or to prepare them for transparency and compositing. People who need to remove a background start by converting to PNG, since transparency requires it. Developers and content creators convert images to PNG for tools, environments or platforms that expect that format. Anyone doing repeated edits — retouching, annotating, adjusting — converts to PNG first so that re-saving does not keep degrading the picture. Office and document workflows sometimes call for PNG specifically for its crisp rendering of text and graphics. Even casual users convert a JPG to PNG when a particular app or upload form only accepts PNG. Whatever the reason, converting gives you a lossless, editing-friendly, transparency-capable version of a photographic image, and this tool produces it in a single click, instantly and privately, so you can get on with whatever you needed the PNG for in the first place.",
+      },
+    ],
+    howTo: [
+      { name: "Add your JPG", text: "Drag a JPG image into the drop area, or click to browse for one." },
+      { name: "Convert", text: "Click convert and the image is re-encoded as a PNG in your browser." },
+      { name: "Check the preview", text: "See the converted PNG before downloading." },
+      { name: "Download", text: "Download the lossless PNG, ready for editing or graphics work." },
+    ],
+    faq: [
+      { q: "Does converting to PNG improve quality?", a: "It can't restore detail JPG already discarded, but it stops further loss — the PNG won't degrade when you edit and re-save it." },
+      { q: "Why convert JPG to PNG?", a: "PNG is lossless and supports transparency, making it better for editing, graphics work and compositing." },
+      { q: "Will the PNG be larger than the JPG?", a: "Usually yes. Lossless storage means a bigger file, which is the trade-off for not losing any more quality." },
+      { q: "Are my images uploaded anywhere?", a: "No. The conversion runs locally in your browser, so your image never leaves your device." },
+      { q: "Can I then make the background transparent?", a: "Converting to PNG enables transparency; you can erase or cut out the background in an editor afterward." },
+      { q: "Is it free?", a: "Yes. The JPG to PNG converter is completely free, with no account and no limits." },
+    ],
+  },
+
+  // ---------------------------------------------------------------------------
+  {
+    slug: "svg-to-png",
+    category: "image",
+    name: "SVG to PNG",
+    shortDescription: "Rasterize SVG vector graphics to PNG at any size.",
+    icon: "shapes",
+    processing: "client",
+    accept: ["image/svg+xml"],
+    multiple: false,
+    keywords: ["svg to png", "convert svg to png", "svg converter", "rasterize svg", "svg to png online"],
+    metaTitle: "SVG to PNG — Convert SVG to PNG Online Free | In1",
+    metaDescription:
+      "Convert SVG vector graphics to PNG online for free. Choose any output width and get a crisp raster image with transparency. Private — runs in your browser.",
+    h1: "SVG to PNG converter",
+    intro:
+      "Rasterize SVG vector graphics into PNG images at exactly the size you need. Drop in an SVG, set the output width, and download a crisp PNG with transparency — generated entirely in your browser.",
+    sections: [
+      {
+        heading: "Turn scalable vectors into ready-to-use images",
+        body: "SVG is a vector format: instead of storing pixels, it stores instructions for drawing shapes, which means it scales to any size without ever losing sharpness. That makes it ideal for logos, icons and illustrations on the web. But vectors are not always what you need. Many programs, platforms and workflows expect a raster image — actual pixels — and simply will not accept or display an SVG. Social media, a lot of document and presentation software, image editors and countless apps want a PNG or similar. Converting your SVG to PNG bridges that gap, turning the scalable drawing into a fixed-size image that any of these tools can use. This converter rasterizes your SVG in the browser and gives you a PNG you can drop anywhere a vector would be rejected. You keep the crisp, clean look of the original artwork; you just get it in the pixel-based form that the tool or platform you are using actually understands.",
+      },
+      {
+        heading: "Choose exactly the size you need",
+        body: "Because an SVG has no inherent pixel resolution, the most important decision when rasterizing it is what size to render. This converter lets you set the output width directly, and it scales the height automatically to keep the artwork's proportions correct, so nothing is stretched or squashed. This control is genuinely useful, because the right size depends entirely on the use: you might want a small PNG for a favicon or an inline icon, a medium one for a web graphic, or a large, high-resolution one for print or a hero image. Since the source is a vector, you can render at a high resolution and get a perfectly crisp result — there is no upscaling blur, because the image is drawn fresh at whatever size you request rather than enlarged from existing pixels. Being able to dial in the exact width means you get a PNG that fits its destination precisely, at the resolution that destination calls for, rather than being stuck with whatever a fixed conversion would produce.",
+      },
+      {
+        heading: "Crisp output with transparency preserved",
+        body: "Rendering a vector at the size you choose means the PNG comes out sharp, with clean edges and smooth curves, exactly as the SVG was designed. And because PNG supports an alpha channel, the transparency that SVGs so often rely on is preserved in the conversion. This matters a great deal for the kinds of graphics people convert: a logo or icon usually has a transparent background so it can sit on top of any color, and the resulting PNG keeps that transparency rather than filling it with white or another solid color. The result is a raster image that drops cleanly onto any background, just like the original vector would. You get the best of both worlds — the precision and clarity of vector artwork, rendered into a pixel image at your chosen resolution, with the see-through areas intact. For logos, icons, illustrations and UI assets, that combination of crispness and preserved transparency is exactly what makes the converted PNG genuinely usable.",
+      },
+      {
+        heading: "Private by design — rasterized in your browser",
+        body: "SVG files are often design assets — logos, brand marks, icon sets — that you would not want to hand to an unknown server. In1 rasterizes your SVG to PNG entirely in your browser, drawing the vector onto a canvas on your own device and exporting the result. Nothing is uploaded, nothing is stored, and there is no account or sign-up. Because the rendering happens locally, it is instant and works exactly the same offline as online, with no file travelling to a server and back. This local-only approach is the right default for design work, where an unreleased logo or a proprietary icon should stay on your machine, but it benefits everyone: your artwork remains private, the conversion is fast, and there is nothing retaining or transmitting your files. You can rasterize as many SVGs as you like at whatever sizes you need, free and without watermarks, knowing each one is processed on your own computer and nowhere else.",
+      },
+      {
+        heading: "Who converts SVG to PNG?",
+        body: "The need is common among anyone who works with vector graphics but has to deliver pixels. Designers rasterize logos and icons to PNG for platforms and tools that do not accept SVG. Developers convert vector assets to PNG for environments, apps or older systems that lack SVG support, or to produce fixed-size icons. Marketers and social media managers turn SVG brand assets into PNGs because most social platforms require raster images. People building presentations and documents convert SVGs to PNG so they embed reliably. Anyone who has downloaded or been sent an SVG and found that the app they want to use it in simply will not open it has a use for a converter. Because SVG is increasingly the format logos and icons are distributed in, while so many destinations still want raster images, converting to PNG at a chosen size is a frequent, practical task — and this tool handles it instantly, at any resolution, with transparency preserved, entirely in your browser.",
+      },
+    ],
+    howTo: [
+      { name: "Add your SVG", text: "Drag an SVG file into the drop area, or click to browse for one." },
+      { name: "Set the width", text: "Choose the output width in pixels; the height scales to match." },
+      { name: "Convert", text: "Click convert and the SVG is rendered to a PNG at that size." },
+      { name: "Download", text: "Download the crisp PNG, with transparency preserved." },
+    ],
+    faq: [
+      { q: "Why convert SVG to PNG?", a: "Many tools and platforms accept raster images but not SVG, so converting makes vector artwork usable where SVG isn't supported." },
+      { q: "Can I choose the output size?", a: "Yes. You set the output width and the height scales automatically to keep the proportions." },
+      { q: "Is transparency kept?", a: "Yes. PNG supports an alpha channel, so transparent areas in the SVG remain transparent." },
+      { q: "Will the PNG be sharp?", a: "Yes. The vector is rendered fresh at your chosen size, so the result is crisp with no upscaling blur." },
+      { q: "Are my files uploaded anywhere?", a: "No. The SVG is rasterized locally in your browser, so it never leaves your device." },
+      { q: "Is it free?", a: "Yes. The SVG to PNG converter is completely free, with no account and no limits." },
+    ],
+  },
+
+  // ---------------------------------------------------------------------------
+  {
+    slug: "image-to-base64",
+    category: "image",
+    name: "Image to Base64",
+    shortDescription: "Encode an image as a Base64 data URI for HTML or CSS.",
+    icon: "binary",
+    processing: "client",
+    accept: ["image/png", "image/jpeg", "image/webp", "image/gif", "image/svg+xml"],
+    multiple: false,
+    keywords: ["image to base64", "base64 encode image", "image data uri", "img to base64", "base64 image encoder"],
+    metaTitle: "Image to Base64 — Encode Images Online Free | In1",
+    metaDescription:
+      "Convert an image to a Base64 data URI online for free. Get ready-to-paste HTML and CSS snippets to embed images inline. Private — runs entirely in your browser.",
+    h1: "Image to Base64 encoder",
+    intro:
+      "Encode any image as a Base64 data URI and get ready-to-use HTML and CSS snippets for embedding it inline. Drop in an image and copy the result — everything happens in your browser.",
+    sections: [
+      {
+        heading: "Embed images directly in code",
+        body: "Normally an image lives in a separate file that a web page or stylesheet links to, but sometimes it is more convenient to embed the image data directly inside the code itself. That is what a Base64 data URI does: it represents the entire image as a long text string that can be dropped straight into an HTML tag or a CSS rule, so the image travels with the markup instead of as a separate request. This tool takes any image and produces that data URI for you, encoding the file into Base64 and wrapping it in the correct data-URI prefix so it is ready to use. Encoding by hand is impractical, and getting the prefix or formatting wrong means the image silently fails to appear, so having a tool generate a correct, complete data URI removes a real source of friction. You simply drop in your image and get back a string you can paste directly into your page or stylesheet, with the image embedded right there in the code.",
+      },
+      {
+        heading: "Ready-to-paste HTML and CSS snippets",
+        body: "A raw data URI is useful, but you usually want it in a specific form depending on where it is going, so this tool gives you more than the bare string. Alongside the data URI itself, it generates a complete HTML image tag with the data URI already set as the source, and a CSS background-image rule with the data URI in place, both ready to copy with a single click. This means you do not have to remember the exact syntax for embedding an image inline in either context or assemble it by hand — you just grab the snippet that matches what you are doing. Whether you are inlining a small icon directly into a page's markup, setting a background image in a stylesheet without a separate file, or embedding an image in an email template, the right snippet is there ready to paste. It turns a fiddly, error-prone bit of hand-coding into a copy-and-go step, which is exactly what you want when you are in the middle of building something.",
+      },
+      {
+        heading: "When inlining images makes sense",
+        body: "Embedding an image as Base64 is a useful technique, but it is worth knowing when it helps and when it does not. The main benefit is removing a separate network request: a small icon or graphic baked into the HTML or CSS loads with the page rather than requiring its own round trip to the server, which can speed up the initial render for tiny, critical images. It is also handy when an image needs to be entirely self-contained — embedded in an email, bundled into a single file, or used somewhere external files are awkward. The trade-off is size: Base64 encoding makes the data roughly a third larger than the original file, and large images bloat your HTML or CSS and cannot be cached separately, so inlining is best reserved for small assets. The tool shows you the encoded size so you can judge this for yourself. Used thoughtfully on small graphics, inlining is a neat optimization; this tool makes producing the data URI effortless so you can apply the technique wherever it genuinely helps.",
+      },
+      {
+        heading: "Private by design — encoded in your browser",
+        body: "The images you encode might be assets from a project you are building, private graphics, or anything else you would rather keep to yourself. In1 encodes the image to Base64 entirely in your browser, reading the file and converting it to a data URI on your own device. Nothing is uploaded, nothing is stored, and there is no account or sign-up. Because the encoding happens locally, it is instant and works exactly the same offline as online, with no file travelling to a server. This local-only approach matters because the images people inline are often part of their own work — UI assets, brand graphics, content for a site they are developing — and there is no reason to expose them to a third party just to produce a text encoding. You get the convenience of an instant encoder with the assurance that your image never leaves your machine. Encode as many images as you like, free and without limits, with the whole process happening privately on your own computer.",
+      },
+      {
+        heading: "Who uses an image-to-Base64 encoder?",
+        body: "It is primarily a developer's tool, but a widely used one. Front-end developers inline small icons and graphics into HTML and CSS to cut down on network requests and keep critical assets loading with the page. Email developers encode images as data URIs because inlining is one of the more reliable ways to make images appear in email clients without hosting them externally. People building self-contained HTML files — single-page documents, exports, bundled widgets — embed images so everything lives in one file. Developers working with frameworks and build tools sometimes need a quick data URI for a prototype or a one-off. Designers and technical writers occasionally encode an image to drop into documentation or a demo. Anyone who needs an image to live inside code rather than as a separate file has a use for a quick, accurate encoder. Because the tool also produces ready-made HTML and CSS snippets, it saves not just the encoding but the surrounding boilerplate, making inlining an image a genuinely one-click task.",
+      },
+    ],
+    howTo: [
+      { name: "Add your image", text: "Drag an image into the drop area, or click to browse for one." },
+      { name: "Get the data URI", text: "The image is encoded to a Base64 data URI instantly." },
+      { name: "Pick a snippet", text: "Copy the raw data URI, the HTML img tag, or the CSS background rule." },
+      { name: "Paste it in", text: "Drop the snippet into your page, stylesheet or template." },
+    ],
+    faq: [
+      { q: "What is a Base64 data URI?", a: "It's the whole image encoded as a text string with a data-URI prefix, so it can be embedded directly in HTML or CSS instead of linked as a file." },
+      { q: "Do I get ready-to-use snippets?", a: "Yes. Alongside the raw data URI you get a complete HTML img tag and a CSS background-image rule, ready to copy." },
+      { q: "Does Base64 make the image bigger?", a: "Yes, by roughly a third. Inlining is best for small images; the tool shows the encoded size so you can decide." },
+      { q: "Is my image uploaded anywhere?", a: "No. The encoding runs locally in your browser, so your image never leaves your device." },
+      { q: "Which image formats work?", a: "Common formats including PNG, JPG, WebP, GIF and SVG can all be encoded to a data URI." },
+      { q: "Is it free?", a: "Yes. The image to Base64 encoder is completely free, with no account and no limits." },
+    ],
+  },
+
+  // ---------------------------------------------------------------------------
+  {
+    slug: "base64-to-image",
+    category: "image",
+    name: "Base64 to Image",
+    shortDescription: "Decode a Base64 string or data URI back into an image.",
+    icon: "image-plus",
+    processing: "client",
+    keywords: ["base64 to image", "decode base64 image", "data uri to image", "base64 image decoder", "base64 to png"],
+    metaTitle: "Base64 to Image — Decode Base64 Online Free | In1",
+    metaDescription:
+      "Decode a Base64 string or data URI back into a viewable, downloadable image online for free. Paste, preview and save. Private — runs entirely in your browser.",
+    h1: "Base64 to image decoder",
+    intro:
+      "Paste a Base64 string or a full data URI and instantly see the image it represents, then download it as a file. Everything is decoded in your browser, with nothing uploaded.",
+    sections: [
+      {
+        heading: "Turn Base64 back into a real image",
+        body: "Base64-encoded images are everywhere once you start looking: embedded in HTML and CSS as data URIs, stored in JSON payloads and API responses, saved in configuration files, or pasted into documents. The problem is that in this form an image is just a long, meaningless string of characters — you cannot see what it is or use it as a normal picture. This decoder reverses the encoding, taking that string and turning it back into an actual viewable, downloadable image. Paste the Base64 in and the picture appears, so you can finally see what the encoded data represents and save it as a proper file. This is the natural counterpart to encoding an image: whenever you encounter image data in text form and need the real image back — to view it, reuse it, or check what it is — this tool recovers it instantly. No more staring at an indecipherable block of characters wondering what image is hiding inside it.",
+      },
+      {
+        heading: "Accepts data URIs and raw Base64",
+        body: "Base64 image data turns up in slightly different forms, and this decoder handles them. If you paste a complete data URI — the kind that starts with a data-image prefix followed by the Base64 — it reads the embedded type and decodes it directly, so an image pulled straight out of HTML or CSS works as-is. If you only have the raw Base64 portion, without the prefix, the decoder still works: it treats the data as an image and decodes it so you can see the result. This flexibility means you do not have to massage the input into a particular shape first; you can paste whatever you have, whether you copied a full data URI out of a stylesheet or just have the bare encoded string from a database field or an API response. The tool figures out what to do with it and shows you the image. Being tolerant of both forms is what makes it practical for real-world data, which rarely arrives in exactly the format a stricter tool would demand.",
+      },
+      {
+        heading: "Preview, then download as a file",
+        body: "Seeing the decoded image is the first thing you usually want, so the tool shows a live preview the moment it can read your input — confirming at a glance that the Base64 really does contain a valid image and letting you check it is the one you expected. From there, a single click downloads the picture as a proper image file, so you can save it, reuse it, or drop it into another tool that needs an actual file rather than a string. The decoder also handles the failure case gracefully: if the data is not valid image data, it tells you rather than showing a broken preview or a confusing error, so you know the problem is with the input. This combination of an immediate preview and a clean download turns a block of encoded text back into a usable image in two steps. Whether you just need to view what an encoded string contains or you need the image as a file on disk, the tool covers both.",
+      },
+      {
+        heading: "Private by design — decoded in your browser",
+        body: "The Base64 image data you decode might come from your own code, a private API, an internal document or anything else you would rather not send to an outside service. In1 decodes the Base64 entirely in your browser, turning the string back into an image on your own device. Nothing is uploaded, nothing is stored, and there is no account or sign-up. Because the decoding happens locally, it is instant and works exactly the same offline as online, with no data travelling to a server. This local-only approach is the right default for a developer tool, where the encoded data may be tied to a project, a system or content you are not free to share. You get the convenience of an instant decoder with the assurance that the image data — and the image it becomes — never leaves your machine. Decode as many strings as you like, free and without limits, with the entire process happening privately on your own computer rather than someone else's server.",
+      },
+      {
+        heading: "Who uses a Base64 image decoder?",
+        body: "It is mainly a developer and technical tool, used wherever encoded image data needs to become a real picture again. Front-end developers decode data URIs they find in HTML or CSS to see and extract the underlying image. Back-end developers and API consumers decode Base64 image fields returned in JSON to verify what they contain or to save them. People debugging applications paste in encoded strings from logs, requests or databases to check that an image was stored or transmitted correctly. QA testers confirm that image data in a payload is valid. Anyone who has ever seen a giant block of Base64 in a file or a response and wondered what image it actually is has a use for a quick decoder. Designers and content people occasionally need to recover an image that was embedded as a data URI. Because the tool accepts both full data URIs and raw Base64, previews the result and lets you download it, it covers the whole range of 'I have encoded image data and I need the real image' situations, instantly and privately.",
+      },
+    ],
+    howTo: [
+      { name: "Paste the Base64", text: "Paste a full data URI or a raw Base64 string into the box." },
+      { name: "See the preview", text: "The decoded image appears immediately if the data is valid." },
+      { name: "Check it's right", text: "Confirm the preview shows the image you expected." },
+      { name: "Download", text: "Click download to save the decoded image as a file." },
+    ],
+    faq: [
+      { q: "What can I paste in?", a: "Either a complete data URI starting with the data-image prefix, or just the raw Base64 string on its own." },
+      { q: "Can I download the decoded image?", a: "Yes. Once it previews, a single click saves it as a proper image file." },
+      { q: "What if my Base64 is invalid?", a: "The tool tells you the data isn't a valid image rather than showing a broken preview, so you know the input is the problem." },
+      { q: "Is my data uploaded anywhere?", a: "No. The decoding runs locally in your browser, so the data and image never leave your device." },
+      { q: "Does it work for data URIs from CSS or HTML?", a: "Yes. You can paste a data URI copied straight out of a stylesheet or markup and it decodes directly." },
+      { q: "Is it free?", a: "Yes. The Base64 to image decoder is completely free, with no account and no limits." },
+    ],
+  },
+
+  // ---------------------------------------------------------------------------
+  {
+    slug: "exif-remover",
+    category: "image",
+    name: "EXIF Remover",
+    shortDescription: "Strip hidden EXIF metadata like GPS location from photos.",
+    icon: "image-off",
+    processing: "client",
+    accept: ["image/jpeg", "image/png", "image/webp"],
+    multiple: false,
+    keywords: ["exif remover", "remove exif data", "strip metadata photo", "remove gps from photo", "remove image metadata"],
+    metaTitle: "EXIF Remover — Strip Photo Metadata Online Free | In1",
+    metaDescription:
+      "Remove EXIF metadata from photos online for free, including GPS location, camera model and timestamps. Protect your privacy. Runs entirely in your browser.",
+    h1: "EXIF metadata remover",
+    intro:
+      "Strip hidden metadata from your photos — GPS coordinates, camera details, timestamps and more — by re-saving the image cleanly in your browser. The pixels stay; only the hidden data is removed.",
+    sections: [
+      {
+        heading: "The hidden data inside your photos",
+        body: "Every photo you take with a phone or camera carries more than just the image. Embedded invisibly inside the file is EXIF metadata: a record of when the photo was taken, the make and model of the device, the camera settings used, and — most sensitively — often the exact GPS coordinates of where you were standing. This information travels with the file when you share it, and most people have no idea it is there. That is a genuine privacy concern: posting a photo can inadvertently reveal your home address, your daily routine, or your precise location at a particular moment, simply because the location was baked into the image without you realizing. This tool removes that hidden data. It strips the EXIF metadata out of your photo so that what you share is just the picture, with none of the invisible details about where, when and how it was taken. It is a simple step that closes a privacy gap most people never knew they had.",
+      },
+      {
+        heading: "Protect your privacy before you share",
+        body: "The most important reason to remove EXIF data is location privacy. Photos taken on a phone very often include precise GPS coordinates, and when you share such a photo — on social media, in a forum, with a stranger, or on a marketplace listing — anyone who downloads it can read exactly where it was taken. For a picture taken at home, that can mean handing over your address; for photos of children, pets or daily activities, it can reveal patterns about your life you never intended to make public. Removing the metadata before sharing closes that exposure. Beyond location, stripping EXIF also removes the device details and timestamps that can be used to profile or identify you, and it cleans up information you simply may not want attached to an image for professional or personal reasons. This tool makes that protective step quick and effortless, so cleaning a photo's metadata before you post or send it can become a normal habit rather than an afterthought you only remember too late.",
+      },
+      {
+        heading: "Keeps the picture, removes the metadata",
+        body: "It is natural to worry that stripping metadata might harm the image itself, but it does not. This tool works by re-saving your photo through a fresh canvas, which reproduces every pixel of the picture exactly while leaving all the hidden EXIF fields behind. The visible image — its content, its resolution, its appearance — is fully preserved; what disappears is only the invisible data that was attached to it. The output is a clean image you can use exactly as you would the original, just without the embedded location, device and timing information. This is the right way to handle the task: rather than editing or degrading the photo, it simply produces a copy that contains the picture and nothing else. You end up with an image that looks identical to the one you started with but carries none of the metadata you wanted gone, ready to share with confidence that it is not quietly revealing more than you intended.",
+      },
+      {
+        heading: "Private by design — cleaned in your browser",
+        body: "There is a particular irony in using an online tool to protect your privacy if that tool uploads your photo to a server — you would be handing the very image, with its location data still intact, to a third party. In1 avoids this entirely by removing the metadata on your own device. The photo is processed in your browser, re-saved locally, and never uploaded, stored or transmitted anywhere. There is no account and no sign-up. This is the only sensible way to build a privacy tool: the cleaning happens on your machine, so the sensitive data you are trying to strip is never exposed in the process. Because everything is local, it is also instant and works offline. You can clean a photo's metadata knowing that neither the original nor the cleaned version, and certainly not the location data inside it, ever leaves your computer. For a tool whose entire purpose is protecting your privacy, doing the work locally is not just a nice feature — it is the whole point.",
+      },
+      {
+        heading: "Who removes EXIF data?",
+        body: "Privacy-conscious people of all kinds remove EXIF metadata before sharing photos. Anyone posting pictures on social media, forums or dating apps strips the data so they do not broadcast their location. Parents remove metadata from photos of their children before sharing them. People selling items online clean their listing photos so buyers cannot see where they live. Journalists, activists and sources remove EXIF to protect themselves and others when images could reveal sensitive locations. Professionals strip metadata from images before sending them to clients or publishing them, to avoid leaking device details or timestamps. Anyone who has realized that their photos might be quietly carrying their home coordinates has a reason to clean them. As awareness of image metadata grows, removing it before sharing is becoming a basic privacy hygiene step, much like thinking before you post. This tool makes that step trivial and, crucially, does it without ever sending your photo — or its hidden location — to anyone.",
+      },
+    ],
+    howTo: [
+      { name: "Add your photo", text: "Drag a JPG, PNG or WebP image into the drop area, or browse for one." },
+      { name: "Remove metadata", text: "Click to re-save the image without its EXIF data." },
+      { name: "Check the preview", text: "The cleaned image looks identical, minus the hidden metadata." },
+      { name: "Download", text: "Download the clean image, ready to share safely." },
+    ],
+    faq: [
+      { q: "What metadata does it remove?", a: "EXIF data such as GPS location, camera make and model, settings and timestamps embedded in the photo." },
+      { q: "Does removing metadata change the picture?", a: "No. The image is re-saved pixel-for-pixel; only the hidden metadata is dropped." },
+      { q: "Why should I remove EXIF data?", a: "Mainly privacy — photos often contain the exact GPS location and device details, which you may not want to share." },
+      { q: "Is my photo uploaded anywhere?", a: "No. The image is cleaned locally in your browser, so it never leaves your device — essential for a privacy tool." },
+      { q: "Which formats are supported?", a: "JPG, PNG and WebP images can all be re-saved without their metadata." },
+      { q: "Is it free?", a: "Yes. The EXIF remover is completely free, with no account and no limits." },
+    ],
+  },
+
+  // ---------------------------------------------------------------------------
+  {
+    slug: "image-color-picker",
+    category: "image",
+    name: "Image Color Picker",
+    shortDescription: "Pick the exact color of any pixel in an image.",
+    icon: "pipette",
+    processing: "client",
+    accept: ["image/png", "image/jpeg", "image/webp", "image/gif"],
+    multiple: false,
+    keywords: ["image color picker", "get color from image", "pixel color picker", "color picker from image", "hex from image"],
+    metaTitle: "Image Color Picker — Get Color from Image Free | In1",
+    metaDescription:
+      "Pick the exact color of any pixel in an image online for free. Click anywhere to get the HEX and RGB values, ready to copy. Private — runs in your browser.",
+    h1: "Image color picker",
+    intro:
+      "Upload an image and click anywhere on it to read the exact color of that pixel, in HEX and RGB. Copy the value with one click — everything happens in your browser, with nothing uploaded.",
+    sections: [
+      {
+        heading: "Read any color straight from an image",
+        body: "Sometimes you see a color you want — in a photo, a screenshot, a logo, a design — and you need its exact value to use elsewhere. Guessing or eyeballing it never gets you the precise shade, and matching a color by hand is frustrating and unreliable. This tool lets you pull the exact color directly from the image. You upload the picture, click on any point, and it reads the precise color of that pixel and shows you its value. There is no approximation: the number you get is exactly the color that pixel contains, sampled directly from the image data. This is the reliable way to capture a color you have spotted, whether it is a brand color from a logo, a shade from a photograph, or a value from a design someone sent you. Instead of trying to reproduce a color from memory or by trial and error, you click the pixel and get its true value, ready to reuse with confidence that it matches exactly.",
+      },
+      {
+        heading: "HEX and RGB, ready to copy",
+        body: "Colors are written in different formats depending on where they are used, so this picker gives you the two most common at once. It shows the HEX code — the hash-prefixed six-character form used throughout web design and CSS — and the RGB values, the red-green-blue triplet used in many design tools and contexts. Both are displayed for every pixel you pick, and each has a copy button, so you can grab whichever format the tool you are working in expects without any manual conversion. This matters because needing a color in the 'wrong' format is a common annoyance: you have the HEX but your software wants RGB, or vice versa. By presenting both and letting you copy either instantly, the picker fits straight into whatever workflow you are in. You click a pixel, see the color in both standard notations, and copy the one you need in a single click — turning 'what color is that?' into an answer you can paste directly into your stylesheet, your design tool or your document.",
+      },
+      {
+        heading: "Pinpoint the exact pixel you want",
+        body: "Images are full of subtly different colors, and the shade you want is often in one specific spot — a particular point on a gradient, a single element in a busy design, the precise tone of an object in a photo. This tool lets you target exactly that pixel. The image is displayed for you to click directly, and a click reads the color at that precise location, so you are not getting an average or an approximation but the actual color where you pointed. You can click around to compare different areas, sampling as many points as you like until you find the exact shade you are after. This precision is what makes the tool genuinely useful rather than a rough guide: when you need to match a specific color, getting it from the exact pixel matters, because even areas that look uniform can vary, and gradients change continuously. Being able to click the precise spot and read its true value means the color you capture is the one you actually wanted, not a near-miss.",
+      },
+      {
+        heading: "Private by design — read in your browser",
+        body: "The images you sample colors from might be your own designs, client work, brand assets or private photos, and there is no reason to upload them to a server just to read a pixel's color. In1 loads your image into the browser and reads the colors entirely on your own device. Nothing is uploaded, nothing is stored, and there is no account or sign-up. Because the image is processed locally, picking colors is instant and works exactly the same offline as online, with no file travelling anywhere. This local-only approach is the right default for design work, where an unreleased layout or a confidential asset should stay on your machine, but it benefits everyone by keeping the tool fast and your images private. You can sample as many colors from as many images as you like, free and without limits, knowing that each picture is handled on your own computer and never sent to a server. The color you extract is yours, taken privately, ready to use.",
+      },
+      {
+        heading: "Who uses an image color picker?",
+        body: "It is a staple for anyone who works with color. Web designers and developers pull exact HEX codes from mockups, screenshots and reference images to reproduce them faithfully in CSS. Graphic designers sample colors from photos, logos and inspiration images to build palettes and match brand shades. Digital artists pick colors from references while painting. Marketers and brand managers extract the precise colors of a logo or asset to keep materials consistent. People building presentations or documents match a color from an image to use elsewhere in their design. Anyone recreating or coordinating with a color they have seen — matching a theme, copying a shade, identifying a brand color — benefits from being able to click a pixel and get its exact value. Because the picker shows both HEX and RGB and copies either instantly, it slots into any design or development workflow, and because it runs entirely in the browser, it does so without ever exposing the images you are sampling from.",
+      },
+    ],
+    howTo: [
+      { name: "Add your image", text: "Drag an image into the drop area, or click to browse for one." },
+      { name: "Click a pixel", text: "Click anywhere on the image to sample the color at that point." },
+      { name: "Read HEX and RGB", text: "See the exact color in both formats, with a swatch preview." },
+      { name: "Copy the value", text: "Copy the HEX or RGB value with one click and use it anywhere." },
+    ],
+    faq: [
+      { q: "How accurate is the color?", a: "It reads the exact color of the pixel you click, sampled directly from the image data — no approximation." },
+      { q: "What color formats does it give?", a: "Both the HEX code and the RGB values, each with its own copy button." },
+      { q: "Can I sample more than one color?", a: "Yes. Click as many points as you like to compare colors and find the exact shade you want." },
+      { q: "Is my image uploaded anywhere?", a: "No. The image is read locally in your browser, so it never leaves your device." },
+      { q: "Does it work on photos and screenshots?", a: "Yes. Any common image works — photos, screenshots, logos and designs." },
+      { q: "Is it free?", a: "Yes. The image color picker is completely free, with no account and no limits." },
+    ],
+  },
+
+  // ---------------------------------------------------------------------------
+  {
+    slug: "color-palette-extractor",
+    category: "image",
+    name: "Color Palette Extractor",
+    shortDescription: "Pull the dominant colors out of any image as a palette.",
+    icon: "swatch-book",
+    processing: "client",
+    accept: ["image/png", "image/jpeg", "image/webp", "image/gif"],
+    multiple: false,
+    keywords: ["color palette extractor", "extract colors from image", "image palette generator", "dominant colors", "color scheme from image"],
+    metaTitle: "Color Palette Extractor — Colors from Image Free | In1",
+    metaDescription:
+      "Extract the dominant color palette from any image online for free. Get the main colors as swatches with HEX codes, ready to copy. Private — runs in your browser.",
+    h1: "Color palette extractor",
+    intro:
+      "Upload an image and instantly get its dominant colors as a palette of swatches with HEX codes. Copy any color with a click — the whole analysis happens in your browser, with nothing uploaded.",
+    sections: [
+      {
+        heading: "Discover an image's color story",
+        body: "Every image has an underlying palette — the handful of colors that define its overall look and feel. Identifying those colors by eye is hard, because an image can contain thousands of distinct shades and the ones that actually characterize it are not always obvious. This tool does the analysis for you. You upload an image and it examines the colors throughout, groups the similar ones together, and surfaces the dominant shades as a clean palette of swatches. In a moment you go from a complex picture to a small, representative set of colors that capture its essence. This is invaluable whenever you want to understand or reuse the color scheme of an image: a photograph whose mood you want to match, a design whose palette you admire, a brand image you need to coordinate with, or simply an inspiring picture you want to build a color scheme around. Instead of guessing which colors matter, you get the image's real palette extracted automatically.",
+      },
+      {
+        heading: "Swatches with HEX codes you can copy",
+        body: "An extracted palette is only useful if you can actually use the colors, so the tool presents each one as a swatch paired with its HEX code, the standard format for web and design work. You see the colors laid out visually, which makes the palette easy to take in at a glance, and each swatch's HEX value is right there ready to copy with a single click. This means you can lift any color from the palette straight into your stylesheet, your design tool or your document without conversion or retyping. Whether you want the single most dominant color, a couple of complementary shades, or the whole set to build a scheme, you can grab exactly what you need. Presenting both the visual swatch and the copyable code is what turns the extraction from an interesting observation into a practical resource: you do not just see what colors an image is made of, you can immediately put those colors to work in whatever you are building, with their precise values in hand.",
+      },
+      {
+        heading: "Build palettes from inspiration",
+        body: "One of the most enjoyable uses of a palette extractor is turning visual inspiration into a usable color scheme. Designers and creators constantly draw on images — a photograph, an artwork, a sunset, a product shot, a moodboard reference — for the feeling a particular combination of colors evokes. Extracting the palette from such an image gives you a concrete, reusable starting point: the actual colors behind the look you were drawn to, ready to apply to a website, a brand, a presentation, an illustration or a room. It takes the guesswork out of translating 'I love the colors in this picture' into specific values you can build with. Because the tool surfaces several dominant colors rather than just one, you get a coordinated set that already works together — they came from the same image, after all — which is a strong foundation for a harmonious scheme. It turns any image you find inspiring into a palette you can immediately use, bridging the gap between inspiration and application.",
+      },
+      {
+        heading: "Private by design — analyzed in your browser",
+        body: "The images you extract palettes from might be client work, unreleased designs, brand assets or personal photos, and there is no reason to upload them to a server just to analyze their colors. In1 examines the image and extracts its palette entirely in your browser, reading the pixels on your own device. Nothing is uploaded, nothing is stored, and there is no account or sign-up. Because the analysis happens locally, it is fast and works exactly the same offline as online, with no file travelling anywhere. This local-only approach is the right default for creative work, where the images you draw inspiration or color from may be confidential or proprietary, but it keeps the tool quick and your pictures private for everyone. You can extract palettes from as many images as you like, free and without limits, with every picture handled on your own computer rather than someone else's server. The colors you pull out are yours, taken privately, ready to build with.",
+      },
+      {
+        heading: "Who uses a color palette extractor?",
+        body: "It is a favorite among designers and creators of all kinds. Web and graphic designers extract palettes from reference images, photos and existing designs to build coordinated color schemes. Brand designers pull the exact colors from a logo or brand image to keep materials consistent. Digital artists and illustrators sample palettes from photographs and artwork to inform their own work. Interior and fashion enthusiasts extract colors from inspiring images to plan combinations. Marketers and content creators build on-brand palettes from product or campaign imagery. Developers grab a scheme from a mockup to implement it. Anyone who has been struck by the colors in an image and wanted to reuse them has a use for a tool that pulls those colors out automatically. Because the extractor presents the palette as copyable swatches with HEX codes, it turns any image into a ready-to-use set of colors, and because it runs entirely in the browser, it does so while keeping the source images completely private.",
+      },
+    ],
+    howTo: [
+      { name: "Add your image", text: "Drag an image into the drop area, or click to browse for one." },
+      { name: "See the palette", text: "The dominant colors are extracted and shown as swatches instantly." },
+      { name: "Read the HEX codes", text: "Each swatch shows its HEX value beneath it." },
+      { name: "Copy a color", text: "Click any swatch's code to copy it and use it in your work." },
+    ],
+    faq: [
+      { q: "How does it choose the colors?", a: "It analyzes the pixels, groups similar shades together, and surfaces the most dominant colors as the palette." },
+      { q: "What format are the colors in?", a: "Each color is shown as a swatch with its HEX code, ready to copy." },
+      { q: "How many colors does it extract?", a: "It surfaces several of the most dominant colors, enough to form a coordinated palette." },
+      { q: "Is my image uploaded anywhere?", a: "No. The analysis runs locally in your browser, so your image never leaves your device." },
+      { q: "Does it work on photos and designs?", a: "Yes. Any common image works — photos, artwork, logos and designs." },
+      { q: "Is it free?", a: "Yes. The color palette extractor is completely free, with no account and no limits." },
+    ],
+  },
+
+  // ---------------------------------------------------------------------------
+  {
+    slug: "meme-generator",
+    category: "image",
+    name: "Meme Generator",
+    shortDescription: "Add classic top and bottom captions to any image.",
+    icon: "smile",
+    processing: "client",
+    accept: ["image/png", "image/jpeg", "image/webp", "image/gif"],
+    multiple: false,
+    keywords: ["meme generator", "meme maker", "caption image", "add text to image meme", "make a meme"],
+    metaTitle: "Meme Generator — Add Captions to Images Free | In1",
+    metaDescription:
+      "Make a meme online for free. Add classic top and bottom captions to any image with the bold meme style, preview live and download. Private — runs in your browser.",
+    h1: "Meme generator",
+    intro:
+      "Turn any image into a meme by adding bold top and bottom captions in the classic style. Type your text, see it on the image instantly, and download the result — all in your browser.",
+    sections: [
+      {
+        heading: "The classic meme, made in seconds",
+        body: "The top-and-bottom caption meme is one of the most recognizable formats on the internet, and this tool lets you make one from any image in seconds. You upload a picture, type your caption for the top and your punchline for the bottom, and the text is rendered onto the image in the bold, white, black-outlined style that defines the format. There is no need for image-editing software, no fiddling with layers or fonts, and no learning curve — you just type and the meme takes shape. The classic styling is applied automatically: heavy uppercase lettering with a dark outline that stands out clearly against any background, exactly the look people expect from a meme. This makes turning a funny image, a reaction shot or a screenshot into a shareable meme effortless. What used to require opening an editor and manually styling text becomes a matter of typing two lines, so you can capture a joke while it is still funny rather than losing the moment to setup.",
+      },
+      {
+        heading: "See your meme as you type",
+        body: "Making a meme is a creative, iterative process — you try a line, see how it lands on the image, and adjust until it is right — so this tool shows your meme live as you type. Every keystroke updates the preview, so the caption appears on the image immediately and you can see exactly how it looks in context. This instant feedback is what makes the tool fun and fast to use: you can refine your wording, see whether a line fits, and get the timing of the joke right without any guesswork or repeated exporting. The text is automatically styled and positioned in the classic way, at the top and bottom of the image, so you can focus entirely on the words rather than on layout. Being able to watch the meme come together as you write means you nail the caption before you ever download it, which is exactly how meme-making should feel — quick, visual and responsive, with the result always in front of you as you craft it.",
+      },
+      {
+        heading: "Works with any image you choose",
+        body: "The best memes often come from your own images — a screenshot, a reaction photo, a picture of your pet, a frame from something you saw — and this tool works with any image you upload rather than limiting you to a gallery of pre-set templates. That freedom is what lets you make a meme that is actually relevant to the moment or the conversation, instead of forcing your joke onto a generic stock template. Drop in whatever image fits the idea and add your captions to it. The bold, outlined text style is designed to remain readable over any background, light or dark, busy or plain, so your caption stands out no matter what the underlying picture looks like. This flexibility means the tool is as useful for an inside joke built on a personal photo as it is for a classic reaction image. Whatever picture captures the idea, you can turn it into a properly captioned meme, which is what makes memes personal and timely rather than recycled.",
+      },
+      {
+        heading: "Private by design — made in your browser",
+        body: "Memes are often built from personal images — your own photos, screenshots of private conversations, pictures that are funny precisely because of who or what is in them — and there is no reason to upload those to a server just to add some text. In1 generates the meme entirely in your browser, drawing your captions onto the image on your own device. Nothing is uploaded, nothing is stored, and there is no account or sign-up. Because everything happens locally, the preview is instant and the tool works exactly the same offline as online. This local-only approach matters because the images people turn into memes are frequently private, and sending them to a third-party meme site to add a caption would mean handing over those pictures unnecessarily. Here, the image and the finished meme stay on your machine, and you download the result directly. You can make as many memes as you like, free and without watermarks, knowing that each image — and whatever is in it — never leaves your own computer.",
+      },
+      {
+        heading: "Who uses a meme generator?",
+        body: "Memes are a language of the internet, so the audience is enormous. People make memes to react in group chats and comment threads, capturing a feeling faster and funnier than words alone. Friends turn inside jokes and personal photos into captioned images that only their circle will get. Social media users and content creators produce memes to engage their followers and ride trends while they are fresh. Community managers and brands make on-brand memes for marketing and social posts. Students and coworkers make memes about shared experiences. Anyone who has wanted to caption a reaction image or turn a funny picture into a shareable joke has a use for a quick meme maker. Because the tool works with any image, styles the text in the classic way automatically, previews live and keeps everything private, it serves both the spur-of-the-moment joke and the more deliberate creation equally well — and it does it without making you open an image editor or trust your pictures to a meme website.",
+      },
+    ],
+    howTo: [
+      { name: "Add an image", text: "Drag any image into the drop area, or click to browse for one." },
+      { name: "Type your captions", text: "Enter the top and bottom text for your meme." },
+      { name: "Watch it appear", text: "The captions render on the image live in the classic meme style." },
+      { name: "Download", text: "Download the finished meme, ready to share." },
+    ],
+    faq: [
+      { q: "What style is the text?", a: "The classic meme style — bold uppercase white lettering with a black outline, positioned at the top and bottom." },
+      { q: "Can I use my own image?", a: "Yes. Any image you upload works, so you're not limited to preset templates." },
+      { q: "Is the preview live?", a: "Yes. The captions appear on the image as you type, so you can see exactly how the meme looks." },
+      { q: "Is my image uploaded anywhere?", a: "No. The meme is made locally in your browser, so your image never leaves your device." },
+      { q: "Is there a watermark?", a: "No. The downloaded meme has no watermark added by the tool." },
+      { q: "Is it free?", a: "Yes. The meme generator is completely free, with no account and no limits." },
+    ],
+  },
+
+  // ---------------------------------------------------------------------------
+  {
+    slug: "og-image-generator",
+    category: "image",
+    name: "OG Image Generator",
+    shortDescription: "Create 1200×630 social share images for links.",
+    icon: "layout-template",
+    processing: "client",
+    keywords: ["og image generator", "open graph image", "social share image", "twitter card image", "link preview image"],
+    metaTitle: "OG Image Generator — Social Share Images Free | In1",
+    metaDescription:
+      "Create Open Graph social share images (1200×630) online for free. Add a title, subtitle and theme, preview live and download a PNG. Private — runs in your browser.",
+    h1: "OG image generator",
+    intro:
+      "Design the image that appears when your link is shared on social media. Add a title, subtitle and footer, pick a theme, and download a perfectly sized 1200×630 PNG — all in your browser.",
+    sections: [
+      {
+        heading: "The image behind every shared link",
+        body: "When a link is posted on social media, in a chat, or in a messaging app, it usually appears not as a bare URL but as a rich preview card with an image, a title and a description. That image is the Open Graph image, and it is one of the biggest factors in whether people notice and click the link. A blank, broken or unappealing preview makes a link easy to scroll past; a clear, attractive one draws the eye and communicates what the link is about before anyone reads a word. This tool lets you create that image without design software. You provide a title and supporting text, choose a look, and it produces a clean, professional share image sized exactly as social platforms expect. Instead of leaving your link previews to chance — or to whatever a platform scrapes automatically — you get to design the impression your link makes, which is well worth the minute it takes when that impression directly affects how many people engage.",
+      },
+      {
+        heading: "Exactly the right size, every time",
+        body: "Open Graph images have a standard size — 1200 by 630 pixels — and getting it right matters more than it might seem. An image at the wrong dimensions gets awkwardly cropped, letterboxed or stretched when platforms render the preview, often cutting off your text or leaving ugly bars, which undermines the whole point. This tool produces images at exactly 1200×630, the dimensions that social networks and messaging apps are built around, so your share image displays cleanly and completely wherever the link appears. You do not have to look up the correct size, set up a canvas, or worry about how different platforms will treat your image — it comes out at the right ratio and resolution every time. The text is laid out with sensible margins so nothing sits too close to the edges where it might be trimmed. Getting the dimensions exactly right is the unglamorous but essential part of a good share image, and the tool handles it automatically so your previews always look intentional.",
+      },
+      {
+        heading: "Readable text and clean themes",
+        body: "A good share image communicates instantly, so this tool focuses on clear, readable text on a clean background. You add a headline, a supporting subtitle and a small footer label such as your site name, and the text is laid out with strong typographic hierarchy — a large, bold title with a lighter subtitle beneath — so the message reads at a glance even at thumbnail size. A choice of themes gives you different background and text color combinations, from dark and high-contrast to lighter, cleaner looks, so you can match the tone of your content or brand without making any design decisions yourself. Long titles wrap sensibly so they fit within the image rather than overflowing. The result is a share image that looks deliberate and professional rather than thrown together, with the text doing the work of telling people what the link offers. You get a polished, on-message preview without needing any design skill, just by typing your text and picking a theme that fits.",
+      },
+      {
+        heading: "Live preview and instant download",
+        body: "Designing a share image works best when you can see it as you build it, so this tool shows a live preview that updates as you type and switch themes. You see exactly how your title, subtitle and footer sit on the chosen background in real time, so you can adjust your wording to fit, try different themes, and get the balance right before you commit. There is no exporting and re-checking — what you see in the preview is precisely what you download. When it looks right, a single click saves the image as a PNG at the full 1200×630 resolution, ready to set as your page's Open Graph image or to use anywhere a share graphic is needed. This immediate, visual workflow makes creating a share image quick and almost enjoyable rather than a chore, and it means you can produce a tailored image for each important page or post in moments. The preview removes all the guesswork, so the downloaded result always matches what you designed.",
+      },
+      {
+        heading: "Who uses an OG image generator?",
+        body: "Anyone who shares links and cares how they look has a use for it. Bloggers and content creators make share images for their posts so links stand out in social feeds and drive more clicks. Marketers design Open Graph images for campaigns, landing pages and announcements. Developers and indie makers generate share images for their projects, apps and documentation without commissioning a designer. Small business owners create previews for the pages they promote. Newsletter writers and community managers make graphics for the links they circulate. Anyone launching something — a product, an article, an event — wants the shared link to look compelling rather than blank. Because the tool produces correctly sized images with readable text and clean themes, previewed live and downloaded instantly, it lets people who are not designers create professional-looking share images in moments. And because it runs entirely in the browser, they can do it quickly, for free, and as often as they need, tailoring a distinct preview image for every link that matters.",
+      },
+    ],
+    howTo: [
+      { name: "Enter your text", text: "Add a title, a subtitle and a footer label such as your site name." },
+      { name: "Pick a theme", text: "Choose a background and text color combination that fits your content." },
+      { name: "Check the live preview", text: "See exactly how the 1200×630 image looks as you type." },
+      { name: "Download the PNG", text: "Save the image and set it as your page's Open Graph image." },
+    ],
+    faq: [
+      { q: "What is an OG image?", a: "It's the Open Graph image that appears in the preview card when your link is shared on social media or in messaging apps." },
+      { q: "What size are the images?", a: "Exactly 1200×630 pixels, the standard size social platforms and messaging apps expect." },
+      { q: "Can I preview before downloading?", a: "Yes. A live preview updates as you type and change themes, and the download matches it exactly." },
+      { q: "Is anything uploaded?", a: "No. The image is generated locally in your browser, so your text and the result never leave your device." },
+      { q: "Do I need design skills?", a: "No. You just enter text and pick a theme; the layout, sizing and styling are handled for you." },
+      { q: "Is it free?", a: "Yes. The OG image generator is completely free, with no account and no limits." },
+    ],
+  },
+
+  // ---------------------------------------------------------------------------
+  {
+    slug: "favicon-generator",
+    category: "image",
+    name: "Favicon Generator",
+    shortDescription: "Turn an image into a full set of favicon sizes in a zip.",
+    icon: "app-window",
+    processing: "client",
+    accept: ["image/png", "image/jpeg", "image/webp", "image/svg+xml"],
+    multiple: false,
+    keywords: ["favicon generator", "create favicon", "favicon from image", "favicon maker", "apple touch icon generator"],
+    metaTitle: "Favicon Generator — Make Favicons Online Free | In1",
+    metaDescription:
+      "Generate a full set of favicon sizes from one image online for free. Get PNG icons and an apple-touch-icon in a zip, ready for your site. Private — runs in your browser.",
+    h1: "Favicon generator",
+    intro:
+      "Turn one image into a complete set of favicon sizes for your website. Drop in a square image, preview the icons, and download a zip with all the PNG sizes plus an apple-touch-icon — generated in your browser.",
+    sections: [
+      {
+        heading: "Every favicon size from one image",
+        body: "A favicon is the small icon that represents your website — the little image in the browser tab, in bookmarks, and on a phone's home screen when someone saves your site. The complication is that modern sites need this icon at several different sizes, because browsers, operating systems and devices each ask for different dimensions: a tiny one for the tab, larger ones for bookmarks and app icons, a specific size for Apple devices, and more for web app manifests. Producing all of these by hand means resizing the same image over and over, which is tedious and easy to get inconsistent. This generator does it from a single source image. You provide one picture and it creates the full set of sizes for you in one step, each one a clean resize of your original. Instead of opening an image editor and exporting size after size, you get the complete range a website needs at once, ready to drop into your site, which removes one of the more annoying chores in setting up a site's branding.",
+      },
+      {
+        heading: "Includes the sizes browsers and devices expect",
+        body: "Rather than leaving you to guess which dimensions you need, this generator produces the sizes that real-world browsers and devices actually use. That includes the small icons for browser tabs, the medium sizes used for bookmarks and shortcuts, the larger sizes referenced by web app manifests for when a site is installed or saved to a home screen, and a dedicated apple-touch-icon at the size Apple devices look for. Covering this range means your site's icon shows up crisply everywhere it might appear, rather than being scaled awkwardly from a single ill-fitting size. The icons are delivered as PNGs, which every browser supports, and named clearly so you can tell which is which. By generating the standard set in one go, the tool takes care of the compatibility details so you do not have to research what sizes are required or worry that you have missed one. You end up with a kit that covers the common cases, ready to reference from your site's markup and manifest.",
+      },
+      {
+        heading: "Preview before you download",
+        body: "A favicon has to read clearly even when it is tiny, and an image that looks great at full size can become an unrecognizable blob when shrunk to a tab icon. That is why this tool shows you a preview of how your image looks at small favicon sizes before you download anything. Seeing the icon at the dimensions it will actually appear lets you judge whether it works — whether the detail holds up, whether it is still recognizable, whether you need a simpler or more square source image. This quick check can save you from publishing a favicon that looks fine in your editor but turns to mush in the browser tab. The general rule it helps you apply is that favicons work best when they are simple, bold and roughly square, and the preview makes any problems with your chosen image obvious immediately. Being able to see the result at true size before committing means the icon set you download is one you have actually confirmed looks good where it counts.",
+      },
+      {
+        heading: "Private by design — generated in your browser",
+        body: "The image you turn into a favicon is usually your logo or brand mark, often for a project that is not yet public, and there is no reason to upload it to a server just to resize it. In1 generates the entire favicon set in your browser, resizing your image and packaging the icons on your own device. Nothing is uploaded, nothing is stored, and there is no account or sign-up. The icons are bundled into a zip file locally and downloaded directly, with no file ever travelling to a server. This local-only approach is the right default for branding work, where an unreleased logo should stay on your machine, but it benefits everyone by keeping the tool fast and your image private. Because it all happens locally, generation is instant and works offline too. You can create favicon sets from as many images as you like, free and without watermarks, knowing that your logo or mark — and the icons made from it — never leave your own computer.",
+      },
+      {
+        heading: "Who uses a favicon generator?",
+        body: "Anyone building or maintaining a website needs favicons, so the audience is broad. Web developers generate the icon set whenever they set up a new site or project, dropping the files in and referencing them from the markup and manifest. Designers create favicons from a logo as part of delivering a brand's web presence. Indie makers and solo founders building their own sites need favicons but do not want to wrestle with exporting a dozen sizes by hand. Small business owners setting up a site want their logo to appear properly in browser tabs and on phone home screens. Bloggers and hobbyists adding a personal touch to their site generate an icon from an image. Anyone who has noticed the blank or default icon next to their site in a browser tab and wanted to replace it with their own has a use for a generator. Because the tool produces the full standard set from one image, previews the result and packages everything in a zip, it turns a fiddly setup task into a single, private, in-browser step.",
+      },
+    ],
+    howTo: [
+      { name: "Add your image", text: "Drag a square image into the drop area, or click to browse for one." },
+      { name: "Preview the icons", text: "See how your image looks at small favicon sizes." },
+      { name: "Generate the pack", text: "The full set of PNG sizes plus an apple-touch-icon is created in your browser." },
+      { name: "Download the zip", text: "Download the zip and add the icons to your site." },
+    ],
+    faq: [
+      { q: "What sizes does it generate?", a: "A standard set of PNG favicon sizes for browsers and web app manifests, plus an apple-touch-icon for Apple devices." },
+      { q: "What format are the icons?", a: "PNG, which every modern browser supports, packaged together in a zip file." },
+      { q: "What image should I use?", a: "A square image works best, and simple, bold designs stay recognizable at tiny sizes. The preview helps you check." },
+      { q: "Is my image uploaded anywhere?", a: "No. The icons are generated locally in your browser, so your image never leaves your device." },
+      { q: "Can I preview before downloading?", a: "Yes. You see your image at small favicon sizes before you download the pack." },
+      { q: "Is it free?", a: "Yes. The favicon generator is completely free, with no account and no limits." },
+    ],
+  },
+
+  // ---------------------------------------------------------------------------
+  {
+    slug: "screenshot-to-pdf",
+    category: "pdf",
+    name: "Screenshot to PDF",
+    shortDescription: "Combine screenshots and images into a single PDF.",
+    icon: "file-image",
+    processing: "client",
+    accept: ["image/png", "image/jpeg", "image/webp"],
+    multiple: true,
+    keywords: ["screenshot to pdf", "screenshots to pdf", "images to pdf", "combine screenshots pdf", "png to pdf"],
+    metaTitle: "Screenshot to PDF — Combine Screenshots Free | In1",
+    metaDescription:
+      "Combine screenshots and images into one PDF online for free. Add multiple images, order them, and download a single PDF. Private — runs entirely in your browser.",
+    h1: "Screenshot to PDF converter",
+    intro:
+      "Turn one or many screenshots into a single, tidy PDF. Add your images, arrange them in order, and download one PDF with a page per screenshot — all in your browser, nothing uploaded.",
+    sections: [
+      {
+        heading: "Bundle screenshots into one shareable file",
+        body: "Screenshots are how we capture and share what is on our screens — a conversation, an error, a receipt, a design, a step in a process — but a folder full of separate image files is awkward to send and clumsy to view in order. Combining them into a single PDF solves that. A PDF holds all your screenshots in one file, in a fixed order, that opens the same way on any device and is far easier to send, store and read than a pile of loose images. This tool takes your screenshots and assembles them into one PDF, putting each image on its own page. Instead of attaching a dozen separate files to an email or message and hoping the recipient views them in the right sequence, you send one tidy document. It is the natural way to package a set of related screenshots — a bug report, a how-to, a record of a conversation, a collection of receipts — into something coherent that the person on the other end can open and read straight through.",
+      },
+      {
+        heading: "Add several images and put them in order",
+        body: "A useful screenshot PDF is rarely just one image, and the order usually matters — the steps of a tutorial, the sequence of a conversation, the pages of a captured document. This tool lets you add multiple images at once and arrange them into exactly the order you want before creating the PDF. You are not stuck with whatever sequence the files happened to be in; you control how the pages are laid out, so the final document reads correctly from start to finish. Each image becomes its own page, preserving the screenshots at their natural proportions rather than cramming them together. This control is what turns a set of screenshots into a proper document: a bug report where the steps appear in the right sequence, a guide whose instructions flow logically, a record whose pages are in chronological order. Being able to add everything and then order it means the PDF you produce tells the story you intend, rather than leaving the sequence to chance.",
+      },
+      {
+        heading: "Works with screenshots and any images",
+        body: "Although it is built around the common need to combine screenshots, this tool works with ordinary images too, so it doubles as a general image-to-PDF converter. Photos, scans, exported graphics, diagrams — any standard image can go into the PDF alongside or instead of screenshots. This makes it handy well beyond capturing your screen: assembling scanned pages into a document, turning a set of photos into a shareable PDF, bundling diagrams or designs for review, or combining receipts and records for filing. Because it accepts the common image formats, you can mix sources freely, and each one lands on its own page in the order you set. The result is a flexible way to gather any collection of images into a single, ordered, universally openable document. Whether your inputs are screenshots, photographs or scans, the process is the same — add them, arrange them, and get one clean PDF — which is exactly the kind of everyday document assembly that should be quick and free rather than requiring special software.",
+      },
+      {
+        heading: "Private by design — built in your browser",
+        body: "Screenshots are often sensitive: they can show private conversations, account details, internal systems, personal information or confidential work. Uploading them to a server just to combine them into a PDF would mean exposing exactly the kind of content you most want to keep private. In1 builds the PDF entirely in your browser, assembling your images into the document on your own device. Nothing is uploaded, nothing is stored, and there is no account or sign-up. Because there is no upload step, creating the PDF is fast and works exactly the same offline as online. This local-only approach is especially important for screenshots, given how frequently they contain things you would not want a third party to see — and it applies equally to scans and photos that may be personal or confidential. You get the convenience of an instant online converter with the assurance that your screenshots and the resulting PDF never leave your computer. Combine as many as you like, free and without watermarks, with everything handled privately on your own machine.",
+      },
+      {
+        heading: "Who turns screenshots into PDFs?",
+        body: "The need is everywhere screens are captured and shared. People filing bug reports combine screenshots of each step into one document so developers can follow the issue in order. Support staff and customers assemble screenshots to illustrate a problem. Office workers turn a series of captured screens into a tidy report or a record of a process. Anyone documenting how to do something bundles step-by-step screenshots into a guide. People keep records by combining screenshots of receipts, confirmations, conversations or statements into a single archive file. Students compile screenshots of resources or submissions. Anyone who has ever needed to send several screenshots and realized a single PDF would be far cleaner than a heap of image attachments has a use for this tool. Because it accepts multiple images, lets you order them, works with any common image and keeps everything private in the browser, it covers the full range of reasons people need to package screen captures and images into one coherent, easy-to-share document.",
+      },
+    ],
+    howTo: [
+      { name: "Add your screenshots", text: "Drag your screenshots or images into the drop area, or browse for them." },
+      { name: "Put them in order", text: "Arrange the images into the sequence you want for the pages." },
+      { name: "Create the PDF", text: "Each image becomes a page in a single PDF, built in your browser." },
+      { name: "Download", text: "Download the combined PDF, ready to share or store." },
+    ],
+    faq: [
+      { q: "Can I combine several screenshots?", a: "Yes. Add as many images as you like and arrange them; each becomes a page in one PDF." },
+      { q: "Can I control the page order?", a: "Yes. You arrange the images into the order you want before creating the PDF." },
+      { q: "Does it work with photos and scans too?", a: "Yes. Any common image works, so it doubles as a general image-to-PDF converter." },
+      { q: "Are my screenshots uploaded anywhere?", a: "No. The PDF is built locally in your browser, so your images never leave your device — important for sensitive screenshots." },
+      { q: "Is there a watermark?", a: "No. The PDF has no watermark added by the tool." },
+      { q: "Is it free?", a: "Yes. The screenshot to PDF converter is completely free, with no account and no limits." },
+    ],
+  },
 ];
 
 // --- Helpers -----------------------------------------------------------------
