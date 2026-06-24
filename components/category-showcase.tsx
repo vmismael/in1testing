@@ -15,6 +15,8 @@ interface ShowcaseCategory {
   // illustration is commissioned for newer categories).
   icon?: StaticImageData;
   lucide?: IconName;
+  // Per-image tweak for PNGs whose internal whitespace throws off the baseline.
+  imageClassName?: string;
   title: string;
   blurb: string;
 }
@@ -23,7 +25,7 @@ interface ShowcaseCategory {
 const SHOWCASE: ShowcaseCategory[] = [
   { slug: "pdf", icon: pdfIcon, title: "PDF tools", blurb: "Merge, split, compress and convert PDFs." },
   { slug: "image", icon: imageIcon, title: "Image tools", blurb: "Compress, resize and edit your images." },
-  { slug: "video", icon: videoIcon, title: "Video & audio tools", blurb: "Convert and process your media files." },
+  { slug: "video", icon: videoIcon, imageClassName: "-translate-y-2.5", title: "Video & audio tools", blurb: "Convert and process your media files." },
   { slug: "text", icon: iaIcon, title: "Text & AI tools", blurb: "Rewrite, summarize and improve your content." },
   { slug: "web", icon: webIcon, title: "Web tools", blurb: "QR codes, passwords, JSON and link utilities." },
   { slug: "calculators", lucide: "calculator", title: "Calculators", blurb: "Finance, health and everyday calculators." },
@@ -58,7 +60,7 @@ export function CategoryShowcase() {
                     alt=""
                     fill
                     sizes="(min-width: 1024px) 16vw, (min-width: 640px) 33vw, 50vw"
-                    className="object-contain object-bottom p-6"
+                    className={`object-contain object-bottom p-6 ${c.imageClassName ?? ""}`}
                   />
                 ) : c.lucide ? (
                   <Icon name={c.lucide} className="size-14 self-center text-foreground/70" strokeWidth={1.5} />
