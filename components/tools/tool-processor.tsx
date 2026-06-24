@@ -119,6 +119,24 @@ const TextRepeaterTool = dynamic(
   () => import("./text-repeater/text-repeater-tool"),
   { ssr: false, loading },
 );
+const FindAndReplaceTool = dynamic(
+  () => import("./find-and-replace/find-and-replace-tool"),
+  { ssr: false, loading },
+);
+const SlugifyTool = dynamic(() => import("./slugify/slugify-tool"), { ssr: false, loading });
+const LoremIpsumTool = dynamic(
+  () => import("./lorem-ipsum/lorem-ipsum-tool"),
+  { ssr: false, loading },
+);
+const TextDiffTool = dynamic(() => import("./text-diff/text-diff-tool"), { ssr: false, loading });
+const MarkdownToHtmlTool = dynamic(
+  () => import("./markdown-to-html/markdown-to-html-tool"),
+  { ssr: false, loading },
+);
+const MarkdownEditorTool = dynamic(
+  () => import("./markdown-editor/markdown-editor-tool"),
+  { ssr: false, loading },
+);
 
 export function ToolProcessor({ tool }: { tool: Tool }) {
   if (tool.comingSoon) {
@@ -196,6 +214,18 @@ export function ToolProcessor({ tool }: { tool: Tool }) {
       return <ReverseTextTool />;
     case "text-repeater":
       return <TextRepeaterTool />;
+    case "find-and-replace":
+      return <FindAndReplaceTool />;
+    case "slugify":
+      return <SlugifyTool />;
+    case "lorem-ipsum":
+      return <LoremIpsumTool />;
+    case "text-diff":
+      return <TextDiffTool />;
+    case "markdown-to-html":
+      return <MarkdownToHtmlTool />;
+    case "markdown-editor":
+      return <MarkdownEditorTool />;
     default:
       return (
         <div className="rounded-xl border border-dashed border-border bg-muted/30 py-16 text-center text-sm text-muted-foreground">

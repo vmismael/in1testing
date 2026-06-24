@@ -1803,6 +1803,324 @@ export const tools: Tool[] = [
       { q: "Does it work on mobile?", a: "Yes. It runs in any modern phone or tablet browser with nothing to install." },
     ],
   },
+
+  // ---------------------------------------------------------------------------
+  {
+    slug: "find-and-replace",
+    category: "text",
+    name: "Find and Replace",
+    shortDescription: "Find and replace text online, with case-insensitive and regex options.",
+    icon: "replace",
+    processing: "client",
+    keywords: ["find and replace", "find and replace online", "replace text", "search and replace", "regex replace"],
+    metaTitle: "Find and Replace — Search and Replace Text Online Free | In1",
+    metaDescription:
+      "Find and replace text online for free. Replace every match at once, ignore case, or use regular expressions. Private, instant and runs entirely in your browser.",
+    h1: "Find and replace text",
+    intro:
+      "Paste your text, type what to find and what to replace it with, and every match is swapped instantly. Turn on case-insensitive matching or full regular expressions, and see how many replacements were made — all without leaving your browser.",
+    sections: [
+      {
+        heading: "Replace every match in one pass",
+        body: "Editing the same word or phrase by hand throughout a long document is slow and easy to get wrong: miss one occurrence and the inconsistency slips through, or accidentally change the wrong thing and you have a new bug to chase. Find and Replace does the whole job in a single pass. You enter the text to find and the text to replace it with, and every match is swapped at once, with a count showing exactly how many replacements were made. That count is a quick confidence check — it confirms the tool found what you expected and tells you the scope of the change before you copy the result out. Whether you are renaming a term across an article, fixing a repeated typo, swapping a placeholder for a real value, or standardizing wording, doing it in one instant operation is far faster and more reliable than scrolling through and editing each instance yourself.",
+      },
+      {
+        heading: "Case-insensitive matching when you need it",
+        body: "By default the search is case-sensitive, so 'Apple' and 'apple' are treated as different words — exactly what you want when capitalization matters, such as replacing a proper noun without touching the same letters elsewhere. But often you need the opposite: catching a word no matter how it was capitalized. Turn on the 'Ignore case' option and the tool matches every variation at once, so 'Color', 'color' and 'COLOR' are all found and replaced in a single step. This is invaluable when text has been written by several people, pasted from different sources, or simply typed inconsistently. You can toggle the option and watch the replacement count change immediately, which makes it easy to see how many extra matches case-insensitive mode catches and decide whether that is the behavior you actually want for this particular edit.",
+      },
+      {
+        heading: "Full regular expressions for power users",
+        body: "When a plain word search is not enough, switch on regular expression mode and the 'find' field becomes a full regex pattern. That unlocks edits that would be impossible or painfully tedious by hand: collapse runs of multiple spaces into one, strip trailing whitespace from every line, reformat dates or phone numbers, wrap or unwrap text, or match a family of words with a single pattern. The replacement field supports capture group references too, so you can rearrange the pieces a pattern matched rather than just deleting them. If a pattern is invalid, the tool tells you instead of failing silently or mangling your text, so you can fix it and try again. Regex mode turns Find and Replace from a simple word swapper into a genuinely powerful text-transformation tool, while staying out of the way when you only need a basic replacement. Because the same panel handles both, you can start with a plain swap and reach for a pattern only when the job actually calls for one, without switching tools or learning a new interface.",
+      },
+      {
+        heading: "Private by design — nothing is uploaded",
+        body: "The text you are editing might be a confidential draft, client work, source code or personal notes, so it should not be sent to a stranger's server just to change a word. In1 runs the entire find-and-replace operation locally in your browser using plain JavaScript. Nothing is uploaded, nothing is stored and there is no account to create. The replacement happens the instant you type, with no request travelling to a server and back, which also means it works the same offline as online and never fails because of a slow connection. You can paste an entire document and the swap is still immediate. When you are done, one click copies the result so you can paste it straight back into your editor. It is the convenience of an online tool with the privacy of doing the edit on your own machine, which is exactly what sensitive text deserves.",
+      },
+      {
+        heading: "Who uses find and replace?",
+        body: "Almost everyone who works with text has a use for it. Writers and editors standardize terminology, fix a repeated misspelling, or change a character's name throughout a draft. Developers and data analysts reformat values, clean up exported data, and transform strings with regex patterns that would take ages to apply by hand. Translators and localizers swap placeholders and adjust wording consistently across a file. Office workers update names, dates and figures that appear many times in a document before sharing it. Marketers tweak a campaign phrase everywhere it appears. Students reformat references and citations. Because the tool covers everything from a one-word swap to a sophisticated pattern-based transformation, and does it instantly and privately in the browser, it serves quick everyday edits and serious bulk cleanups equally well, without anyone needing to open a heavyweight editor or trust their text to an online service. Customer support teams normalize canned responses, researchers clean transcripts before analysis, and bloggers update an outdated link or brand name across an entire post in one move. The replacement count is reassuring on every one of these jobs, because it confirms the change reached exactly as many places as you expected and no more, turning a nervous bulk edit into one you can verify at a glance.",
+      },
+    ],
+    howTo: [
+      { name: "Paste your text", text: "Drop in the text you want to edit." },
+      { name: "Enter find and replace", text: "Type the text to find and the text to replace it with." },
+      { name: "Choose your options", text: "Optionally ignore case, or turn on regular expressions for advanced patterns." },
+      { name: "Copy the result", text: "Every match is replaced instantly, with a count shown — copy the result with one click." },
+    ],
+    faq: [
+      { q: "Does it replace all matches at once?", a: "Yes. Every occurrence is replaced in a single pass, and the tool shows how many replacements it made." },
+      { q: "Can it ignore capitalization?", a: "Yes. Turn on 'Ignore case' to match a word regardless of how it is capitalized." },
+      { q: "Does it support regular expressions?", a: "Yes. Switch on regex mode to use full patterns, including capture group references in the replacement." },
+      { q: "Is my text uploaded anywhere?", a: "No. Everything runs locally in your browser, so your text never leaves your device." },
+      { q: "What happens if my regex is invalid?", a: "The tool shows an error message and leaves your text unchanged, so nothing is mangled by a broken pattern." },
+      { q: "Is it free?", a: "Yes. Find and replace on In1 is completely free, with no account and no limits." },
+    ],
+  },
+
+  // ---------------------------------------------------------------------------
+  {
+    slug: "slugify",
+    category: "web",
+    name: "Slug Generator",
+    shortDescription: "Turn any title into a clean, URL-friendly slug instantly.",
+    icon: "link",
+    processing: "client",
+    keywords: ["slugify", "slug generator", "url slug", "url slug generator", "make url friendly"],
+    metaTitle: "Slug Generator — Make URL-Friendly Slugs Online Free | In1",
+    metaDescription:
+      "Turn titles into clean URL slugs online for free. Lowercase, hyphen-separated, accent-free and safe for links. Process many lines at once, private in your browser.",
+    h1: "URL slug generator",
+    intro:
+      "Type a title or paste a whole list and instantly get clean, URL-friendly slugs. Accents are stripped, spaces become separators and unsafe characters are removed, so every result is safe to drop straight into a link.",
+    sections: [
+      {
+        heading: "What a slug is and why it matters",
+        body: "A slug is the human-readable part of a URL that identifies a specific page — the 'best-running-shoes' in '/blog/best-running-shoes'. A good slug is lowercase, uses hyphens instead of spaces, contains only safe characters and reads clearly to both people and search engines. Getting it right matters more than it first appears. Clean, descriptive slugs are easier to read, share and remember, they look trustworthy when pasted into a message, and they give search engines another clear signal about what a page is about, which can help with ranking and click-through. Messy slugs full of spaces, capital letters, accents or punctuation get percent-encoded into unreadable strings, break in some systems, and look unprofessional. This tool takes any title and produces a slug that follows all the conventions automatically, so you do not have to remember the rules or clean each one up by hand.",
+      },
+      {
+        heading: "Handles accents, symbols and spacing for you",
+        body: "Turning a title into a safe slug involves several steps that are tedious to do manually and easy to get wrong. In1 does them all at once. Accented and special letters are converted to their plain ASCII base, so 'Café au Lait' becomes 'cafe-au-lait' rather than a string of encoded characters. Punctuation and symbols that have no place in a clean URL are removed. Runs of spaces, hyphens and underscores are collapsed into a single separator, and any separators left dangling at the start or end are trimmed away. The result is a tidy slug with no surprises. Because every transformation happens as you type, you can watch a title turn into its slug in real time and immediately see the effect of your wording, which makes it easy to tweak a title until the slug reads exactly the way you want it to.",
+      },
+      {
+        heading: "Choose your separator and casing",
+        body: "Different platforms and personal preferences call for slightly different slug styles, so the tool gives you control over the two choices that matter most. You can separate words with a hyphen, which is the web standard and what search engines recommend, or with an underscore if a particular system or convention you follow uses them. You can also choose whether to force everything to lowercase — the safest and most common option, since URLs are often case-sensitive and mixed casing can lead to duplicate-looking links — or preserve the original capitalization when you specifically need it. The options update the output instantly, so you can compare styles at a glance and pick the one that fits where the slug is going. Sensible defaults mean that for most people the tool produces exactly the right result without touching any settings at all, while the options are there the moment a specific platform or house style needs something different.",
+      },
+      {
+        heading: "Slugify a whole list at once",
+        body: "Slugs rarely come one at a time. When you are planning a content calendar, importing posts, building a sitemap or naming a batch of files, you need many slugs in one go. In1 handles that by processing each line of your input separately: paste a list of titles, one per line, and you get back the matching list of slugs in the same order, ready to copy as a block. This turns what could be dozens of individual conversions into a single instant operation, which is a real time-saver for bloggers, developers and anyone migrating or bulk-creating content. The order is preserved so you can line the slugs up against your original titles, and because everything runs locally there is no limit on how many lines you can convert at once beyond what your own device handles, which in practice means very long lists are no problem.",
+      },
+      {
+        heading: "Private, instant and free",
+        body: "The titles you are slugifying might belong to unpublished articles, internal projects or products you have not announced, so they should not be sent off to a server. In1 generates every slug locally in your browser with plain JavaScript. Nothing is uploaded, nothing is stored and there is no account or sign-up. The slug appears the moment you type, with no waiting and no network request, so it works the same offline as online. There are no limits and no watermark, and a single click copies the result so you can paste it straight into your CMS, your code or your spreadsheet. It is a small utility that quietly enforces all the slug conventions for you, saving you from both the busywork of cleaning titles by hand and the risk of shipping a broken or ugly URL — and it does it while keeping your unpublished titles entirely on your own machine. Developers wire slugs into routing and file names, e-commerce teams generate product handles in bulk, and documentation authors keep anchor links tidy and predictable. Because the same rules are applied every time, your slugs stay consistent across a whole site instead of drifting as different people create pages, which is exactly the kind of quiet consistency that keeps URLs clean and links from breaking down the line.",
+      },
+    ],
+    howTo: [
+      { name: "Enter a title", text: "Type a single title, or paste many titles with one per line." },
+      { name: "Pick separator and casing", text: "Choose hyphen or underscore, and whether to force lowercase." },
+      { name: "Get clean slugs", text: "Each title is converted to a URL-safe slug instantly as you type." },
+      { name: "Copy them out", text: "Copy the slug or the whole list with one click and paste it where you need it." },
+    ],
+    faq: [
+      { q: "What does this slug generator do?", a: "It turns a title into a clean, URL-friendly slug — lowercase, hyphen-separated, accent-free and stripped of unsafe characters." },
+      { q: "Does it remove accents and special characters?", a: "Yes. Accented letters are converted to their plain base letters and punctuation or symbols are removed." },
+      { q: "Can I slugify several titles at once?", a: "Yes. Paste a list with one title per line and you get the matching slugs back in the same order." },
+      { q: "Can I use underscores instead of hyphens?", a: "Yes. You can choose a hyphen or an underscore as the word separator." },
+      { q: "Is my text uploaded anywhere?", a: "No. Slugs are generated locally in your browser, so your titles never leave your device." },
+      { q: "Is it free?", a: "Yes. The slug generator is completely free, with no account and no limits." },
+    ],
+  },
+
+  // ---------------------------------------------------------------------------
+  {
+    slug: "lorem-ipsum",
+    category: "text",
+    name: "Lorem Ipsum Generator",
+    shortDescription: "Generate placeholder text by paragraphs, sentences or words.",
+    icon: "pilcrow",
+    processing: "client",
+    keywords: ["lorem ipsum", "lorem ipsum generator", "placeholder text", "dummy text generator", "filler text"],
+    metaTitle: "Lorem Ipsum Generator — Placeholder Text Online Free | In1",
+    metaDescription:
+      "Generate Lorem Ipsum placeholder text online for free. Choose paragraphs, sentences or words, with the classic opening line. Instant, private and runs in your browser.",
+    h1: "Lorem Ipsum generator",
+    intro:
+      "Generate as much placeholder text as you need in an instant. Choose paragraphs, sentences or words, decide whether to start with the classic 'Lorem ipsum dolor sit amet', and copy the result straight into your design or document.",
+    sections: [
+      {
+        heading: "Placeholder text, generated to fit your layout",
+        body: "Lorem Ipsum is the dummy text the design and publishing world has leaned on for decades, and the reason it endures is simple: it lets you see how a layout looks with content in it without the distraction of real words. When you drop in meaningful text, people start reading and reacting to the message; when you use Lorem Ipsum, attention stays on the typography, spacing and structure, which is exactly what you want while a design is still taking shape. In1 generates as much or as little of it as you need on demand. Instead of copying the same tired paragraph from somewhere and pasting it over and over to fill a space, you choose the amount you want and get a fresh block instantly, sized to your layout. It is the fast, no-friction way to fill a mockup, a template or a draft with realistic-looking filler.",
+      },
+      {
+        heading: "Choose paragraphs, sentences or words",
+        body: "Different placeholders call for different amounts of text, so the generator lets you pick the unit that matches what you are filling. Choose paragraphs when you are mocking up an article body, a blog post or a long content area and need several blocks separated by blank lines. Choose sentences when you want a specific run of prose — a card description, an intro, a caption — without the structure of full paragraphs. Choose words when you need to fill a precise, short space such as a headline, a button label, a menu item or a meta field, where the exact length matters more than the shape. You set how many of the chosen unit to generate, up to a sensible maximum, and the tool builds the text immediately. This flexibility means the same generator works for everything from a single placeholder label to a multi-section page of dummy content.",
+      },
+      {
+        heading: "The classic opening, on or off",
+        body: "There is a small convention around Lorem Ipsum: it traditionally begins with the familiar line 'Lorem ipsum dolor sit amet, consectetur adipiscing elit'. Sometimes you want that recognizable opening, because it instantly signals to everyone looking at the mockup that the text is placeholder and not real copy that needs reviewing. Other times you would rather the filler start with varied text so it does not always look identical, especially when you are generating several separate blocks on the same page. In1 lets you toggle the classic opening on or off to suit the situation. When it is on, your text leads with the canonical phrase; when it is off, you get freshly assembled filler from the first word. It is a small touch, but it is the kind of control that keeps mockups looking intentional rather than copy-pasted from the same source every time.",
+      },
+      {
+        heading: "Instant, private and free",
+        body: "The Lorem Ipsum generator runs entirely in your browser using plain JavaScript, assembling the text on your own device the moment you click generate. Nothing is uploaded, there is no account to create and there are no limits beyond a sensible maximum that keeps the output manageable. Because it works locally, it is instant and reliable: there is no waiting for a server, no network request and no failure if you are offline. The generated text is plain and clean, with paragraphs separated by blank lines so it pastes neatly into any editor, design tool or content management system, and a single click copies the whole block. There is no watermark and no sign-up wall. It is a deliberately simple utility, but one that designers, developers and writers reach for constantly, and having it produce exactly the amount and shape of filler you asked for — privately and instantly — is what makes it pleasant to use.",
+      },
+      {
+        heading: "Who uses a Lorem Ipsum generator?",
+        body: "The audience is mostly people who build things that hold text. Web designers and UI designers fill mockups and prototypes so they can judge layout, hierarchy and spacing before real content exists. Front-end developers drop placeholder text into components and templates to see how they behave when populated, including how they handle short and long content. Print and graphic designers flow dummy text into brochures, posters and layouts to evaluate typography. Writers and editors use it to block out the structure of a document before the words are ready. Marketers and product teams populate wireframes for reviews and presentations. Students learning design or development use it while practicing layouts. Anyone who has ever needed 'some text, any text' to see how a design looks when it is not empty benefits from a generator that produces the right amount on demand, in the unit they need, without hunting for a paragraph to copy. Agencies fill client mockups before the copywriting is signed off, app developers seed demo screens for screenshots, and teachers create sample passages for typography and reading exercises. Generating fresh filler each time also avoids the oddly distracting effect of seeing the exact same placeholder paragraph repeated across every block of a page, which keeps a mockup feeling like a real, varied design rather than a template stuffed with one cloned sentence.",
+      },
+    ],
+    howTo: [
+      { name: "Choose a unit", text: "Pick paragraphs, sentences or words depending on what you are filling." },
+      { name: "Set the amount", text: "Enter how many of that unit you want, up to the maximum." },
+      { name: "Toggle the classic opening", text: "Decide whether to start with the familiar 'Lorem ipsum dolor sit amet' line." },
+      { name: "Generate and copy", text: "Click generate, then copy the placeholder text with one click." },
+    ],
+    faq: [
+      { q: "What is Lorem Ipsum?", a: "It is standard placeholder text used in design and publishing to fill a layout so you can judge its look without the distraction of real words." },
+      { q: "Can I generate paragraphs, sentences or words?", a: "Yes. You choose the unit and how many to generate, so you can fill anything from a single label to a full page." },
+      { q: "Can I start with the classic opening line?", a: "Yes. You can toggle the familiar 'Lorem ipsum dolor sit amet…' opening on or off." },
+      { q: "Is it uploaded anywhere?", a: "No. The text is generated locally in your browser, so nothing is sent to a server." },
+      { q: "Is there a limit?", a: "There is a sensible maximum that keeps the output manageable, which is more than enough for typical placeholder needs." },
+      { q: "Is it free?", a: "Yes. The Lorem Ipsum generator is completely free, with no account and no sign-up." },
+    ],
+  },
+
+  // ---------------------------------------------------------------------------
+  {
+    slug: "text-diff",
+    category: "text",
+    name: "Text Diff Checker",
+    shortDescription: "Compare two texts and highlight what was added and removed.",
+    icon: "git-compare",
+    processing: "client",
+    keywords: ["text diff", "diff checker", "compare text", "text comparison", "diff tool online"],
+    metaTitle: "Text Diff Checker — Compare Two Texts Online Free | In1",
+    metaDescription:
+      "Compare two blocks of text online for free and see exactly what changed. Highlights additions and removals by line or by word. Private, instant, runs in your browser.",
+    h1: "Text diff checker",
+    intro:
+      "Paste an original and a changed version and instantly see what is different. Additions and removals are highlighted in color, line by line or word by word, with a count of each — all without uploading your text.",
+    sections: [
+      {
+        heading: "See exactly what changed between two versions",
+        body: "Comparing two versions of text by eye is genuinely hard. A single changed word in a long paragraph, a moved line, or an extra space can be almost invisible when you are reading two blocks side by side and trying to hold both in your head. A diff checker removes the guesswork by computing the differences for you and showing them in color: text that was added appears one way, text that was removed appears another, and everything that stayed the same is dimmed so the changes stand out. In1 also shows a count of additions and removals, giving you an instant sense of how big the change really is. Instead of squinting back and forth and hoping you have spotted everything, you get a clear, reliable map of every difference between the two versions, which is exactly what you need when accuracy matters and a missed change has consequences.",
+      },
+      {
+        heading: "Compare by line or by word",
+        body: "Different comparisons call for different granularity, so the tool offers two modes. Line-by-line comparison treats each line as a unit and is ideal for structured text like lists, configuration, code, addresses or anything where the line is the meaningful chunk — it tells you which whole lines were added, removed or left alone. Word-by-word comparison drills deeper, highlighting the specific words that changed within otherwise similar text, which is what you want when two paragraphs are mostly the same and you need to pinpoint the exact edits inside them. You can switch between the modes instantly and watch the highlighting change, so it is easy to start with a line-level overview to see the shape of the change and then drop to word level to examine a particular passage in detail. Having both in one tool means you do not have to choose the right granularity up front or open a separate utility.",
+      },
+      {
+        heading: "Proofread edits and catch unintended changes",
+        body: "One of the most valuable uses of a diff is confirming that a change did only what you intended. When you edit a contract, a piece of copy, a configuration file or a block of code, it is easy to alter something by accident — a deleted word, a number that got changed, a line that moved. Comparing the before and after versions surfaces every difference, so you can verify that the edits are exactly the ones you meant to make and nothing slipped in unnoticed. It is equally useful in the other direction: when someone hands you a revised document, a diff shows you precisely what they touched instead of forcing you to re-read the whole thing looking for changes. This makes review faster and far more trustworthy, whether you are checking your own work, reviewing a collaborator's edits, or auditing how a piece of text evolved between two points in time.",
+      },
+      {
+        heading: "Private by design — your text stays local",
+        body: "The documents people compare are frequently sensitive: contract drafts, unpublished writing, source code, configuration or confidential records. In1 computes the diff entirely in your browser using plain JavaScript, so both versions of your text stay on your own device. Nothing is uploaded, nothing is stored and there is no account to create. The comparison runs the moment you paste or edit either side, with no server round trip, which means it is instant and works exactly the same offline as online. You can compare long documents without waiting for an upload or worrying about where your text ends up. This local-only approach is what makes a diff checker safe to use on material you would never paste into an unknown online service — you get the convenience of an instant visual comparison with the assurance that the content never leaves your machine.",
+      },
+      {
+        heading: "Who uses a diff checker?",
+        body: "Diff tools started with programmers but are useful to far more people now. Developers compare versions of code, config and data to see what changed before committing or after a merge. Writers and editors check revisions, compare drafts and confirm that requested edits were applied correctly. Lawyers and contract managers compare versions of agreements to spot exactly which clauses were altered. Translators and localizers check what changed in source text so they only re-translate what is necessary. Students and academics compare drafts of essays and papers. Office workers diff two versions of a policy, a spreadsheet export or a list to find discrepancies. Anyone who has ever needed to answer the question 'what is different between these two pieces of text?' — and wanted a trustworthy answer rather than a hopeful manual scan — benefits from a fast, private diff that highlights every addition and removal at a glance, in whichever granularity the job needs. Support engineers compare a working configuration against a broken one to isolate the change that caused an outage, and editors confirm a publisher applied their corrections and nothing else. The added and removed counts give an instant sense of scale, telling you at a glance whether two versions differ by a single word or by whole paragraphs before you even start reading the highlights.",
+      },
+    ],
+    howTo: [
+      { name: "Paste the original", text: "Put the first version of your text in the left box." },
+      { name: "Paste the changed version", text: "Put the second version in the right box." },
+      { name: "Choose line or word mode", text: "Compare by whole lines for structured text, or by word to pinpoint edits within similar text." },
+      { name: "Read the highlighted diff", text: "Additions and removals are color-coded, with a count of each shown above the result." },
+    ],
+    faq: [
+      { q: "What does the diff checker show?", a: "It highlights what was added and removed between two texts, with everything unchanged dimmed, plus a count of additions and removals." },
+      { q: "Can I compare by word instead of by line?", a: "Yes. Switch between line-by-line and word-by-word comparison depending on how detailed you need to be." },
+      { q: "Is my text uploaded anywhere?", a: "No. The comparison runs locally in your browser, so both versions of your text stay on your device." },
+      { q: "Can it handle long documents?", a: "Yes. Because the diff is computed locally and instantly, you can compare long blocks of text without uploading anything." },
+      { q: "Does it work for code?", a: "Yes. Line-by-line mode is well suited to code, configuration and other structured text." },
+      { q: "Is it free?", a: "Yes. The text diff checker is completely free, with no account and no limits." },
+    ],
+  },
+
+  // ---------------------------------------------------------------------------
+  {
+    slug: "markdown-to-html",
+    category: "text",
+    name: "Markdown to HTML",
+    shortDescription: "Convert Markdown to clean HTML, with a live preview.",
+    icon: "file-code",
+    processing: "client",
+    keywords: ["markdown to html", "md to html", "convert markdown", "markdown converter", "markdown html"],
+    metaTitle: "Markdown to HTML — Convert Markdown Online Free | In1",
+    metaDescription:
+      "Convert Markdown to HTML online for free. Paste Markdown and get clean HTML plus a live preview, with GitHub-flavored syntax. Private, instant, runs in your browser.",
+    h1: "Markdown to HTML converter",
+    intro:
+      "Paste your Markdown and instantly get clean HTML you can copy, plus a live preview of how it will look. GitHub-flavored Markdown is supported, and everything is converted right in your browser.",
+    sections: [
+      {
+        heading: "From Markdown to ready-to-use HTML",
+        body: "Markdown is a wonderfully simple way to write formatted text: a few hashes make headings, asterisks make things bold or italic, and dashes make lists, all in plain text that stays readable as you type. But to publish that content on the web, in an email template or inside an app, you usually need it as HTML. Converting by hand is tedious and error-prone, especially for anything with nested lists, links, code blocks or tables. This tool does it in an instant. You paste your Markdown and it produces clean, correct HTML that you can copy straight into a page, a template or a content management system. There is no need to remember the exact tags or worry about closing them properly — the converter handles the translation faithfully, so you can keep writing in comfortable Markdown and get production-ready HTML whenever you need it, without switching tools or doing the markup yourself.",
+      },
+      {
+        heading: "See a live preview as you go",
+        body: "Converting blindly is risky — you cannot be sure the output is right until you see it rendered. In1 gives you both the HTML source and a live preview, so you can check your work without leaving the tool. The preview shows your Markdown rendered the way a browser would display it: headings sized correctly, lists indented, links styled, code blocks set in a monospace box, and tables drawn with borders. As you adjust your Markdown, the preview keeps up, so you can catch a malformed list or a missing blank line immediately and fix it on the spot. This tight feedback loop turns writing Markdown into a confident, visual process rather than a guess-and-check one. When the preview looks right, you know the HTML is right too, and you can switch to the source view and copy it knowing exactly what it will produce wherever you paste it.",
+      },
+      {
+        heading: "GitHub-flavored Markdown supported",
+        body: "Not all Markdown is the same, and most people who write it day to day are actually using GitHub-flavored Markdown (GFM), the popular extended dialect. In1 supports it, so the features you rely on work as expected: fenced code blocks with triple backticks, tables built from pipes and dashes, automatic linking, and the other conveniences GFM adds on top of the original specification. That means the Markdown you already write in README files, issues, notes apps and documentation converts cleanly here without surprises or stripped-out features. Supporting the dialect people genuinely use — rather than a stricter, more limited base version — is what makes the converter practical for real work. Whether you are turning a README into a web page, converting documentation, or moving notes into a CMS, the output reflects the full set of formatting you put in, including the tables and code blocks that simpler converters often mishandle.",
+      },
+      {
+        heading: "Private by design — converted in your browser",
+        body: "The content you convert might be documentation, draft articles, internal notes or anything else you would rather not hand to a third-party server. In1 performs the entire Markdown-to-HTML conversion locally in your browser using plain JavaScript, so your text never leaves your device. Nothing is uploaded, nothing is stored and there is no account to create. The conversion and the preview update the moment you type, with no network request, which makes the tool instant and fully functional offline. You can paste a long document and the HTML is produced immediately. When you are happy with it, a single click copies the HTML so you can paste it wherever it needs to go. This local-only approach gives you the ease of an online converter with none of the privacy trade-offs, which matters when the Markdown you are converting is unpublished, confidential, or simply yours to keep.",
+      },
+      {
+        heading: "Who converts Markdown to HTML?",
+        body: "The audience is wide because Markdown is everywhere. Developers convert README files and documentation into HTML for websites, wikis and help centers. Technical writers draft in Markdown for its speed and then need HTML for the publishing platform. Bloggers and content creators write posts in Markdown and paste the resulting HTML into a CMS that expects markup. Email marketers turn Markdown into the HTML their templates require. Note-takers and students export their Markdown notes to HTML for sharing or archiving. Anyone who prefers writing in plain, readable Markdown but has to deliver HTML — which is a very common situation — benefits from a converter that is accurate, supports the GitHub-flavored features they actually use, shows a live preview so they can trust the result, and does the whole thing instantly and privately in the browser. It removes the friction between a comfortable writing format and the markup the web runs on. Support teams convert help-article drafts for their knowledge base, newsletter writers turn Markdown into the HTML their sending tool expects, and educators publish lesson notes written in Markdown to a class website. Seeing the live preview before copying means there is never a surprise when the HTML lands on the page, because the rendered result you approved in the tool is the same structure that gets pasted, which removes the usual round of fixing markup after the fact.",
+      },
+    ],
+    howTo: [
+      { name: "Paste your Markdown", text: "Type or paste Markdown into the input box." },
+      { name: "Watch it convert", text: "Clean HTML is generated instantly as you type." },
+      { name: "Check the preview", text: "Switch to the preview to see exactly how the rendered output looks." },
+      { name: "Copy the HTML", text: "Switch to the HTML view and copy the result with one click." },
+    ],
+    faq: [
+      { q: "Does it support GitHub-flavored Markdown?", a: "Yes. Tables, fenced code blocks, automatic links and other GFM features are supported." },
+      { q: "Can I preview the result?", a: "Yes. You can toggle between the raw HTML and a live rendered preview of how it will look." },
+      { q: "Is my Markdown uploaded anywhere?", a: "No. The conversion runs locally in your browser, so your content never leaves your device." },
+      { q: "Is the HTML clean?", a: "Yes. The converter produces standard, clean HTML you can paste directly into a page or template." },
+      { q: "Does it work offline?", a: "Yes. Because everything runs in your browser, the converter works the same with or without a connection." },
+      { q: "Is it free?", a: "Yes. Converting Markdown to HTML on In1 is completely free, with no account and no limits." },
+    ],
+  },
+
+  // ---------------------------------------------------------------------------
+  {
+    slug: "markdown-editor",
+    category: "text",
+    name: "Markdown Editor",
+    shortDescription: "Write Markdown with an instant live preview side by side.",
+    icon: "square-pen",
+    processing: "client",
+    keywords: ["markdown editor", "online markdown editor", "markdown preview", "markdown live preview", "write markdown online"],
+    metaTitle: "Markdown Editor — Live Preview Online Free | In1",
+    metaDescription:
+      "Write Markdown online for free with an instant live preview side by side. GitHub-flavored Markdown, copy the text or the HTML. Private and runs entirely in your browser.",
+    h1: "Markdown editor with live preview",
+    intro:
+      "Write on the left and see your Markdown rendered on the right, instantly. Use GitHub-flavored syntax, copy either the Markdown or the generated HTML, and work entirely in your browser with nothing uploaded.",
+    sections: [
+      {
+        heading: "Write and preview, side by side",
+        body: "The best way to write Markdown is to see it taking shape as you go, and that is exactly what a split-screen editor gives you. You type in the panel on the left and the panel on the right shows your text rendered the way it will actually appear, updating with every keystroke. There is no separate 'preview' button to click and no mental translation required between the symbols you type and the formatting they produce. Add a heading and it appears, styled, the instant you type the hash; start a list and watch it indent; paste a link and see it become clickable. This immediate feedback makes writing Markdown faster and far more pleasant, especially for longer documents where small formatting mistakes are easy to miss in raw text. Instead of writing, switching context to check, and switching back, you stay in a single flow with the finished look always visible beside your words.",
+      },
+      {
+        heading: "GitHub-flavored Markdown, fully rendered",
+        body: "The editor supports GitHub-flavored Markdown, the dialect most people actually write, so the preview reflects the full range of formatting you use rather than a stripped-down subset. Headings, bold and italic, ordered and unordered lists, links, images, blockquotes, horizontal rules, inline code and fenced code blocks all render the way you expect, and tables built from pipes and dashes are drawn with proper borders. Line breaks behave sensibly, so the text you write reads the same in the preview as it does in your head. Because the rendering matches the conventions used in README files, documentation and notes apps, what you compose here will look the same when you take it elsewhere. That consistency is the whole point of a preview: it is only useful if you can trust that the rendered result you see is the result you will get when the Markdown is published or pasted into another GFM-aware system.",
+      },
+      {
+        heading: "Copy the Markdown or the HTML",
+        body: "When your document is ready, you need to get it out of the editor, and how you want it depends on where it is going. Sometimes you want the Markdown itself — to commit a README, paste into an issue, save a note, or hand to another Markdown-aware system. Other times you need the rendered HTML — to drop into a web page, an email template or a CMS that expects markup. In1 lets you copy either with a single click: grab the raw Markdown from the editor side, or copy the generated HTML from the preview side. You are never locked into one format or forced to run the text through a second tool to get the other. This dual output makes the editor useful both as a comfortable place to write Markdown and as a quick way to turn that Markdown into publishable HTML, covering the two things people most often need to do with it.",
+      },
+      {
+        heading: "Private by design — nothing leaves your browser",
+        body: "Whatever you are writing — documentation, a draft post, private notes, a README for an unreleased project — it stays on your own device. In1's Markdown editor runs entirely in your browser using plain JavaScript, so neither your Markdown nor the rendered HTML is ever uploaded to a server. There is no account to create, no document stored in the cloud and nothing left behind when you close the tab. The preview and both copy actions work with no network request, which means the editor is instant and fully functional offline — you can write on a plane or behind a firewall and it behaves exactly the same. This local-only design is what makes it safe to draft sensitive or unpublished content here, and it is also what keeps the experience fast and reliable: there is no syncing, no loading and no failure mode tied to your connection. You just write, and the preview keeps up.",
+      },
+      {
+        heading: "Who uses an online Markdown editor?",
+        body: "Plenty of people write Markdown but do not always have their preferred editor open. Developers draft README files, documentation and issue descriptions and want to see them rendered before committing or posting. Technical writers compose docs in Markdown for its speed and clarity. Bloggers and content creators write posts in Markdown and need to preview them and grab the HTML for their platform. Students and researchers take structured notes in Markdown and like seeing them formatted. Open-source maintainers polish project pages. Anyone jotting something down who wants clean formatting without wrestling with a word processor reaches for Markdown, and a browser-based editor with a live preview means they can do it anywhere, on any device, without installing anything. Being able to copy either the Markdown or the HTML at the end makes it a practical one-stop tool: a comfortable place to write and an instant way to publish what you wrote. It is equally handy for quick one-off tasks — formatting a comment, drafting release notes, or cleaning up a snippet someone sent you — where opening a full application would be overkill. Because the preview is always visible beside the text, even people who do not write Markdown often can experiment, see what each symbol does, and learn the syntax by watching it render in real time rather than memorizing rules.",
+      },
+    ],
+    howTo: [
+      { name: "Start writing", text: "Type Markdown in the left panel — a sample is there to get you started." },
+      { name: "Watch the live preview", text: "The right panel renders your Markdown instantly as you type." },
+      { name: "Use GitHub-flavored syntax", text: "Headings, lists, links, tables and code blocks all render as expected." },
+      { name: "Copy what you need", text: "Copy the raw Markdown or the generated HTML with one click." },
+    ],
+    faq: [
+      { q: "Is the preview really live?", a: "Yes. The rendered preview updates with every keystroke, so you always see the current result." },
+      { q: "Can I copy the HTML, not just the Markdown?", a: "Yes. You can copy the raw Markdown from the editor or the generated HTML from the preview." },
+      { q: "Does it support tables and code blocks?", a: "Yes. GitHub-flavored Markdown is supported, including tables, fenced code blocks and more." },
+      { q: "Is my writing uploaded anywhere?", a: "No. Everything runs locally in your browser, so your Markdown and HTML never leave your device." },
+      { q: "Does it work offline?", a: "Yes. Because it runs entirely in the browser, the editor works the same with or without a connection." },
+      { q: "Is it free?", a: "Yes. The Markdown editor is completely free, with no account and no limits." },
+    ],
+  },
 ];
 
 // --- Helpers -----------------------------------------------------------------

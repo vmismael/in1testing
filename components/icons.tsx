@@ -37,6 +37,10 @@ import {
   CopyMinus,
   FlipHorizontal2,
   Repeat,
+  Pilcrow,
+  GitCompare,
+  FileCode2,
+  SquarePen,
   type LucideIcon,
 } from "lucide-react";
 
@@ -84,6 +88,10 @@ export const iconMap = {
   "copy-minus": CopyMinus,
   "flip-horizontal-2": FlipHorizontal2,
   repeat: Repeat,
+  pilcrow: Pilcrow,
+  "git-compare": GitCompare,
+  "file-code": FileCode2,
+  "square-pen": SquarePen,
 } satisfies Record<string, LucideIcon>;
 
 export type IconName = keyof typeof iconMap;
