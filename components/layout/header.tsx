@@ -1,10 +1,16 @@
 import Link from "next/link";
 import { Logo } from "@/components/layout/logo";
+import { MobileNav, type NavItem } from "@/components/layout/mobile-nav";
 import { getActiveCategories } from "@/lib/tools/registry";
 import { siteConfig } from "@/lib/site";
 
 export function Header() {
   const categories = getActiveCategories();
+
+  const navItems: NavItem[] = [
+    { href: "/", label: "All tools" },
+    ...categories.map((c) => ({ href: `/category/${c.slug}`, label: c.label })),
+  ];
 
   return (
     <header className="sticky top-0 z-40 bg-black/80 text-white backdrop-blur-xl backdrop-saturate-150">
@@ -14,19 +20,18 @@ export function Header() {
         </Link>
 
         <nav className="hidden items-center gap-5 text-sm sm:flex">
-          <Link href="/" className="text-white/70 transition-colors hover:text-white">
-            All tools
-          </Link>
-          {categories.map((c) => (
+          {navItems.map((item) => (
             <Link
-              key={c.slug}
-              href={`/category/${c.slug}`}
+              key={item.href}
+              href={item.href}
               className="whitespace-nowrap text-white/70 transition-colors hover:text-white"
             >
-              {c.label}
+              {item.label}
             </Link>
           ))}
         </nav>
+
+        <MobileNav items={navItems} />
       </div>
     </header>
   );
