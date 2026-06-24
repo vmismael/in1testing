@@ -61,7 +61,7 @@ export function CategoryShowcase() {
                     className="object-contain object-bottom p-6"
                   />
                 ) : c.lucide ? (
-                  <Icon name={c.lucide} className="mb-6 size-14 text-foreground/70" strokeWidth={1.5} />
+                  <Icon name={c.lucide} className="size-14 self-center text-foreground/70" strokeWidth={1.5} />
                 ) : null}
               </div>
               <div className="flex flex-1 flex-col p-4">

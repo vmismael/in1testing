@@ -73,29 +73,28 @@ export default function MemeGeneratorTool({ tool }: { tool: Tool }) {
     <div className="space-y-5">
       <FileDropzone accept={tool.accept} onAdd={pickFile} hint="Any image · captioned privately in your browser" />
 
-      {hasImage && (
-        <div className="space-y-4">
-          <div className="grid gap-4 sm:grid-cols-2">
-            <div className="space-y-2">
-              <Label htmlFor="meme-top">Top text</Label>
-              <Input id="meme-top" value={top} onChange={(e) => { setTop(e.target.value); render(e.target.value, bottom); }} placeholder="ONE DOES NOT SIMPLY" />
-            </div>
-            <div className="space-y-2">
-              <Label htmlFor="meme-bottom">Bottom text</Label>
-              <Input id="meme-bottom" value={bottom} onChange={(e) => { setBottom(e.target.value); render(top, e.target.value); }} placeholder="WALK INTO MORDOR" />
-            </div>
+      {/* Kept mounted (hidden until an image loads) so the canvas ref exists when we draw. */}
+      <div className={hasImage ? "space-y-4" : "hidden"}>
+        <div className="grid gap-4 sm:grid-cols-2">
+          <div className="space-y-2">
+            <Label htmlFor="meme-top">Top text</Label>
+            <Input id="meme-top" value={top} onChange={(e) => { setTop(e.target.value); render(e.target.value, bottom); }} placeholder="ONE DOES NOT SIMPLY" />
           </div>
-
-          <div className="overflow-auto rounded-xl border border-border bg-muted/30 p-2">
-            <canvas ref={canvasRef} className="mx-auto block max-w-full rounded" />
+          <div className="space-y-2">
+            <Label htmlFor="meme-bottom">Bottom text</Label>
+            <Input id="meme-bottom" value={bottom} onChange={(e) => { setBottom(e.target.value); render(top, e.target.value); }} placeholder="WALK INTO MORDOR" />
           </div>
-
-          <Button type="button" size="lg" onClick={download}>
-            <Download />
-            Download meme
-          </Button>
         </div>
-      )}
+
+        <div className="overflow-auto rounded-xl border border-border bg-muted/30 p-2">
+          <canvas ref={canvasRef} className="mx-auto block max-w-full rounded" />
+        </div>
+
+        <Button type="button" size="lg" onClick={download}>
+          <Download />
+          Download meme
+        </Button>
+      </div>
     </div>
   );
 }
