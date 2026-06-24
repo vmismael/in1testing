@@ -229,6 +229,15 @@ const FaviconGeneratorTool = dynamic(
   () => import("./favicon-generator/favicon-generator-tool"),
   { ssr: false, loading },
 );
+const PdfToTextTool = dynamic(() => import("./pdf-to-text/pdf-to-text-tool"), { ssr: false, loading });
+const PageNumbersToPdfTool = dynamic(
+  () => import("./page-numbers-to-pdf/page-numbers-to-pdf-tool"),
+  { ssr: false, loading },
+);
+const PdfHeaderFooterTool = dynamic(
+  () => import("./pdf-header-footer/pdf-header-footer-tool"),
+  { ssr: false, loading },
+);
 
 export function ToolProcessor({ tool }: { tool: Tool }) {
   if (tool.comingSoon) {
@@ -387,6 +396,12 @@ export function ToolProcessor({ tool }: { tool: Tool }) {
       return <FaviconGeneratorTool tool={tool} />;
     case "screenshot-to-pdf":
       return <ImageToPdfTool tool={tool} />;
+    case "pdf-to-text":
+      return <PdfToTextTool tool={tool} />;
+    case "page-numbers-to-pdf":
+      return <PageNumbersToPdfTool tool={tool} />;
+    case "pdf-header-footer":
+      return <PdfHeaderFooterTool tool={tool} />;
     default:
       return (
         <div className="rounded-xl border border-dashed border-border bg-muted/30 py-16 text-center text-sm text-muted-foreground">

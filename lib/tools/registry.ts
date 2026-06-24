@@ -3999,6 +3999,171 @@ export const tools: Tool[] = [
       { q: "Is it free?", a: "Yes. The screenshot to PDF converter is completely free, with no account and no limits." },
     ],
   },
+
+  // ---------------------------------------------------------------------------
+  {
+    slug: "pdf-to-text",
+    category: "pdf",
+    name: "PDF to Text",
+    shortDescription: "Extract the selectable text from a PDF as plain text.",
+    icon: "file-type",
+    processing: "client",
+    accept: ["application/pdf"],
+    multiple: false,
+    keywords: ["pdf to text", "extract text from pdf", "pdf text extractor", "pdf to txt", "copy text from pdf"],
+    metaTitle: "PDF to Text — Extract Text from PDF Online Free | In1",
+    metaDescription:
+      "Extract the text from a PDF online for free. Pull selectable text out of any PDF, copy it or download a .txt file. Private — runs entirely in your browser.",
+    h1: "PDF to text extractor",
+    intro:
+      "Pull the selectable text out of a PDF and get it as plain text you can copy or download. Drop in a PDF, extract, and the text from every page is yours — all processed in your browser.",
+    sections: [
+      {
+        heading: "Get the text out of a PDF",
+        body: "PDFs are designed to look the same everywhere, which is great for sharing but frustrating when you actually need the words inside. Selecting and copying text from a PDF often goes wrong — the selection jumps around, picks up the wrong order, or grabs nothing at all — and copying page after page by hand is tedious. This tool extracts the text for you in one step. You drop in a PDF and it reads the selectable text from every page, gathering it into a single block you can copy or download. Instead of fighting with a PDF viewer's clumsy selection, you get the whole document's text at once, ready to paste into an editor, a document, a translator, a search, or anywhere else you need the words rather than the formatted page. It turns a locked-feeling document back into editable, reusable text, which is exactly what you want when the content matters more than the layout.",
+      },
+      {
+        heading: "Copy it or save it as a file",
+        body: "Once the text is extracted, you can take it whichever way suits the task. A single click copies the entire text to your clipboard, ready to paste straight into wherever you are working — a word processor, an email, a note, a chat, a form. Alternatively, you can download the text as a plain .txt file, which is handy when you want to keep it, hand it to a program that reads text files, or archive the content separately from the original PDF. Plain text is the most universal, lightweight and future-proof format there is: it opens anywhere, takes almost no space, and carries none of the complexity of the original PDF. Having both options means the tool fits both the quick 'I just need to grab this paragraph' case and the more deliberate 'I need the whole document as a text file' case. Either way, the extracted words are immediately usable, freed from the fixed page they were trapped in.",
+      },
+      {
+        heading: "Works best with real, selectable text",
+        body: "It helps to understand how PDF text extraction works so you know what to expect. PDFs come in two broad kinds. Most are 'digital' PDFs created from a document or a web page, where the text is stored as actual characters — this is the text you can normally select, and it is exactly what this tool pulls out cleanly and accurately. The other kind is 'scanned' PDFs, which are really just photographs of pages: they look like text to your eye, but to a computer they are images with no characters inside, so there is nothing to extract. This tool is honest about that distinction — if it finds no selectable text, it tells you the PDF is likely scanned rather than silently returning nothing. For the vast majority of PDFs, which contain real text, extraction works beautifully. Knowing the difference means you understand the result: clean text from a digital PDF, and a clear explanation when a document turns out to be images rather than words.",
+      },
+      {
+        heading: "Private by design — read in your browser",
+        body: "PDFs frequently contain sensitive material: contracts, reports, statements, personal records, confidential business documents. Uploading such a file to a server just to pull out its text would mean exposing the whole document to a third party. In1 extracts the text entirely in your browser, reading the PDF on your own device using a PDF engine that runs locally. Nothing is uploaded, nothing is stored, and there is no account or sign-up. Because there is no upload step, extraction is fast and works exactly the same offline as online. This local-only approach is especially important for documents, which are so often private — and it means you can pull the text out of a confidential PDF without trusting it to an online service that might store or process it elsewhere. You get the convenience of an instant extractor with the assurance that your document never leaves your computer. Extract text from as many PDFs as you like, free and without limits, with every file handled privately on your own machine.",
+      },
+      {
+        heading: "Who extracts text from PDFs?",
+        body: "The need is constant across study, work and everyday tasks. Students pull quotes and passages out of PDF readings, papers and textbooks to use in their own writing and notes. Researchers extract text from articles and reports for analysis, citation or translation. Office workers lift content out of PDF documents to reuse in other files, emails or systems rather than retyping it. People translating documents extract the text so they can paste it into a translation tool. Developers and data workers pull text from PDFs to process or search it. Anyone who has tried to copy from a PDF and ended up with a jumbled mess, or who needs the words from a document without the formatting, has a use for a clean extractor. Because the tool gets the full text of every page in one step, lets you copy or download it, is honest about scanned files, and keeps everything private, it covers the whole range of reasons people need to free the text from inside a PDF.",
+      },
+    ],
+    howTo: [
+      { name: "Add your PDF", text: "Drag a PDF into the drop area, or click to browse for one." },
+      { name: "Extract the text", text: "Click extract and the selectable text from every page is gathered." },
+      { name: "Review it", text: "See the full text, ready to read or edit." },
+      { name: "Copy or download", text: "Copy the text to your clipboard or download it as a .txt file." },
+    ],
+    faq: [
+      { q: "Does it get text from every page?", a: "Yes. It extracts the selectable text from all pages and joins it into one block." },
+      { q: "Can it read scanned PDFs?", a: "No. Scanned PDFs are images with no selectable text. The tool tells you when it finds none rather than returning nothing silently." },
+      { q: "Can I download the text?", a: "Yes. You can copy the text or download it as a plain .txt file." },
+      { q: "Is my PDF uploaded anywhere?", a: "No. The PDF is read locally in your browser, so it never leaves your device." },
+      { q: "Does it keep the formatting?", a: "It extracts plain text, so the words come out without the original page formatting." },
+      { q: "Is it free?", a: "Yes. The PDF to text extractor is completely free, with no account and no limits." },
+    ],
+  },
+
+  // ---------------------------------------------------------------------------
+  {
+    slug: "page-numbers-to-pdf",
+    category: "pdf",
+    name: "Add Page Numbers to PDF",
+    shortDescription: "Stamp page numbers onto a PDF in the position you choose.",
+    icon: "file-digit",
+    processing: "client",
+    accept: ["application/pdf"],
+    multiple: false,
+    keywords: ["add page numbers to pdf", "page numbers pdf", "number pdf pages", "pdf page numbering", "insert page numbers pdf"],
+    metaTitle: "Add Page Numbers to PDF — Number Pages Online Free | In1",
+    metaDescription:
+      "Add page numbers to a PDF online for free. Choose the position, starting number and an optional 'X of N' format. Private — runs entirely in your browser.",
+    h1: "Add page numbers to a PDF",
+    intro:
+      "Stamp clean page numbers onto every page of a PDF. Choose where they go, what number to start from, and whether to show the total — then download the numbered PDF, all in your browser.",
+    sections: [
+      {
+        heading: "Number every page in one step",
+        body: "Page numbers seem like a small thing until you have a long PDF without them — a report, a manuscript, a contract, a set of notes — and you need to reference a particular page or keep a printed stack in order. Adding them by hand is not really possible in most PDF viewers, and recreating the document just to get numbering is overkill. This tool stamps page numbers onto every page of your PDF in a single step. You drop in the file and it adds clean, consistent numbers across the whole document, so each page is clearly marked. This makes a long PDF far easier to navigate, cite and print: you can tell someone to 'see page 14', keep a printout collated, and give the document the finished, professional feel that numbered pages provide. Instead of wrestling with software or leaving a document unnumbered, you get properly paginated output in moments, ready to share or print.",
+      },
+      {
+        heading: "Put the numbers where you want them",
+        body: "Where a page number sits is a matter of both convention and preference, so this tool lets you choose the position rather than forcing one on you. You can place the numbers at the bottom center, the most common spot for reports and books; at the bottom right or bottom left, which suit certain document styles and binding choices; or at the top of the page if that fits your layout better. The numbers are added with sensible margins so they sit neatly near the edge without crowding the content or running off the page. Being able to pick the position means the numbering matches the kind of document you are working with — a formal report, a bound manuscript, a printed handout — and looks intentional rather than awkwardly placed. It is the difference between page numbers that feel like part of the document's design and ones that look bolted on, and it takes nothing more than choosing the spot that fits.",
+      },
+      {
+        heading: "Control the starting number and format",
+        body: "Real documents do not always start their numbering at one on the first physical page, so this tool gives you control over where the count begins and how it reads. You can set the starting number, which is essential when your PDF is a section of a larger document, when the first pages are a cover or table of contents that should not count, or when you are continuing the numbering from another file. You can also choose to show the total, turning a plain '7' into a more informative '7 of 20', which helps readers see at a glance how much of the document remains and is reassuring on printouts that nothing is missing. These options mean the numbering reflects how your document is actually structured rather than a rigid default. Whether you need a simple count from one, a sequence that starts partway through, or the fuller 'page X of N' style, you can set it up to match exactly what the document calls for.",
+      },
+      {
+        heading: "Private by design — stamped in your browser",
+        body: "The PDFs people number are often documents they care about and would rather keep private: reports, contracts, drafts, financial or legal paperwork. Uploading such a file to a server just to add page numbers would mean handing the whole document to a third party for a trivial change. In1 adds the page numbers entirely in your browser, modifying the PDF on your own device. Nothing is uploaded, nothing is stored, and there is no account or sign-up. Because there is no upload step, the process is fast and works exactly the same offline as online. This local-only approach matters because the documents being numbered are frequently confidential, and there is no reason to expose them to an online service for something as simple as pagination. You get the convenience of an instant tool with the assurance that your PDF never leaves your computer. Number as many PDFs as you like, free and without watermarks, with every file processed privately on your own machine.",
+      },
+      {
+        heading: "Who adds page numbers to PDFs?",
+        body: "The need spans professional and personal document work. People preparing reports, proposals and whitepapers add page numbers so the documents look finished and are easy to reference and discuss. Writers and authors number the pages of manuscripts and drafts before sharing them with editors or readers. Students paginate essays, dissertations and assignments to meet submission requirements. Legal and administrative staff add numbers to contracts, filings and records where page references matter. People assembling printed handouts, booklets or bound documents number the pages so a printed stack stays in order. Anyone who has received or created a long PDF without page numbers and found it awkward to navigate or cite has a use for this tool. Because it lets you choose the position, the starting number and the format, and does it instantly and privately in the browser, it handles everything from a quick count on a casual document to the precise pagination a formal report or legal file requires.",
+      },
+    ],
+    howTo: [
+      { name: "Add your PDF", text: "Drag a PDF into the drop area, or click to browse for one." },
+      { name: "Choose the position", text: "Pick where the page numbers should appear on the page." },
+      { name: "Set start and format", text: "Choose the starting number and whether to show 'X of N'." },
+      { name: "Download", text: "Add the numbers and download the paginated PDF." },
+    ],
+    faq: [
+      { q: "Where can the page numbers go?", a: "You can place them at the bottom center, bottom left or right, or at the top, with sensible margins." },
+      { q: "Can I start at a number other than one?", a: "Yes. You can set the starting number, which is useful for sections or continued numbering." },
+      { q: "Can it show the total pages?", a: "Yes. Turn on the 'X of N' format to show each page number alongside the total." },
+      { q: "Is my PDF uploaded anywhere?", a: "No. The numbers are added locally in your browser, so your document never leaves your device." },
+      { q: "Will it change my content?", a: "No. It only stamps page numbers near the margin; the rest of the document is untouched." },
+      { q: "Is it free?", a: "Yes. Adding page numbers is completely free, with no account and no limits." },
+    ],
+  },
+
+  // ---------------------------------------------------------------------------
+  {
+    slug: "pdf-header-footer",
+    category: "pdf",
+    name: "Add Header & Footer to PDF",
+    shortDescription: "Add header and footer text to every page of a PDF.",
+    icon: "heading",
+    processing: "client",
+    accept: ["application/pdf"],
+    multiple: false,
+    keywords: ["add header footer pdf", "pdf header footer", "header to pdf", "footer to pdf", "stamp text on pdf"],
+    metaTitle: "Add Header & Footer to PDF — Online Free | In1",
+    metaDescription:
+      "Add header and footer text to every page of a PDF online for free. Choose the text and alignment, then download. Private — runs entirely in your browser.",
+    h1: "Add a header and footer to a PDF",
+    intro:
+      "Stamp a header and footer onto every page of a PDF — a title, a company name, a confidentiality notice or anything you like. Choose the text and alignment, then download the result, all in your browser.",
+    sections: [
+      {
+        heading: "Add a consistent header and footer",
+        body: "Headers and footers give a document a finished, professional identity and carry information that belongs on every page: a title, an author or company name, a date, a status like 'Draft' or 'Confidential', or a reference code. The trouble is that a finished PDF is hard to edit, so adding this running text after the fact usually means going back to the source document — if you even still have it — and regenerating the file. This tool lets you stamp a header and footer straight onto an existing PDF instead. You enter the text you want, and it adds it to every page in one step, top and bottom, so the whole document carries the same running information consistently. Whether you are labelling a report, marking a draft, branding a handout or adding a notice to a contract, you get the header and footer applied across the entire file without touching the original source, in a matter of seconds.",
+      },
+      {
+        heading: "Header, footer, or both",
+        body: "Different documents call for different running text, so this tool lets you add a header, a footer, or both, depending on what you need. You might want only a footer with a company name and nothing at the top, only a header marking the document as confidential, or both — a title up top and a reference or page note at the bottom. You simply fill in the fields you want and leave the others blank, and the tool stamps exactly what you provided onto every page. This flexibility means it adapts to whatever convention your document follows rather than imposing a fixed structure. The text is placed near the top and bottom margins so it sits cleanly above and below the main content without interfering with it. Being able to choose which of the two you use, and what each says, makes the tool suitable for the full range of common needs, from a single discreet footer line to a fully labelled document with running text at both the head and foot of every page.",
+      },
+      {
+        heading: "Choose the alignment that fits",
+        body: "Where running text sits horizontally is part of a document's look, so the tool lets you align the header and footer to the left, the center or the right. Centered text suits titles and formal notices that should feel balanced on the page. Left-aligned text is common for names, references and dates that read naturally from the margin. Right-aligned text fits certain styles and pairs well with content that leads from the left. The alignment you pick applies to both the header and footer, giving the document a consistent, deliberate appearance rather than text that looks arbitrarily placed. With sensible margins keeping the text a comfortable distance from the edges, the result looks like running text that was meant to be there. This small amount of control is what makes the difference between a header and footer that look like a polished part of the document and ones that feel like an afterthought stamped on without care, and it takes only a tap to set.",
+      },
+      {
+        heading: "Private by design — applied in your browser",
+        body: "The documents that get headers and footers are often exactly the ones you would not want to upload: contracts marked confidential, internal reports, drafts, branded client materials. Sending such a file to a server just to add a line of running text would expose the whole document unnecessarily. In1 adds the header and footer entirely in your browser, modifying the PDF on your own device. Nothing is uploaded, nothing is stored, and there is no account or sign-up. Because there is no upload step, the process is fast and works exactly the same offline as online. This local-only approach is especially fitting given that a common use is stamping documents as confidential — it would be self-defeating to upload a confidential file to do so. You get the convenience of an instant tool with the assurance that your PDF never leaves your computer. Add headers and footers to as many PDFs as you like, free and without watermarks, with every document handled privately on your own machine.",
+      },
+      {
+        heading: "Who adds headers and footers to PDFs?",
+        body: "The need is common in professional document work. Businesses add company names, logos-in-text, dates and reference codes to reports, proposals and deliverables so every page is branded and traceable. Legal and compliance staff stamp 'Confidential', 'Draft' or matter references onto contracts and filings. People preparing handouts, manuals and guides add titles and section names as running headers. Authors and editors mark drafts and add working titles. Administrators add document control information — version, date, owner — to the foot of every page. Anyone who receives a finished PDF and needs to label it consistently, without the original editable source, has a use for a tool that stamps running text directly onto the file. Because it lets you add a header, a footer or both, choose the text and the alignment, and does it instantly and privately in the browser, it covers everything from a discreet footer line to a fully labelled, branded or marked-up document, exactly as the situation requires.",
+      },
+    ],
+    howTo: [
+      { name: "Add your PDF", text: "Drag a PDF into the drop area, or click to browse for one." },
+      { name: "Enter the text", text: "Type a header, a footer, or both — leave either blank to skip it." },
+      { name: "Pick the alignment", text: "Align the running text left, center or right." },
+      { name: "Download", text: "Apply it and download the PDF with the header and footer on every page." },
+    ],
+    faq: [
+      { q: "Can I add just a header or just a footer?", a: "Yes. Fill in whichever you want and leave the other blank; the tool only stamps what you provide." },
+      { q: "Does it apply to every page?", a: "Yes. The header and footer are added to all pages of the document." },
+      { q: "Can I align the text?", a: "Yes. You can align the header and footer to the left, center or right." },
+      { q: "Is my PDF uploaded anywhere?", a: "No. The text is added locally in your browser, so your document never leaves your device." },
+      { q: "Will it cover my content?", a: "No. The text sits near the top and bottom margins, clear of the main page content." },
+      { q: "Is it free?", a: "Yes. Adding headers and footers is completely free, with no account and no limits." },
+    ],
+  },
 ];
 
 // --- Helpers -----------------------------------------------------------------

@@ -69,6 +69,9 @@ import {
   Smile,
   LayoutTemplate,
   AppWindow,
+  FileType,
+  FileDigit,
+  Heading,
   type LucideIcon,
 } from "lucide-react";
 
@@ -148,6 +151,9 @@ export const iconMap = {
   smile: Smile,
   "layout-template": LayoutTemplate,
   "app-window": AppWindow,
+  "file-type": FileType,
+  "file-digit": FileDigit,
+  heading: Heading,
 } satisfies Record<string, LucideIcon>;
 
 export type IconName = keyof typeof iconMap;
