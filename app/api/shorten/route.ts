@@ -3,16 +3,29 @@ import { z } from "zod";
 import { getSupabaseAdmin } from "@/lib/supabase/server";
 import { generateCode } from "@/lib/short-code";
 import { absoluteUrl } from "@/lib/site";
+import { isSafeRedirectUrl } from "@/lib/safe-url";
+import {
+  checkRateLimit,
+  getClientIp,
+  guardJsonRequest,
+  rateLimitedResponse,
+} from "@/lib/rate-limit";
 
 const schema = z.object({
   url: z
     .string()
     .trim()
     .url("Please enter a valid URL.")
-    .refine((u) => /^https?:\/\//i.test(u), "Only http and https links are supported."),
+    .refine(isSafeRedirectUrl, "Only http and https links are supported."),
 });
 
 export async function POST(request: Request) {
+  const badRequest = guardJsonRequest(request);
+  if (badRequest) return badRequest;
+
+  const limit = await checkRateLimit("shorten", getClientIp(request), 10, 60);
+  if (!limit.ok) return rateLimitedResponse(limit.retryAfter);
+
   let body: unknown;
   try {
     body = await request.json();

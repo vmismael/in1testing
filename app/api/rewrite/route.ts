@@ -1,6 +1,12 @@
 import { streamText } from "ai";
 import { z } from "zod";
 import { NextResponse } from "next/server";
+import {
+  checkRateLimit,
+  getClientIp,
+  guardJsonRequest,
+  rateLimitedResponse,
+} from "@/lib/rate-limit";
 
 // Streaming responses can take a while; give the function room.
 export const maxDuration = 30;
@@ -29,6 +35,12 @@ function gatewayConfigured(): boolean {
 }
 
 export async function POST(request: Request) {
+  const badRequest = guardJsonRequest(request);
+  if (badRequest) return badRequest;
+
+  const limit = await checkRateLimit("rewrite", getClientIp(request), 8, 60);
+  if (!limit.ok) return rateLimitedResponse(limit.retryAfter);
+
   let body: unknown;
   try {
     body = await request.json();
