@@ -1,0 +1,90 @@
+import {
+  Combine,
+  ImageDown,
+  Link2,
+  FileText,
+  Image as ImageIcon,
+  Film,
+  Type,
+  Globe,
+  Sparkles,
+  AlignLeft,
+  KeyRound,
+  Braces,
+  Binary,
+  QrCode,
+  Replace,
+  Scaling,
+  FileImage,
+  Scissors,
+  Images,
+  Crop,
+  Shrink,
+  Eraser,
+  FileAudio,
+  AudioLines,
+  CaseSensitive,
+  Palette,
+  Hash,
+  RotateCw,
+  Stamp,
+  ListOrdered,
+  Video,
+  Clapperboard,
+  ScissorsLineDashed,
+  type LucideIcon,
+} from "lucide-react";
+
+/**
+ * Central map of icon names used across the tool registry and category config.
+ * Keeping it explicit (rather than dynamic) keeps the bundle tree-shakeable and
+ * makes `icon` fields type-safe via {@link IconName}.
+ */
+export const iconMap = {
+  combine: Combine,
+  "image-down": ImageDown,
+  link: Link2,
+  "file-text": FileText,
+  image: ImageIcon,
+  film: Film,
+  type: Type,
+  globe: Globe,
+  sparkles: Sparkles,
+  "align-left": AlignLeft,
+  "key-round": KeyRound,
+  braces: Braces,
+  binary: Binary,
+  "qr-code": QrCode,
+  replace: Replace,
+  scaling: Scaling,
+  "file-image": FileImage,
+  scissors: Scissors,
+  images: Images,
+  crop: Crop,
+  shrink: Shrink,
+  eraser: Eraser,
+  "file-audio": FileAudio,
+  "audio-lines": AudioLines,
+  "case-sensitive": CaseSensitive,
+  palette: Palette,
+  hash: Hash,
+  "rotate-cw": RotateCw,
+  stamp: Stamp,
+  "list-ordered": ListOrdered,
+  video: Video,
+  clapperboard: Clapperboard,
+  "scissors-line-dashed": ScissorsLineDashed,
+} satisfies Record<string, LucideIcon>;
+
+export type IconName = keyof typeof iconMap;
+
+export function Icon({
+  name,
+  className,
+}: {
+  name: IconName;
+  className?: string;
+}) {
+  const Cmp = iconMap[name];
+  return <Cmp className={className} aria-hidden="true" />;
+}

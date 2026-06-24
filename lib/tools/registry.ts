@@ -1,0 +1,1564 @@
+import type { CategoryMeta, Tool, ToolCategory } from "./types";
+
+/**
+ * Category metadata, used for navigation and the homepage groupings.
+ * Adding a category here makes it available everywhere automatically.
+ */
+export const categories: CategoryMeta[] = [
+  { slug: "pdf", label: "PDF", icon: "file-text", description: "Merge, split, compress and convert PDF documents." },
+  { slug: "image", label: "Image", icon: "image", description: "Compress, resize and clean up images." },
+  { slug: "video", label: "Video & Audio", icon: "film", description: "Convert and extract audio from video files." },
+  { slug: "text", label: "Text & AI", icon: "type", description: "Rewrite, summarize and transform text." },
+  { slug: "web", label: "Web", icon: "globe", description: "Links, QR codes and everyday web utilities." },
+];
+
+/**
+ * The single source of truth for every tool on In1.
+ *
+ * Adding a new tool = adding one object here + (for interactive tools) a
+ * processor component wired into `components/tools/tool-processor.tsx`.
+ * Pages, metadata, sitemap entries and JSON-LD schema are all derived from this.
+ */
+export const tools: Tool[] = [
+  // ---------------------------------------------------------------------------
+  {
+    slug: "merge-pdf",
+    category: "pdf",
+    name: "Merge PDF",
+    shortDescription: "Combine several PDF files into one ordered document.",
+    icon: "combine",
+    processing: "client",
+    accept: ["application/pdf"],
+    multiple: true,
+    keywords: ["merge pdf", "combine pdf", "join pdf files", "pdf merger online", "merge pdf free"],
+    metaTitle: "Merge PDF — Combine PDF Files Online Free | In1",
+    metaDescription:
+      "Merge multiple PDF files into a single document for free. Fast and private — files are combined in your browser, with no uploads, watermarks or sign-up.",
+    h1: "Merge PDF files online",
+    intro:
+      "Combine two or more PDFs into one tidy document in seconds. Drag your files in, drag them into the order you want, and download a single merged PDF. Everything happens locally in your browser, so your documents never leave your device.",
+    sections: [
+      {
+        heading: "Combine PDFs without uploading them anywhere",
+        body: "Most online PDF mergers upload your files to a server, process them there, and send the result back. That is slow, it puts your private documents on someone else's machine, and it often comes with file-size caps or watermarks. In1 takes a different approach: the merge runs entirely inside your browser using WebAssembly. Your contracts, invoices, scanned IDs and reports are never transmitted over the network, which makes this one of the most private ways to combine PDFs online. It is also fast, because there is no upload-and-wait round trip — small files are typically merged in well under a second.",
+      },
+      {
+        heading: "Reorder pages and files before you merge",
+        body: "Merging is rarely just 'glue file A to file B'. You usually need the cover letter first, then the report, then the appendix. In1 lets you add as many PDFs as you like and rearrange them into exactly the sequence you want before producing the final document. Add a file you didn't mean to include? Remove it with a single click. The order you see on screen is the order in the downloaded file, so there are no surprises.",
+      },
+      {
+        heading: "Free, unlimited and watermark-free",
+        body: "There is no account to create, no email to hand over and no premium upsell standing between you and your merged PDF. You can combine as many documents as you want, as often as you want, and the output is a clean PDF with no watermark stamped across the pages. Because the heavy lifting happens on your own computer, there are no per-file fees and no daily limits to worry about.",
+      },
+      {
+        heading: "Works on any device with a modern browser",
+        body: "In1 is built mobile-first, so merging PDFs works just as well on a phone or tablet as it does on a laptop. There is nothing to install — no desktop app, no browser extension, no plugin. As long as you have a recent version of Chrome, Edge, Firefox or Safari, you can merge PDFs on the spot, whether you are putting together an application packet at home or assembling a report on the go.",
+      },
+      {
+        heading: "Common ways people use Merge PDF",
+        body: "People combine PDFs for all sorts of reasons: stitching together scanned pages into a single file, bundling a resume with a cover letter and portfolio, joining monthly statements into one annual archive, combining signed contract pages, or assembling chapters of an ebook. Because the tool keeps the original quality of each page and simply concatenates them, the result looks exactly like the source documents — just in one convenient file.",
+      },
+    ],
+    howTo: [
+      { name: "Add your PDFs", text: "Drag your PDF files into the drop area, or click to browse and select them from your device." },
+      { name: "Put them in order", text: "Move files up or down so they appear in the sequence you want in the final document." },
+      { name: "Merge", text: "Click 'Merge PDFs' and the files are combined locally in your browser within seconds." },
+      { name: "Download", text: "Download the single merged PDF. No watermark, no sign-up, no upload." },
+    ],
+    faq: [
+      { q: "Is it really free to merge PDF files?", a: "Yes. Merging PDFs on In1 is completely free with no limits, no account and no watermark on the output." },
+      { q: "Are my files uploaded to a server?", a: "No. The merge happens entirely in your browser using WebAssembly, so your PDFs never leave your device." },
+      { q: "How many PDFs can I combine at once?", a: "There is no fixed limit. The practical ceiling depends on your device's memory, but combining dozens of typical documents works fine." },
+      { q: "Can I change the order of the files?", a: "Yes. After adding your files you can move each one up or down, and the final PDF follows the order shown on screen." },
+      { q: "Will the quality of my pages change?", a: "No. Pages are copied as-is into the new document, so text stays selectable and images keep their original resolution." },
+      { q: "Does it work on mobile?", a: "Yes. The tool is mobile-first and runs in any modern phone or tablet browser without installing anything." },
+    ],
+  },
+
+  // ---------------------------------------------------------------------------
+  {
+    slug: "image-compressor",
+    category: "image",
+    name: "Image Compressor",
+    shortDescription: "Shrink JPG, PNG and WebP images while keeping them sharp.",
+    icon: "image-down",
+    processing: "client",
+    accept: ["image/jpeg", "image/png", "image/webp"],
+    multiple: false,
+    keywords: ["image compressor", "compress image online", "reduce image size", "compress jpg", "compress png"],
+    metaTitle: "Image Compressor — Compress JPG, PNG & WebP Free | In1",
+    metaDescription:
+      "Compress images online for free without losing quality. Reduce JPG, PNG and WebP file size right in your browser — no uploads, no watermark, no sign-up.",
+    h1: "Compress images online",
+    intro:
+      "Make your photos and graphics dramatically smaller without an obvious drop in quality. Choose a target quality, and In1 re-encodes the image in your browser and shows you exactly how much space you saved. Your images are never uploaded.",
+    sections: [
+      {
+        heading: "Smaller files, faster everything",
+        body: "Large images are the number-one cause of slow web pages, sluggish email attachments and full phone storage. A single photo straight from a modern camera can weigh several megabytes — far more than it needs to for screen use. Compressing it can cut the size by 70–90% while keeping it visually crisp. Smaller images load faster, improve your site's Core Web Vitals, send more reliably over email, and let you fit far more on a device or in cloud storage.",
+      },
+      {
+        heading: "Control quality with a single slider",
+        body: "Compression is always a trade-off between file size and visual fidelity, so In1 puts that trade-off directly in your hands. A quality slider lets you dial in exactly how aggressive the compression should be, and the tool reports the original size, the compressed size and the percentage saved so you can find the sweet spot. For most photos a mid-range setting removes the bulk of the weight with no perceptible difference; for thumbnails or background images you can push it further.",
+      },
+      {
+        heading: "Private by design — nothing leaves your browser",
+        body: "Family photos, product shots, screenshots of sensitive information — images can be just as private as documents. That is why In1 compresses them locally using the browser's own image pipeline. The file you pick is read into memory, re-encoded and offered back to you as a download, all without a single byte being sent to a server. There is no upload progress bar because there is no upload.",
+      },
+      {
+        heading: "Supports JPG, PNG and WebP",
+        body: "The compressor handles the three formats that cover the vast majority of images on the web. JPGs (great for photographs) are re-encoded at your chosen quality; PNGs (great for graphics and screenshots with sharp edges) are optimized; and WebP — the modern format that often beats both — is supported as well. The output keeps the format that makes the most sense for your image, so you get the best balance of size and quality.",
+      },
+      {
+        heading: "Who uses an image compressor?",
+        body: "Bloggers and site owners compress images so their pages score well on PageSpeed and rank better. Online sellers shrink product photos so listings load instantly. Students and office workers compress scans and screenshots to slip under email attachment limits. Designers create lightweight previews to share for feedback. Whatever the reason, the goal is the same: keep the picture looking good while making the file small — and do it in seconds, for free.",
+      },
+    ],
+    howTo: [
+      { name: "Choose an image", text: "Drag a JPG, PNG or WebP file into the drop area, or click to select one from your device." },
+      { name: "Set the quality", text: "Use the quality slider to balance file size against visual fidelity." },
+      { name: "Compress", text: "In1 re-encodes the image in your browser and shows the original vs. compressed size." },
+      { name: "Download", text: "Save the smaller image. The original file is never uploaded anywhere." },
+    ],
+    faq: [
+      { q: "Does compressing reduce image quality?", a: "Some quality is traded for size, but at typical settings the difference is hard to notice. You control exactly how aggressive the compression is with the quality slider." },
+      { q: "Are my images uploaded?", a: "No. Compression runs entirely in your browser, so your images stay on your device." },
+      { q: "Which formats are supported?", a: "JPG/JPEG, PNG and WebP. The tool keeps the format that best fits your image." },
+      { q: "Is there a file size limit?", a: "There is no hard limit set by In1; very large images are limited only by your device's available memory." },
+      { q: "How much smaller will my image be?", a: "It depends on the image and your quality setting, but reductions of 60–90% are common for photos." },
+      { q: "Is it free?", a: "Yes, completely free with no watermark and no account required." },
+    ],
+  },
+
+  // ---------------------------------------------------------------------------
+  {
+    slug: "url-shortener",
+    category: "web",
+    name: "URL Shortener",
+    shortDescription: "Turn long links into short, shareable URLs with click tracking.",
+    icon: "link",
+    processing: "server",
+    keywords: ["url shortener", "shorten url", "short link generator", "link shortener free", "make short url"],
+    metaTitle: "URL Shortener — Create Short Links Free | In1",
+    metaDescription:
+      "Shorten long URLs into clean, shareable short links for free. Create tidy links for social media, messages and print — with built-in click counting.",
+    h1: "Shorten your URLs",
+    intro:
+      "Paste a long, messy link and get a short, tidy one you can share anywhere. Short links are easier to read, look more trustworthy, fit inside character-limited posts, and let you see how many times they were clicked.",
+    sections: [
+      {
+        heading: "Why short links matter",
+        body: "Long URLs are ugly and fragile. They wrap awkwardly in emails, get truncated in chat apps, eat into character limits on social media, and are nearly impossible to type from a printed page or a slide. A short link solves all of that: it is compact, it looks clean and intentional, and it survives copy-paste without breaking. Whether you are sharing a campaign landing page, a document, or a product listing, a short link makes the destination feel more trustworthy and easier to act on.",
+      },
+      {
+        heading: "Track how your links perform",
+        body: "Every short link you create on In1 counts how many times it has been opened. That simple number tells you a lot: which post drove the most traffic, whether your newsletter link is getting clicks, or how a printed link is performing. Because the redirect happens through our server, the count stays accurate even when the link is shared and re-shared across different platforms.",
+      },
+      {
+        heading: "Clean links for social, print and messaging",
+        body: "Short links shine wherever space or readability is tight. On social media they leave more room for your message. In SMS and chat they avoid the dreaded line-wrap. On flyers, business cards and slides they are short enough to read aloud or type by hand. And in emails they keep your call-to-action looking polished instead of dumping a wall of query parameters in front of the reader.",
+      },
+      {
+        heading: "Fast, free and no account needed",
+        body: "Creating a short link takes one paste and one click — there is no sign-up wall, no credit card and no daily quota to think about. In1 generates a unique short code, stores the mapping to your original URL, and hands you a link you can copy immediately. The redirect is near-instant, sending visitors to the original destination the moment they click.",
+      },
+      {
+        heading: "How URL shortening works",
+        body: "When you submit a long URL, In1 generates a short, unique code and saves the pair (code → original link) in a secure database. The short link points at our redirect endpoint; when someone opens it, the server looks up the code, increments the click counter, and forwards the visitor to the original address. From the visitor's point of view it is seamless — they click a short link and land exactly where you intended, while you get a tidy URL and a running tally of clicks.",
+      },
+    ],
+    howTo: [
+      { name: "Paste your long URL", text: "Drop the full link you want to shorten into the input field." },
+      { name: "Create the short link", text: "Click 'Shorten' and In1 generates a unique short URL instantly." },
+      { name: "Copy and share", text: "Copy your new short link and use it anywhere — social, email, print or chat." },
+      { name: "Watch the clicks", text: "The link tracks how many times it has been opened so you can measure interest." },
+    ],
+    faq: [
+      { q: "Is the URL shortener free?", a: "Yes. You can create short links for free with no account required." },
+      { q: "Do short links expire?", a: "Links stay active so long as they remain in our system. We may remove links flagged as abusive or unsafe." },
+      { q: "Can I see how many clicks my link gets?", a: "Yes. Every link counts the number of times it has been opened." },
+      { q: "Can I shorten any URL?", a: "You can shorten standard http and https links. Links pointing to malware, phishing or other abuse are not allowed." },
+      { q: "Will the short link work on every device?", a: "Yes. A short link is just a normal web address, so it works in any browser or app on any device." },
+    ],
+  },
+
+  // ---------------------------------------------------------------------------
+  {
+    slug: "text-rewriter",
+    category: "text",
+    name: "AI Text Rewriter",
+    shortDescription: "Rewrite, improve, summarize or change the tone of any text with AI.",
+    icon: "sparkles",
+    processing: "server",
+    keywords: ["text rewriter", "ai rewriter", "paraphrasing tool", "rewrite text online", "paraphrase text"],
+    metaTitle: "AI Text Rewriter — Rewrite & Improve Text Free | In1",
+    metaDescription:
+      "Rewrite, improve, summarize or change the tone of any text with AI, for free. Paste your text, pick a style and get the new version instantly.",
+    h1: "Rewrite text with AI",
+    intro:
+      "Paste any text and let AI rewrite it the way you need: clearer, more formal, more casual, shorter, corrected or expanded. Choose a style, hit rewrite, and watch the new version appear in real time.",
+    sections: [
+      {
+        heading: "Several rewriting styles in one place",
+        body: "Not every piece of text needs the same treatment. Sometimes you just want the wording to be clearer and smoother; other times you need a formal tone for a professional email, or a casual tone for social media. In1's AI Text Rewriter brings the most useful modes together in one click: improve the writing, make it formal, make it casual, summarize, fix the grammar, or expand with more detail. Instead of agonizing over how to rephrase each sentence, you pick the goal and let the AI do the heavy lifting.",
+      },
+      {
+        heading: "Real-time results, in your text's language",
+        body: "The response streams in word by word, so you are not staring at a blank screen waiting for processing to finish. The AI also respects the language of the original text — paste something in English and you get the rewrite in English; paste Portuguese and you get Portuguese. The focus is on delivering just the rewritten text, with no explanations or extra commentary, ready to copy and use.",
+      },
+      {
+        heading: "What a text rewriter is for",
+        body: "The uses are endless. Students paraphrase passages and improve the clarity of essays. Professionals adjust the tone of emails and messages to sound more formal or more friendly. Content creators generate variations of captions and descriptions. People writing in a second language use the grammar fix to gain confidence. And anyone stuck on a clumsy sentence can ask for a better version in seconds.",
+      },
+      {
+        heading: "Free and frictionless",
+        body: "Rewriting text on In1 is free and requires no account. There is no long form, no credit card and no watermark on the result. You paste your text, choose a style and get the new version — that simple. The tool is built to be fast on both phone and desktop, with a clean interface that stays out of your way.",
+      },
+      {
+        heading: "Tips for better rewrites",
+        body: "For the best result, start with text that makes sense — the AI improves the form, but it won't invent the content that's missing. If the text is very long, break it into parts and rewrite each one; that way you keep control of the tone in every passage. Try different modes on the same text: sometimes 'improve' is enough, but 'summarize' or 'expand' can reveal an even better version. And remember to review the result: the AI is a great writing assistant, but the final word is always yours.",
+      },
+    ],
+    howTo: [
+      { name: "Paste your text", text: "Type or paste the content you want to rewrite into the text field." },
+      { name: "Choose a style", text: "Select the mode you want: improve, formal, casual, summarize, fix grammar or expand." },
+      { name: "Rewrite", text: "Click 'Rewrite' and watch the new version appear in real time." },
+      { name: "Copy and use", text: "Copy the rewritten text with one click and use it wherever you need it." },
+    ],
+    faq: [
+      { q: "Is the text rewriter free?", a: "Yes. You can rewrite text for free, with no account required." },
+      { q: "Which rewriting styles are available?", a: "Improve the writing, make it formal, make it casual, summarize, fix grammar, and expand the text with more detail." },
+      { q: "Does the AI keep my text's language?", a: "Yes. The rewrite is delivered in the same language as the text you paste in." },
+      { q: "Is there a length limit?", a: "To keep responses fast, there is a per-rewrite limit. For long texts, split them into parts and rewrite one at a time." },
+      { q: "Is my text stored?", a: "Your text is sent to the AI provider only to generate the rewrite and is not shown publicly. Avoid pasting sensitive data." },
+      { q: "Is the result always perfect?", a: "The AI is an excellent writing assistant, but we recommend reviewing the result before using it, especially in important contexts." },
+    ],
+  },
+
+  // ---------------------------------------------------------------------------
+  {
+    slug: "word-counter",
+    category: "text",
+    name: "Word Counter",
+    shortDescription: "Count words, characters, sentences and reading time as you type.",
+    icon: "align-left",
+    processing: "client",
+    keywords: ["word counter", "character counter", "count words", "words to time", "reading time calculator"],
+    metaTitle: "Word Counter — Count Words & Characters Online Free | In1",
+    metaDescription:
+      "Free online word counter. Count words, characters, sentences, paragraphs and estimated reading time live as you type — private, in your browser, no sign-up.",
+    h1: "Word and character counter",
+    intro:
+      "Paste or type your text and instantly see the word count, character count, sentences, paragraphs and estimated reading time. Everything updates live as you write, and your text never leaves your browser.",
+    sections: [
+      {
+        heading: "Every count you need, updated live",
+        body: "A good word counter does more than count words. As you type or paste, In1 tracks the metrics that actually matter for writing: the number of words, the number of characters with spaces, the number of characters without spaces, the number of sentences and the number of paragraphs. Each figure refreshes instantly with every keystroke, so you always know exactly where you stand against a target without clicking a button or reloading anything. Whether you are trimming a paragraph down to size or padding an essay up to a minimum, the live feedback turns guesswork into a precise, real-time gauge of your progress. Having every statistic visible at once also helps you understand the shape of your writing, not just its length: a high word count spread across very few sentences hints at long, run-on constructions, while many short paragraphs can signal choppy pacing. Instead of switching between separate tools or pasting your text into a spreadsheet, you get the full picture in a single glance and can keep editing in the same place.",
+      },
+      {
+        heading: "Hit word and character limits with confidence",
+        body: "So much writing comes with a hard limit. Meta descriptions and title tags are capped by characters, tweets and social posts have strict ceilings, college essays demand a minimum word count, and academic abstracts must fit inside a tight range. Guessing leads to rejected forms and truncated posts. With a precise character counter and word counter side by side, you can write right up to the edge of any limit and stop with confidence. It is especially handy for SEO work, where a title that runs a few characters too long simply gets cut off in search results, and a meta description that overflows loses the very words meant to earn the click. The same applies to job applications with strict word caps, grant proposals, product descriptions on marketplaces, and bios for social profiles. Because both character totals are shown — with and without spaces — you can match whichever rule a given platform uses, since some count spaces toward the limit and others do not.",
+      },
+      {
+        heading: "Estimated reading time at a glance",
+        body: "Reading time is one of the most useful signals you can put in front of an audience, and it is calculated here automatically. In1 estimates how long your text takes to read using an average adult reading speed of roughly 200 words per minute, a widely used benchmark for general prose. The result helps bloggers add an honest 'X min read' label to articles, helps speakers gauge whether a script fits a time slot, and helps students sense how long a passage really is. Because the estimate updates live, you can watch the reading time grow or shrink as you edit, which makes it easy to trim a talk down to fit a five-minute slot or expand an article toward a target length. Readers increasingly expect that little time estimate at the top of a post, and providing an accurate one sets honest expectations and tends to improve how many people start and finish the piece.",
+      },
+      {
+        heading: "Private by design — nothing is uploaded",
+        body: "Your words can be sensitive: an unpublished article, a confidential report, a personal cover letter or a draft you are not ready to share. In1 counts everything locally in your browser using plain JavaScript, so not a single character is sent to a server. There is no upload, no storage and no account. You can paste an entire manuscript and the counting still happens instantly on your own device. When you close the tab, the text is gone — which makes this one of the safest ways to analyze writing you would rather keep to yourself. This local-only approach is not just about privacy; it is also what makes the tool so fast and reliable. There is no waiting for a request to travel to a server and back, no spinner, and no failure if your connection drops. The counting works exactly the same whether you are online or offline, and a very long document is handled just as smoothly as a single sentence.",
+      },
+      {
+        heading: "Who uses a word counter?",
+        body: "The audience is huge because almost everyone writes to a constraint. Students check essays against assignment minimums and maximums. Content writers and bloggers optimize article length and reading time for both readers and search engines. Marketers craft ad copy, captions and email subject lines that must fit inside platform limits. Authors and journalists track daily word counts and section lengths to keep a steady pace toward a deadline. Translators and editors measure text volume to estimate effort and pricing, since work is often quoted per word or per thousand words. Even casual users lean on it to keep a message concise or to confirm a forum post fits a length rule. Non-native speakers use it to monitor how long their sentences run, a simple proxy for clarity. Whatever you are writing, seeing the numbers live helps you shape it to exactly the right size, so the final piece reads the way you intended and meets whatever requirement it has to satisfy.",
+      },
+    ],
+    howTo: [
+      { name: "Add your text", text: "Type directly into the box, or paste text you have copied from anywhere." },
+      { name: "Read the live counts", text: "Words, characters, sentences, paragraphs and reading time update instantly as you write." },
+      { name: "Edit to fit your target", text: "Trim or expand your text while watching the counts move toward your goal." },
+      { name: "Copy when you're done", text: "Copy the finished text with one click and paste it wherever you need it." },
+    ],
+    faq: [
+      { q: "Is the word counter free?", a: "Yes. Counting words and characters on In1 is completely free, with no account and no limits." },
+      { q: "Is my text uploaded anywhere?", a: "No. All counting happens locally in your browser, so your text never leaves your device." },
+      { q: "How is reading time calculated?", a: "Reading time is estimated from your word count using an average speed of about 200 words per minute, a common benchmark for general reading." },
+      { q: "How do you count words?", a: "Words are counted by splitting the text on spaces and line breaks and ignoring empty gaps, so multiple spaces between words don't inflate the total." },
+      { q: "Does it count characters with and without spaces?", a: "Yes. You get both totals, which is useful for limits that include spaces (like meta tags) and ones that don't." },
+      { q: "Is there a length limit?", a: "There is no fixed limit. Because counting runs on your own device, you can analyze anything from a sentence to a full manuscript." },
+    ],
+  },
+
+  // ---------------------------------------------------------------------------
+  {
+    slug: "password-generator",
+    category: "web",
+    name: "Password Generator",
+    shortDescription: "Create strong, random passwords with cryptographic security.",
+    icon: "key-round",
+    processing: "client",
+    keywords: ["password generator", "strong password generator", "random password", "secure password generator", "create password"],
+    metaTitle: "Password Generator — Create Strong Random Passwords | In1",
+    metaDescription:
+      "Generate strong, random and secure passwords for free. Choose length and character types — built with cryptographic randomness, fully in your browser, no sign-up.",
+    h1: "Strong password generator",
+    intro:
+      "Create a strong, truly random password in one click. Pick the length and the character types you want, and In1 builds a secure password using your browser's cryptographic random generator. Nothing is sent anywhere — the password is created and shown only on your device.",
+    sections: [
+      {
+        heading: "Why random passwords matter",
+        body: "The passwords people invent themselves are far weaker than they feel. Names, dates, favorite teams and predictable substitutions like 'P@ssw0rd' are exactly what attackers try first, and reused passwords mean a single leak can unlock dozens of accounts. A randomly generated password has no pattern to guess: every character is independent, so the only way to break it is brute force, which becomes astronomically slow as length grows. Generating a fresh random password for each account — and storing it in a password manager — is the single most effective habit for keeping your online life secure. Most large-scale account takeovers don't involve some clever hack at all; they happen because a password leaked from one breached site is quietly tried against email, banking and social accounts elsewhere. A unique random password per account breaks that chain completely, so even if one service is compromised, the damage stops there instead of spreading across your whole digital life.",
+      },
+      {
+        heading: "Built on real cryptographic randomness",
+        body: "Not all randomness is equal. Many simple tools rely on JavaScript's Math.random(), which is fast but predictable and never meant for security. In1 instead uses the Web Crypto API — specifically crypto.getRandomValues() — the same cryptographically secure random source browsers use for sensitive operations. That means the characters in your password are drawn from a high-quality, unpredictable entropy source, not a guessable sequence. The generator also makes sure every character type you enable actually appears in the result, so a password meant to include numbers and symbols never comes out missing them by chance. After guaranteeing one character from each selected set, it fills the rest from the combined pool and then shuffles everything, so the required characters aren't predictably parked at the front. The difference between a secure random source and a predictable one is not academic: a password built from a weak generator can sometimes be reproduced by an attacker who knows the algorithm, while one built from real entropy cannot.",
+      },
+      {
+        heading: "You control length and character types",
+        body: "Strength comes from two levers, and both are in your hands. Length is the most powerful: each extra character multiplies the number of possible combinations, so a longer password is exponentially harder to crack. Variety is the second: mixing uppercase letters, lowercase letters, numbers and symbols expands the pool each character is chosen from. With In1 you set the exact length with a slider and toggle the four character groups on or off to satisfy whatever rules a particular site enforces. Want a long passphrase-length secret or a short PIN-style code? Both are a couple of clicks away. The live preview regenerates as soon as you change an option, so you can immediately see the effect of adding symbols or stretching the length. Some sites stubbornly reject certain symbols or cap the length, and being able to dial the exact mix means you can always produce a password that is both as strong as possible and actually accepted by the form in front of you.",
+      },
+      {
+        heading: "Generated privately in your browser",
+        body: "A password is only secret if no one else ever sees it. That is why In1 generates yours entirely on your own device. The random characters are assembled in your browser and displayed only to you; nothing is transmitted over the network, logged on a server or saved anywhere. There is no account to create and no history to leak. When you copy the password and close the tab, no trace of it remains here. This local-only approach removes the biggest risk of online generators — the possibility that the very tool creating your password could be recording it. It is worth being skeptical of any generator that sends your password to a server, because there is simply no good reason for it to do so; everything needed to create a strong password already exists in your browser. Because the work is local, generation is also instant and keeps working even with no internet connection, so you can create credentials anywhere, anytime.",
+      },
+      {
+        heading: "Tips for using your new password",
+        body: "A strong password works best as part of good habits. Use a unique one for every account so a breach on one site can't cascade to others. Store them in a reputable password manager rather than a notebook or a text file, and let the manager autofill them so you never have to type or remember the random string. Turn on two-factor authentication wherever it is offered for a second layer of defense, ideally with an authenticator app rather than SMS. For the accounts that matter most — email, banking, work — favor longer passwords with all character types enabled, since your email in particular is the master key that can reset many of your other logins. Avoid emailing or texting passwords to yourself, and never reuse a password just because it is convenient. Finally, change a password immediately if a service you use reports a data breach, and take the opportunity to replace any other account that shared it.",
+      },
+    ],
+    howTo: [
+      { name: "Set the length", text: "Drag the slider to choose how many characters your password should have — longer is stronger." },
+      { name: "Pick character types", text: "Toggle uppercase, lowercase, numbers and symbols to match the rules of the site you're using." },
+      { name: "Generate", text: "Click 'Generate' to create a fresh random password using your browser's secure random source." },
+      { name: "Copy and store it", text: "Copy the password and save it in your password manager. It's never sent anywhere." },
+    ],
+    faq: [
+      { q: "Is the password generator free?", a: "Yes. You can generate as many secure passwords as you like for free, with no account required." },
+      { q: "Are the passwords really random and secure?", a: "Yes. Passwords are built with the Web Crypto API (crypto.getRandomValues), a cryptographically secure random source, not the predictable Math.random()." },
+      { q: "Are my passwords sent or stored anywhere?", a: "No. Every password is generated locally in your browser and displayed only to you. Nothing is transmitted or saved." },
+      { q: "How long should my password be?", a: "For most accounts 16 characters or more is a good target; for critical accounts, go longer and enable all character types." },
+      { q: "Can I choose which characters to include?", a: "Yes. You can toggle uppercase letters, lowercase letters, numbers and symbols, and the generator guarantees each enabled type appears." },
+      { q: "How should I store the generated password?", a: "Use a reputable password manager so you don't have to remember it, and enable two-factor authentication where possible." },
+    ],
+  },
+
+  // ---------------------------------------------------------------------------
+  {
+    slug: "json-formatter",
+    category: "web",
+    name: "JSON Formatter",
+    shortDescription: "Beautify, validate and minify JSON instantly in your browser.",
+    icon: "braces",
+    processing: "client",
+    keywords: ["json formatter", "json beautifier", "format json", "json validator", "minify json"],
+    metaTitle: "JSON Formatter — Beautify, Validate & Minify JSON | In1",
+    metaDescription:
+      "Free online JSON formatter. Beautify, validate and minify JSON with clear error messages — runs entirely in your browser, no uploads, no sign-up.",
+    h1: "JSON formatter and validator",
+    intro:
+      "Paste messy or minified JSON and get it cleanly formatted with proper indentation, or compress it down to a single line. Invalid JSON is caught with a clear, friendly error so you can fix it fast. Everything runs locally in your browser.",
+    sections: [
+      {
+        heading: "Beautify JSON for readability",
+        body: "Raw JSON from an API or a log file is often a single dense line with no spacing, which is almost impossible to read or debug by eye. The formatter re-indents your JSON with consistent two-space nesting so the structure becomes obvious at a glance: objects, arrays and nested values line up exactly where you expect them. Pretty-printing makes it far easier to spot a missing field, trace a nested path, or compare two responses. Paste in whatever you have — compact, half-formatted or pasted from a terminal — and get back a tidy, properly indented document you can actually read. Once the structure is visible, problems that were hidden in a wall of text jump out: an array where you expected an object, a value that is a string when it should be a number, or a branch that is nested one level deeper than the rest of the payload. Good indentation is the difference between staring at a blob and immediately understanding the shape of your data.",
+      },
+      {
+        heading: "Validate JSON with friendly errors",
+        body: "A single misplaced comma or unquoted key can break an entire JSON document, and the default parser messages can be cryptic. This tool validates your input as it formats it: if the JSON is well-formed, you get the clean result; if it isn't, you get a clear, human-readable message describing what went wrong instead of a silent failure or a blank screen. That instant feedback turns 'why won't this parse?' into a quick fix. It is the fastest way to confirm that a payload, config file or copied snippet is valid before you ship it. Common culprits include trailing commas after the last item, single quotes instead of double quotes, missing quotation marks around keys, and unescaped characters inside strings — all of which strict JSON forbids even though they look harmless. Catching these before the data reaches your application saves you from chasing a confusing runtime error later, when the real problem was a typo in the input all along.",
+      },
+      {
+        heading: "Minify JSON to shrink payloads",
+        body: "When JSON is destined for a network request, a config value or storage, every byte counts. Minifying strips out all the whitespace, indentation and line breaks that make JSON readable for humans but waste space for machines, collapsing the document to the smallest valid single-line form. Smaller payloads mean faster transfers and lower bandwidth — useful for API responses, embedding JSON inside another file, or pasting it into a field with a length limit. With one click you can switch between a readable, beautified version and a compact, production-ready one. The two operations are perfect complements in a normal workflow: minify a configuration blob before you paste it into an environment variable or a URL, then beautify it again later when you need to read or edit it. Because both run instantly on the same input, you never have to commit to one form — you can move freely between the human-friendly and the machine-friendly version of the very same data.",
+      },
+      {
+        heading: "Private and instant — nothing is uploaded",
+        body: "JSON often carries sensitive material: API keys, tokens, user records, internal configuration. Sending that to a remote server just to format it is an unnecessary risk. In1 parses and formats everything locally using the browser's built-in JSON engine, so your data never leaves your device. There is no upload step and nothing is stored, which also makes the tool instant — even large documents are formatted in the blink of an eye because there is no network round trip. You can safely paste a real production payload and know it stays on your machine. This matters because the JSON you most want to inspect is frequently the JSON you least want to leak: a webhook body containing customer details, a token you are decoding to debug an auth issue, or a database export. Doing the work in your own browser means you get the convenience of an online formatter without handing your data to a third party you have to trust.",
+      },
+      {
+        heading: "Who uses a JSON formatter?",
+        body: "Developers are the core audience: they format API responses while debugging, tidy up configuration files, and validate request bodies before sending them. QA engineers inspect payloads to confirm a service returns the right shape. Data analysts clean up exported JSON before importing it elsewhere. Technical writers format examples for documentation so readers can follow the structure. Students learning web development use it to understand how nested JSON is organized, since seeing real data laid out cleanly is one of the fastest ways to grasp how objects and arrays nest. No-code and low-code builders increasingly bump into JSON too, when configuring integrations, mapping fields, or pasting settings between tools. Anyone who works with APIs, webhooks, configuration or data exchange eventually needs to read or compress JSON — and doing it in the browser, privately and instantly, fits right into that workflow without a single install or sign-up. Keeping a reliable formatter one tab away quietly removes a small but constant source of friction from a developer's day.",
+      },
+    ],
+    howTo: [
+      { name: "Paste your JSON", text: "Drop your JSON — minified, messy or copied from anywhere — into the input box." },
+      { name: "Format or minify", text: "Click 'Format' to beautify it with clean indentation, or 'Minify' to compress it to one line." },
+      { name: "Fix any errors", text: "If the JSON is invalid, a clear message tells you what went wrong so you can correct it." },
+      { name: "Copy the result", text: "Copy the formatted or minified output with one click and use it wherever you need it." },
+    ],
+    faq: [
+      { q: "Is the JSON formatter free?", a: "Yes. Formatting, validating and minifying JSON on In1 is completely free with no account required." },
+      { q: "Is my JSON uploaded to a server?", a: "No. All parsing and formatting happens locally in your browser, so your data never leaves your device." },
+      { q: "What does 'minify' do?", a: "Minifying removes all whitespace and line breaks, collapsing your JSON to the smallest valid single-line form to save space." },
+      { q: "What happens if my JSON is invalid?", a: "You get a clear, friendly error message describing the problem instead of a silent failure, so you can fix it quickly." },
+      { q: "How is the JSON indented when formatted?", a: "Formatted output uses standard two-space indentation, which is the most common and readable convention." },
+      { q: "Is there a size limit?", a: "There is no fixed limit. Because everything runs on your device, large documents are formatted instantly without an upload." },
+    ],
+  },
+
+  // ---------------------------------------------------------------------------
+  {
+    slug: "base64",
+    category: "web",
+    name: "Base64 Encoder / Decoder",
+    shortDescription: "Encode text to Base64 or decode it back, with full UTF-8 support.",
+    icon: "binary",
+    processing: "client",
+    keywords: ["base64 encode", "base64 decode", "base64 converter", "encode base64 online", "base64 to text"],
+    metaTitle: "Base64 Encoder & Decoder — Encode / Decode Online Free | In1",
+    metaDescription:
+      "Free online Base64 encoder and decoder with full UTF-8 support. Convert text to Base64 and back instantly in your browser — no uploads, no sign-up.",
+    h1: "Base64 encoder and decoder",
+    intro:
+      "Convert text to Base64 or decode Base64 back to readable text in one click. Accents, emoji and any other Unicode characters are handled correctly thanks to proper UTF-8 encoding. Everything runs locally in your browser.",
+    sections: [
+      {
+        heading: "What Base64 is and why it exists",
+        body: "Base64 is a way of representing binary or text data using only 64 safe, printable ASCII characters. It exists because many systems were built to move plain text reliably but can corrupt or misinterpret raw bytes — think email bodies, URLs, JSON fields, HTML attributes and HTTP headers. By translating data into a compact, text-only alphabet, Base64 lets you embed images, fonts, tokens or arbitrary text inside those text-only channels without anything getting mangled in transit. It does not encrypt or compress — the goal is safe, lossless transport — but it is one of the most common encodings you will meet when working with the web. The name comes from the size of its alphabet: the uppercase and lowercase letters, the digits zero through nine, and two extra symbols, plus a padding character. Every three bytes of input become four Base64 characters, which is why an encoded string is always a bit larger than the original — a deliberate trade of size for safety and compatibility.",
+      },
+      {
+        heading: "Encode and decode in one place",
+        body: "This tool handles both directions. Switch to encode mode and your text is converted into its Base64 representation, ready to paste into a data URI, a config file or an API field. Switch to decode mode and a Base64 string is turned back into the original readable text. A single toggle moves between the two, so you do not need separate tools for each direction. The result appears instantly and can be copied with one click, making it quick to round-trip a value, inspect an encoded token, or prepare data for a system that expects Base64 input. Because the output updates as you type and as you flip modes, it is easy to experiment: paste a suspicious-looking string, switch to decode, and immediately see whether it was Base64 at all. The same convenience helps when you are building a request by hand and need to encode a credential or a small payload without leaving the page.",
+      },
+      {
+        heading: "Full UTF-8 support — accents and emoji included",
+        body: "A surprising number of Base64 tools break the moment you feed them anything beyond plain English, because the naive browser functions only handle a narrow byte range. In1 encodes through the TextEncoder and decodes through the TextDecoder APIs, which means your text is first converted to proper UTF-8 bytes before encoding and reconstructed faithfully on the way back. Accented characters, non-Latin scripts, symbols and emoji all survive the round trip intact. Whether you are encoding Portuguese, Japanese, mathematical symbols or a string full of emoji, what you decode is exactly what you put in. This is more than a nice-to-have: the classic browser shortcut for Base64 throws an error or silently corrupts data when it meets a character outside the basic Latin range, which is exactly the kind of subtle bug that surfaces only in production with real user input. By handling Unicode correctly from the start, this tool gives you results you can trust regardless of the language or symbols involved.",
+      },
+      {
+        heading: "Private by design — nothing leaves your browser",
+        body: "Encoded data often contains things you would rather keep private: access tokens, credentials, snippets of personal information or internal configuration. Because Base64 is trivial to reverse, sending such values to a remote server just to encode or decode them would be careless. In1 performs every conversion locally in your browser, so your text never travels over the network and nothing is stored. There is no account and no logging. You can safely decode a token to inspect its contents or encode a sensitive value, confident that the data stays on your own device the whole time. This point deserves emphasis because Base64 is sometimes mistaken for a security measure, when in reality anyone can decode it in seconds. The only real protection for the data inside an encoded string is to never expose it in the first place — and a local-only tool that keeps your input on your machine is exactly the right way to handle anything sensitive.",
+      },
+      {
+        heading: "Common uses for Base64",
+        body: "Developers run into Base64 constantly. Data URIs embed small images, icons or fonts directly in CSS and HTML as Base64 so they load without a separate request. JSON Web Tokens (JWTs) are made of Base64url-encoded segments that you often want to decode and inspect while debugging an authentication flow. Basic authentication headers, email attachments (MIME), and many API parameters all rely on Base64. It is also handy for safely passing arbitrary text through URLs and query strings, or for storing binary-ish data in places that only accept text, such as certain database columns or environment variables. Whenever you need data to travel through a text-only channel intact, Base64 is the standard answer. Knowing how to quickly encode and decode it by hand is a small but genuinely useful skill — it turns an opaque string in a log or a config file into something you can actually read and reason about. Once you start noticing Base64, you will spot it in dozens of everyday places you previously scrolled right past.",
+      },
+    ],
+    howTo: [
+      { name: "Choose a mode", text: "Pick Encode to turn text into Base64, or Decode to turn Base64 back into text." },
+      { name: "Enter your text", text: "Type or paste the text or Base64 string you want to convert." },
+      { name: "Get the result instantly", text: "The converted output appears right away, with full UTF-8 support for accents and emoji." },
+      { name: "Copy the output", text: "Copy the result with one click and use it wherever you need it." },
+    ],
+    faq: [
+      { q: "Is the Base64 tool free?", a: "Yes. Encoding and decoding Base64 on In1 is completely free with no account required." },
+      { q: "Does it handle accents and emoji?", a: "Yes. Conversion uses UTF-8 (TextEncoder/TextDecoder), so accented characters, non-Latin scripts and emoji round-trip correctly." },
+      { q: "Is my data uploaded anywhere?", a: "No. All encoding and decoding happens locally in your browser, so your text never leaves your device." },
+      { q: "Is Base64 a form of encryption?", a: "No. Base64 is an encoding, not encryption — it is easily reversible and offers no security. Never use it to protect secrets." },
+      { q: "Why does my Base64 fail to decode?", a: "Decoding fails if the input isn't valid Base64 — for example if characters are missing, altered, or padding is incorrect. Check the string and try again." },
+      { q: "Is there a size limit?", a: "There is no fixed limit. Because everything runs on your device, conversions are instant with no upload." },
+    ],
+  },
+
+  // ---------------------------------------------------------------------------
+  {
+    slug: "qr-code-generator",
+    category: "web",
+    name: "QR Code Generator",
+    shortDescription: "Turn any text or link into a QR code and download it as a PNG.",
+    icon: "qr-code",
+    processing: "client",
+    keywords: ["qr code generator", "create qr code", "url to qr code", "free qr code", "qr code maker"],
+    metaTitle: "QR Code Generator — Create & Download QR Codes Free | In1",
+    metaDescription:
+      "Free online QR code generator. Turn any text or URL into a QR code and download it as a PNG — generated in your browser, no uploads, no watermark, no sign-up.",
+    h1: "QR code generator",
+    intro:
+      "Type a link or any text and instantly see a scannable QR code, then download it as a crisp PNG. The code is generated entirely in your browser, with no watermark and no sign-up.",
+    sections: [
+      {
+        heading: "Turn links and text into scannable codes",
+        body: "A QR code is a fast bridge from the physical world to a digital destination. Instead of asking someone to type a long URL, you give them a square they can scan with a phone camera to open it instantly. This generator turns any text or link into that square in real time: paste a website address, a chunk of text, a Wi-Fi password, contact details or a message, and a scannable QR code appears immediately. Because modern phones read QR codes natively through the camera app, there is nothing for your audience to install — they point, tap the notification, and they are there. The live preview means you can see the code take shape as you type and confirm it before you ever download it. Removing the friction of typing a link is the whole point: every extra character a person has to enter by hand is a chance to mistype it and give up, and a code that opens in one tap eliminates that drop-off entirely.",
+      },
+      {
+        heading: "Download a high-quality PNG",
+        body: "The QR code you create is rendered to a clean, high-resolution PNG that you can download with one click. A PNG works everywhere: drop it into a poster, a flyer, a business card, a slide deck, a product label, an email signature or a web page. Because it is a crisp raster image with generous quiet-space margins, it stays sharp and reliably scannable whether it is shown on a screen or printed at size. There is no watermark stamped across it and no branding added, so the code looks professional and is entirely yours to use. That quiet margin around the code is not decorative — scanners rely on the clear border to lock onto the pattern, which is why codes crammed right up against other elements often fail to read. Starting from a clean, well-margined PNG gives you the best chance of a reliable scan no matter where you ultimately place it.",
+      },
+      {
+        heading: "Generated privately in your browser",
+        body: "Everything happens on your own device. The QR code is computed locally in your browser, so the link or text you encode is never uploaded to a server, logged or stored anywhere. That matters more than people realize: a QR code can encode private information like an internal URL, a Wi-Fi password or personal contact details, and many online generators quietly route that data through their own systems — sometimes even creating redirect links that can expire or be tracked. Here the code points straight at exactly what you typed, and your data stays with you. The privacy benefit goes hand in hand with reliability, because a code that depends on someone else's server inherits all of that server's risks: outages, rate limits, and policy changes that could one day break a code you have already printed. A locally generated, direct code sidesteps every one of those problems.",
+      },
+      {
+        heading: "Static codes that never expire",
+        body: "The QR codes this tool creates are static, meaning the destination is baked directly into the code itself. That has a big advantage: there is no third-party redirect in the middle that could go down, start charging, or stop working, so your code keeps functioning for as long as the destination exists. Print it once and it will scan years later. The trade-off is that a static code cannot be edited after the fact — if the link changes you generate a new code — but for the vast majority of uses, the reliability and independence of a static code is exactly what you want. Many commercial 'dynamic' QR services hide this distinction, offering editable codes that secretly route through their servers and can be locked behind a subscription you must keep paying to keep your code alive. A static code asks nothing of you after it is made, which for a printed flyer, a label, or a sign is almost always the safer choice.",
+      },
+      {
+        heading: "Where QR codes are useful",
+        body: "QR codes show up everywhere because they remove friction. Restaurants link to digital menus, shops link to product pages and reviews, and event organizers link to tickets or schedules. Businesses put them on packaging, receipts and signage to point customers to support or promotions. Presenters add one to a final slide so the audience can grab resources without scribbling down a URL. Individuals share Wi-Fi access, contact cards, payment links or a portfolio with a single scan. Anywhere you would otherwise ask someone to type a link, a QR code does the job faster — and creating one here takes just a few seconds. Before you commit a code to print, it is always worth a quick test scan with your own phone to confirm it opens the right destination, since fixing a typo is free on screen but expensive once a thousand flyers are already printed. It also pays to keep the code reasonably large and high-contrast in its final placement, because a tiny code printed on a busy background is the most common reason a scan fails in the real world. A few seconds of testing now saves a reprint later.",
+      },
+    ],
+    howTo: [
+      { name: "Enter text or a URL", text: "Type or paste the link or text you want to encode into the input field." },
+      { name: "See the QR code", text: "A scannable QR code is generated instantly in your browser as you type." },
+      { name: "Download the PNG", text: "Click 'Download PNG' to save a crisp, watermark-free image of your QR code." },
+      { name: "Use it anywhere", text: "Add the PNG to posters, slides, packaging, business cards or web pages." },
+    ],
+    faq: [
+      { q: "Is the QR code generator free?", a: "Yes. You can create and download as many QR codes as you like for free, with no account and no watermark." },
+      { q: "Do the QR codes expire?", a: "No. The codes are static, meaning the destination is encoded directly in the code, so they never expire and rely on no third-party redirect." },
+      { q: "Is my data uploaded anywhere?", a: "No. The QR code is generated locally in your browser, so the text or link you encode never leaves your device." },
+      { q: "What format is the download?", a: "QR codes are downloaded as a high-resolution PNG image that works in print and on screens." },
+      { q: "Can I edit a QR code after creating it?", a: "Static QR codes can't be edited after the fact. If your link changes, simply generate a new code — it only takes seconds." },
+      { q: "How do people scan it?", a: "Most modern phones scan QR codes directly from the built-in camera app — no separate scanner app is needed." },
+    ],
+  },
+
+  // ---------------------------------------------------------------------------
+  {
+    slug: "image-converter",
+    category: "image",
+    name: "Image Converter",
+    shortDescription: "Convert images between PNG, JPG and WebP right in your browser.",
+    icon: "replace",
+    processing: "client",
+    accept: ["image/jpeg", "image/png", "image/webp"],
+    multiple: false,
+    keywords: ["image converter", "png to jpg", "jpg to webp", "webp to png", "convert image online"],
+    metaTitle: "Image Converter — PNG, JPG & WebP Converter Free | In1",
+    metaDescription:
+      "Free online image converter. Convert between PNG, JPG and WebP with an optional quality slider — all in your browser, no uploads, no watermark, no sign-up.",
+    h1: "Convert images online",
+    intro:
+      "Change an image from one format to another in seconds. Drop in a PNG, JPG or WebP, choose the output format, fine-tune the quality for lossy formats, and download the converted file. Everything happens in your browser, so your images are never uploaded.",
+    sections: [
+      {
+        heading: "Convert between the formats that matter",
+        body: "PNG, JPG and WebP cover almost every image you will meet on the web, and each one is good at something different. JPG is the long-standing choice for photographs, where its compression keeps files small at the cost of some invisible detail. PNG is built for graphics, screenshots, logos and anything that needs crisp edges or a transparent background. WebP is the modern all-rounder that often beats both, producing smaller files at similar quality and supporting transparency too. This converter moves your image freely between all three, so you can take a screenshot saved as a heavy PNG and turn it into a lightweight JPG, modernize an old photo into WebP, or convert a WebP someone sent you into a PNG that every program can open. Picking the right format for the job is one of the simplest ways to make images load faster and behave the way you expect, and doing the conversion takes only a couple of clicks here.",
+      },
+      {
+        heading: "Control quality when converting to JPG or WebP",
+        body: "JPG and WebP are lossy formats, which means they trade a little visual fidelity for a much smaller file. How much they trade is up to you. When you convert to either format, a quality slider lets you choose the balance that fits your needs: keep it high for photos you want to look pristine, or lower it to squeeze the file down for a fast-loading web page or an email attachment. PNG, by contrast, is lossless, so converting to PNG always preserves every pixel exactly and the quality control simply does not apply. Being able to see and set the quality yourself means you are never stuck with a one-size-fits-all result — you decide whether file size or maximum sharpness matters more for this particular image, and you can try a different setting in seconds if the first one is not quite right.",
+      },
+      {
+        heading: "Transparency handled correctly",
+        body: "Transparency is where a lot of converters quietly get things wrong. PNG and WebP can store transparent areas, but JPG cannot — it has no concept of an alpha channel. So when you convert a transparent PNG to JPG, those see-through regions have to become something solid. This converter fills them with a clean white background rather than leaving them black or producing strange fringing, which is what you almost always want for a logo or graphic that will sit on a page. Going the other way, converting to PNG or WebP keeps any transparency intact, so a graphic stays usable over any background. Understanding this one detail saves a lot of frustration, and the tool applies the sensible default automatically so your converted image looks right without any manual fixing. If you specifically need transparency in your final file, convert to PNG or WebP rather than JPG, and your see-through areas will be preserved exactly. Choosing the destination format with transparency in mind is the single most important decision when converting logos, icons and other graphics that need to float cleanly over a coloured background.",
+      },
+      {
+        heading: "Private and instant — no uploads",
+        body: "Your images can be personal or confidential: family photos, screenshots that contain private information, unreleased product shots, client work under NDA. Sending them to a server just to change the file format is an unnecessary risk, and it is slow because you have to wait for the upload and the download. In1 converts everything locally using your browser's own image pipeline, so not a single byte leaves your device. There is no upload bar, no queue and no storage — the conversion happens the moment you click, even on a large image, and the result is ready to download immediately. Because there is no server doing the work, there is also no file-size cap imposed by a plan, no watermark stamped on the output, and no account to create. It is the convenience of an online tool with the privacy and speed of a desktop app.",
+      },
+      {
+        heading: "Who converts images and why",
+        body: "The reasons are everywhere once you start looking. Web developers and site owners convert PNG screenshots to JPG or WebP to shrink page weight and improve loading scores. Online sellers convert product photos into the format a marketplace requires. People convert WebP images — which some older programs still refuse to open — into universally supported PNG or JPG so they can edit or print them. Designers export transparent assets as PNG for layering, then to WebP for the web. Office workers convert screenshots to slip under an email attachment limit, and students convert images to meet the format rules of an upload form. Whatever the destination, the need is the same: get the picture into the right format, at the right size, without losing control of quality — and do it quickly, privately and for free. A good rule of thumb is to reach for JPG when the image is a photograph, PNG when it has sharp edges or transparency, and WebP when you want the smallest file for the web without giving up much quality. Keeping those three habits in mind turns format conversion from a chore into a quick, deliberate choice that makes your images behave exactly the way each situation demands.",
+      },
+    ],
+    howTo: [
+      { name: "Add an image", text: "Drag a PNG, JPG or WebP file into the drop area, or click to choose one from your device." },
+      { name: "Choose the output format", text: "Pick PNG, JPG or WebP as the format you want to convert to." },
+      { name: "Set the quality", text: "For JPG or WebP, use the quality slider to balance file size against sharpness. PNG is always lossless." },
+      { name: "Convert and download", text: "Click convert and save the new file. Your image is never uploaded anywhere." },
+    ],
+    faq: [
+      { q: "Is the image converter free?", a: "Yes. Converting images on In1 is completely free with no watermark, no limits and no account required." },
+      { q: "Are my images uploaded to a server?", a: "No. Conversion happens entirely in your browser, so your images never leave your device." },
+      { q: "Which formats can I convert between?", a: "You can convert freely between PNG, JPG/JPEG and WebP in any direction." },
+      { q: "What happens to transparency when I convert to JPG?", a: "JPG doesn't support transparency, so transparent areas are filled with a white background, which is the usual expectation for logos and graphics." },
+      { q: "Does converting reduce quality?", a: "Converting to PNG is lossless and keeps every pixel. Converting to JPG or WebP is lossy, but you control the trade-off with the quality slider." },
+      { q: "Is there a file size limit?", a: "There is no fixed limit. Because everything runs on your device, the practical ceiling is your available memory." },
+    ],
+  },
+
+  // ---------------------------------------------------------------------------
+  {
+    slug: "image-resizer",
+    category: "image",
+    name: "Image Resizer",
+    shortDescription: "Resize images to exact pixel dimensions, with aspect-ratio lock.",
+    icon: "scaling",
+    processing: "client",
+    accept: ["image/jpeg", "image/png", "image/webp"],
+    multiple: false,
+    keywords: ["image resizer", "resize image", "resize photo", "change image dimensions", "resize image online"],
+    metaTitle: "Image Resizer — Resize Photos by Pixels Free | In1",
+    metaDescription:
+      "Free online image resizer. Resize JPG, PNG and WebP to exact pixel dimensions with optional aspect-ratio lock — in your browser, no uploads, no watermark.",
+    h1: "Resize images online",
+    intro:
+      "Set the exact width and height you need and download a perfectly resized image. Lock the aspect ratio to keep your image from stretching, or set custom dimensions freely. Everything runs in your browser, so your photos are never uploaded.",
+    sections: [
+      {
+        heading: "Resize to the exact dimensions you need",
+        body: "Sometimes you do not want to merely compress an image — you need it to be a specific size in pixels. A profile picture must fit a square avatar slot, a banner has to match a template's dimensions, a forum or marketplace caps the maximum width, and a printed layout needs an image at a precise resolution. This resizer lets you type the exact width and height you want and produces an image at those dimensions, no guessing involved. Because the work is done on a canvas at full precision, the output lands on the numbers you asked for. Whether you are scaling a huge camera photo down to something a web page can use or nudging an image to fit a strict upload requirement, you stay in complete control of the final pixel size rather than being handed an approximation.",
+      },
+      {
+        heading: "Keep proportions with aspect-ratio lock",
+        body: "The fastest way to ruin an image is to stretch it, leaving faces squashed or logos distorted. To prevent that, the resizer keeps the aspect-ratio lock switched on by default: change the width and the height updates automatically to match the original proportions, and vice versa. This way your image is scaled cleanly without any squishing, and you only have to think about one dimension. When you genuinely need a non-proportional size — fitting an image into a fixed box where some distortion is acceptable, or deliberately changing the shape — you can simply turn the lock off and set width and height independently. Having both modes one click apart means you get safe, proportional resizing by default but never lose the flexibility to do something custom when the situation calls for it.",
+      },
+      {
+        heading: "Shrink file size as a bonus",
+        body: "Resizing is one of the most effective ways to make an image lighter, because file size is driven far more by pixel dimensions than people expect. A photo straight from a modern phone can be four or five thousand pixels wide — vastly more than any web page or email needs. Scaling it down to a sensible display size like 1200 or 1920 pixels wide can cut the file from several megabytes to a few hundred kilobytes while looking identical on screen, since the extra pixels were never visible at normal viewing sizes anyway. That makes resizing a quick win for faster-loading pages, smoother email attachments and more free space on your device. If you need to squeeze the file even further afterward, you can pair the resizer with a dedicated compressor, but very often resizing alone does the job. As a practical guide, most images shown on a typical screen never need to be wider than about 1920 pixels, and thumbnails or avatars need far less than that. Matching the pixel dimensions to how the image will actually be displayed is the smartest first step, because every pixel you remove that nobody would ever see is pure saved weight with no visible downside at all.",
+      },
+      {
+        heading: "Private and instant — no uploads",
+        body: "Photos are personal. Screenshots can contain sensitive details, and work images may be confidential. Uploading them to a server just to change their dimensions is both a privacy risk and a waste of time spent waiting for transfers. In1 resizes everything locally using your browser's canvas, so your image never leaves your device — there is no upload, no queue and no storage. The resize happens the instant you click, even for a large photo, and the result is ready to download right away. Because no server is involved there is no file-size cap from a pricing plan, no watermark added to the output and no account to create. The original format is preserved too, so a PNG stays a PNG and a JPG stays a JPG, keeping transparency where it exists and giving you exactly the kind of file you started with, just at a new size.",
+      },
+      {
+        heading: "Who resizes images and why",
+        body: "Almost everyone who works with images online eventually needs to resize one. Social media users size profile photos, cover images and posts to each platform's preferred dimensions so nothing gets awkwardly cropped. Sellers resize product photos to meet a marketplace's required width and height. Bloggers and site owners scale hero images and thumbnails down to keep pages fast and tidy. Job seekers shrink a photo to fit an application form's limit, and students resize images to satisfy an assignment's upload rules. Designers prepare assets at multiple sizes for different screens. Even printing has its own needs, where dimensions and resolution have to line up with a layout. In every one of these cases the goal is the same: get the image to a precise size without distortion or fuss — and to do it quickly, privately and for free. A handy habit is to note the exact dimensions a destination asks for before you start, then enter them here with the ratio lock set the way that situation needs. With the target size in hand, resizing becomes a ten-second task rather than a round of trial and error, and you end up with an image that drops perfectly into whatever slot it was meant for.",
+      },
+    ],
+    howTo: [
+      { name: "Add an image", text: "Drag a JPG, PNG or WebP file into the drop area, or click to choose one from your device." },
+      { name: "Enter dimensions", text: "Type the width and height you want in pixels. The current size is filled in to start from." },
+      { name: "Lock or unlock the ratio", text: "Keep aspect-ratio lock on to scale proportionally, or turn it off to set width and height freely." },
+      { name: "Resize and download", text: "Click resize and save the new image. Your file is never uploaded anywhere." },
+    ],
+    faq: [
+      { q: "Is the image resizer free?", a: "Yes. Resizing images on In1 is completely free with no watermark, no limits and no account required." },
+      { q: "Are my images uploaded to a server?", a: "No. Resizing happens entirely in your browser, so your images never leave your device." },
+      { q: "Will resizing stretch my image?", a: "Not if aspect-ratio lock is on — the other dimension updates automatically to keep proportions. Turn the lock off only when you want a custom, non-proportional size." },
+      { q: "Does the format change when I resize?", a: "No. The output keeps the original format, so a PNG stays a PNG (with transparency) and a JPG stays a JPG." },
+      { q: "Can I make an image larger?", a: "Yes, you can enter larger dimensions, but enlarging beyond the original size can look soft, since the tool can't invent detail that isn't there." },
+      { q: "Is there a file size limit?", a: "There is no fixed limit. Because everything runs on your device, the practical ceiling is your available memory." },
+    ],
+  },
+
+  // ---------------------------------------------------------------------------
+  {
+    slug: "image-to-pdf",
+    category: "pdf",
+    name: "Image to PDF",
+    shortDescription: "Combine JPG, PNG and WebP images into a single PDF document.",
+    icon: "file-image",
+    processing: "client",
+    accept: ["image/jpeg", "image/png", "image/webp"],
+    multiple: true,
+    keywords: ["image to pdf", "jpg to pdf", "png to pdf", "convert images to pdf", "photos to pdf"],
+    metaTitle: "Image to PDF — Convert JPG & PNG to PDF Free | In1",
+    metaDescription:
+      "Free online image to PDF converter. Combine JPG, PNG and WebP images into a single PDF, in your chosen order — all in your browser, no uploads, no watermark.",
+    h1: "Convert images to PDF",
+    intro:
+      "Turn one or many images into a clean PDF document. Add your JPG, PNG or WebP files, arrange them in the order you want, and download a single PDF with one image per page. Everything happens in your browser, so your images are never uploaded.",
+    sections: [
+      {
+        heading: "Bundle many images into one tidy PDF",
+        body: "Sharing a stack of loose image files is awkward. They arrive out of order, recipients have to open them one by one, and a folder of photos is far less convenient than a single document you can scroll through, email or print in one go. Converting images to PDF solves all of that by wrapping them into one portable file that looks the same on every device and in every PDF reader. This tool lets you add as many images as you like and turns each one into its own page, producing a single, self-contained document. It is the natural way to package scanned pages, a set of receipts, a batch of photos, screenshots of a conversation, or pictures of a handwritten form — anything that makes more sense as one ordered file than as a pile of separate images scattered across a folder. A PDF also travels far better than raw images: it keeps your pages in a fixed order, prints predictably, and opens the same way whether the recipient is on a phone, a laptop or a library computer. Image files, by contrast, can be reordered by a file manager, stripped of their sequence by an email client, or opened in a viewer that only shows one at a time, which is exactly the kind of friction a single PDF removes.",
+      },
+      {
+        heading: "Put your pages in the right order",
+        body: "Order matters in a document, and a converter that just dumps your images in whatever sequence the browser picked is frustrating to use. In1 lets you arrange your images before you build the PDF: add them in any order, then move each one up or down until the sequence is exactly right, and remove any you added by mistake. The order you see on screen is the order of the pages in the finished PDF, so there are no surprises when you open the result. That control is essential for things like multi-page scans, where page two must follow page one, or a photo story that needs to read in a particular sequence. Getting the arrangement right before you export saves you from having to reshuffle pages in a separate PDF editor afterward.",
+      },
+      {
+        heading: "Handles JPG, PNG and WebP correctly",
+        body: "The converter accepts the three most common web image formats and embeds each one appropriately. JPG and PNG images are placed directly into the PDF, preserving their quality, while WebP images — which the PDF format does not support natively — are converted to PNG in your browser first so they embed cleanly without any loss you would notice. Each page is sized to match its image, so pictures are never awkwardly cropped or forced into a shape that distorts them; a tall portrait photo produces a tall page and a wide screenshot produces a wide one. This means the PDF faithfully represents your originals, whether they are crisp graphics with transparency, detailed photographs, or a mix of both in the same document.",
+      },
+      {
+        heading: "Private and free — nothing is uploaded",
+        body: "The images people turn into PDFs are often sensitive: scanned identity documents, signed forms, receipts for an expense claim, medical paperwork, or private photos. Uploading those to a stranger's server just to bundle them is exactly the kind of risk worth avoiding. In1 builds the PDF entirely in your browser, so your images never leave your device — there is no upload, no queue, no storage and no account. Because the work is local, it is also fast and unlimited: there is no per-file size cap imposed by a pricing plan, no daily quota, and no watermark stamped across your pages. You get a clean, professional PDF made from your own images, created on your own computer, with the privacy of a desktop app and the convenience of a tool that needs nothing installed.",
+      },
+      {
+        heading: "Common reasons to convert images to PDF",
+        body: "The uses are everywhere. Students photograph or scan handwritten assignments and submit them as a single PDF because that is what the upload form requires. Freelancers and employees combine receipts into one document for an expense report. People turn scanned contracts, IDs or application forms into a tidy PDF to email to an office. Sellers package product photos into a lookbook. Travelers bundle booking confirmations and tickets into one file for a trip. Even everyday situations — saving a set of screenshots, archiving a child's drawings, or keeping a visual record of something — are easier when the images live in one ordered document. Whatever the reason, the goal is the same: take a collection of pictures and turn it into a single, shareable, printable PDF quickly, privately and for free. It is worth getting into the habit of converting before you send, because most forms, portals and email systems treat a single PDF as the standard, expected format for documents, while a scattering of image attachments can look unprofessional and is easy to lose track of. One clean file is simply easier to name, store, find again later and hand off to someone else without explanation.",
+      },
+    ],
+    howTo: [
+      { name: "Add your images", text: "Drag your JPG, PNG or WebP files into the drop area, or click to select them from your device." },
+      { name: "Arrange the order", text: "Move images up or down so they appear in the sequence you want, and remove any you don't need." },
+      { name: "Create the PDF", text: "Click convert and In1 builds a PDF with one image per page, locally in your browser." },
+      { name: "Download", text: "Download the single PDF. No watermark, no sign-up and no upload." },
+    ],
+    faq: [
+      { q: "Is the image to PDF converter free?", a: "Yes. Converting images to PDF on In1 is completely free with no watermark, no limits and no account required." },
+      { q: "Are my images uploaded to a server?", a: "No. The PDF is built entirely in your browser, so your images never leave your device." },
+      { q: "Which image formats are supported?", a: "JPG/JPEG, PNG and WebP. WebP images are converted to PNG in your browser before being embedded." },
+      { q: "Can I control the order of the pages?", a: "Yes. You can reorder the images before converting, and the PDF follows the order shown on screen." },
+      { q: "How is each page sized?", a: "Each page is sized to match its image, so pictures keep their proportions and aren't cropped or stretched." },
+      { q: "Is there a limit on the number of images?", a: "There is no fixed limit. Because everything runs on your device, the practical ceiling is your available memory." },
+    ],
+  },
+
+  // ---------------------------------------------------------------------------
+  {
+    slug: "split-pdf",
+    category: "pdf",
+    name: "Split PDF",
+    shortDescription: "Extract a page range or split a PDF into separate one-page files.",
+    icon: "scissors",
+    processing: "client",
+    accept: ["application/pdf"],
+    multiple: false,
+    keywords: ["split pdf", "extract pdf pages", "separate pdf pages", "pdf splitter", "split pdf online"],
+    metaTitle: "Split PDF — Extract or Separate PDF Pages Free | In1",
+    metaDescription:
+      "Free online PDF splitter. Extract a page range into a new PDF, or split a PDF into separate one-page files in a ZIP — all in your browser, no uploads, no watermark.",
+    h1: "Split PDF files online",
+    intro:
+      "Pull a specific range of pages out of a PDF, or break a whole document into individual one-page files. Choose a mode, set your pages, and download the result. Everything happens in your browser, so your documents are never uploaded.",
+    sections: [
+      {
+        heading: "Two ways to split, for two different jobs",
+        body: "Splitting a PDF can mean two quite different things, so this tool does both. The first mode extracts a range of pages — say pages 3 to 8 — into a brand-new PDF, which is perfect when you only need one chapter, a single section, or a handful of pages from a much larger file. The second mode breaks the entire document apart, turning every page into its own separate one-page PDF and bundling them together in a single ZIP archive for easy downloading. Between them these two modes cover almost every reason you would ever need to split a PDF, whether you want to keep just a slice of a document or fully explode it into its individual pages. You pick the mode that matches the task and the tool handles the rest in a couple of clicks. Thinking about it as a choice between 'keep a slice' and 'separate everything' makes the decision easy: if you want a smaller document that holds only the pages you care about, extract a range; if you want each page to stand alone as its own file, split them all. Both produce ready-to-use files immediately, with no need to open a separate PDF editor or reassemble anything by hand afterward.",
+      },
+      {
+        heading: "Extract exactly the pages you need",
+        body: "Large PDFs are often mostly noise when you only care about a few pages. A 90-page report might contain a single summary you want to share; a scanned bundle might hold one form you need to send on; a contract might have just one appendix worth keeping. Rather than forwarding the whole heavy file and asking people to scroll to the right place, you can extract precisely the range you want into a clean, compact PDF that contains nothing else. The tool reads how many pages your document has and lets you enter a start and end page, then produces a new file with just that span. The original is left untouched, so you always keep your full document while sharing only the part that matters.",
+      },
+      {
+        heading: "Burst a document into single pages",
+        body: "Sometimes you need every page as its own file. Splitting a document into single pages is invaluable when each page is really a separate item — individual certificates, tickets, invoices, or scanned pages that need to be filed, renamed or routed separately. Instead of doing this by hand, the split-all mode creates one PDF per page in a single pass and packages them into a ZIP archive so you can download everything at once and unzip it into a tidy folder. The files are numbered in order with zero-padded names, so they sort correctly and stay in the original sequence. What would be a tedious, error-prone manual chore becomes a single click, no matter whether the document has five pages or five hundred. The ZIP keeps everything together so nothing gets lost between the download and your folder.",
+      },
+      {
+        heading: "Private and free — nothing is uploaded",
+        body: "PDFs are where the most sensitive documents tend to live: contracts, bank statements, medical records, identity documents, legal filings and confidential reports. Uploading those to an online service just to split them means handing your private data to someone else's server, often with no real guarantee about what happens to it afterward. In1 avoids that entirely by doing all the work in your browser. Your file is read into memory, split locally, and offered straight back to you as a download — not a single byte is transmitted, stored or logged anywhere, and there is no account to create. Because the processing is local there is also no file-size cap from a pricing tier and no watermark added to your pages. It is the privacy of a desktop application with nothing to install.",
+      },
+      {
+        heading: "Who needs to split PDFs?",
+        body: "The need shows up constantly in everyday document work. Office workers extract a single section from a long report to circulate to a team. Accountants and freelancers separate a combined scan of receipts or invoices into individual files for bookkeeping. Teachers and students pull specific pages out of a textbook scan or a handout. HR teams split a batch of signed forms into one file per employee. People dealing with applications extract just the pages a form asks for, rather than submitting an entire document. Anyone who has ever scanned a stack of paper into one giant PDF eventually needs to break it back apart. Whatever the situation, the goal is the same: get exactly the pages you want, as either one trimmed PDF or a set of single-page files — quickly, privately and for free. Splitting is also a natural companion to merging: you might break a big scan into single pages, drop the ones you don't need, and recombine the rest into a fresh document. Because the whole process runs locally and leaves your original untouched, you can experiment freely — try a range, check the result, and split a different way if it isn't quite what you wanted, all without ever risking the source file.",
+      },
+    ],
+    howTo: [
+      { name: "Add your PDF", text: "Drag a PDF into the drop area, or click to choose one from your device. The tool reads its page count." },
+      { name: "Choose a mode", text: "Pick 'Extract a range' to keep specific pages, or 'Split all pages' to separate every page." },
+      { name: "Set your pages", text: "For a range, enter the start and end page. For split-all, there's nothing else to set." },
+      { name: "Download", text: "Download the new PDF, or a ZIP of single-page PDFs. No watermark, no sign-up and no upload." },
+    ],
+    faq: [
+      { q: "Is the PDF splitter free?", a: "Yes. Splitting PDFs on In1 is completely free with no watermark, no limits and no account required." },
+      { q: "Is my PDF uploaded to a server?", a: "No. The split happens entirely in your browser, so your document never leaves your device." },
+      { q: "What's the difference between the two modes?", a: "'Extract a range' makes one new PDF from a span of pages you choose. 'Split all pages' turns every page into its own PDF, delivered together in a ZIP file." },
+      { q: "What do I get when I split all pages?", a: "A ZIP archive containing one PDF per page, numbered in order so the files stay in sequence." },
+      { q: "Will the original file be changed?", a: "No. Your original PDF is never modified; the tool only creates new files from it." },
+      { q: "Is there a page or size limit?", a: "There is no fixed limit. Because everything runs on your device, the practical ceiling is your available memory." },
+    ],
+  },
+
+  // ---------------------------------------------------------------------------
+  {
+    slug: "pdf-to-jpg",
+    category: "pdf",
+    name: "PDF to JPG",
+    shortDescription: "Convert each page of a PDF into a high-quality JPG image.",
+    icon: "images",
+    processing: "client",
+    accept: ["application/pdf"],
+    multiple: false,
+    keywords: ["pdf to jpg", "pdf to image", "convert pdf to jpg", "pdf to jpeg", "pdf pages to images"],
+    metaTitle: "PDF to JPG — Convert PDF Pages to Images Free | In1",
+    metaDescription:
+      "Free online PDF to JPG converter. Turn every page of a PDF into a high-quality JPG image — all in your browser, no uploads, no watermark, no sign-up.",
+    h1: "Convert PDF to JPG",
+    intro:
+      "Turn the pages of a PDF into sharp JPG images. Drop in a PDF and In1 renders each page to a high-quality JPG — a single image for a one-page file, or a ZIP of images for a multi-page document. Everything happens in your browser, so your files are never uploaded.",
+    sections: [
+      {
+        heading: "Every page becomes a sharp image",
+        body: "Sometimes a PDF is not the format you actually need. You might want to drop a page into a slideshow, post it on social media, paste it into a document that only accepts images, or preview it as a thumbnail. Converting a PDF to JPG solves this by rendering each page as a standalone picture you can use anywhere an image is accepted. In1 draws every page at a high resolution so text stays crisp and details remain legible rather than coming out blurry or pixelated. A one-page PDF gives you a single JPG, while a multi-page document produces one image per page, neatly numbered. Because JPG is universally supported, the result opens instantly on any phone, computer or app, with no special reader required — which is exactly what makes images so much more convenient than PDFs in these situations. An image is also far easier to embed and preview: messaging apps and social platforms show it inline automatically, content editors place it like any other picture, and a thumbnail can be generated from it without extra tooling. A PDF, by contrast, usually shows up as a file attachment that the viewer has to deliberately open, which adds a step that a plain image simply does not have.",
+      },
+      {
+        heading: "One image or a whole ZIP of pages",
+        body: "The tool adapts to the size of your document. When your PDF has a single page, you get that page back as one JPG, ready to download immediately. When it has many pages, In1 renders each one and bundles them all into a single ZIP archive so you can download everything in one click instead of saving images one at a time. The files inside are numbered in order with zero-padded names, so they sort correctly and you never lose track of which page is which. Whether you are turning a single certificate into an image or exploding a fifty-page report into fifty pictures, the workflow is the same: add the file, click convert, and get back exactly the images you need in the most convenient package for the job.",
+      },
+      {
+        heading: "Rendered with pdf.js for accuracy",
+        body: "Faithfully turning a PDF page into an image is harder than it sounds, because PDFs can contain vector graphics, embedded fonts, layered elements and precise typography that all have to be drawn correctly. In1 uses pdf.js, the same mature, open-source rendering engine that powers PDF viewing in major web browsers, to draw each page onto a canvas before exporting it as a JPG. That means what you see in the image closely matches how the page looks in a real PDF viewer — fonts render properly, layouts stay intact, and graphics come through cleanly. Pages are rendered at an increased scale for extra sharpness, so the resulting JPGs look good both on screen and when dropped into a printed document, presentation or web page. Rendering on a high-resolution canvas keeps fine print and thin lines readable rather than fuzzy.",
+      },
+      {
+        heading: "Private and free — nothing is uploaded",
+        body: "PDFs frequently hold confidential material — contracts, statements, reports, scanned identity documents and other private paperwork — so sending them to an online server just to convert them is a real privacy concern. In1 sidesteps that completely by doing all the rendering in your browser. Your file is read into memory, each page is drawn locally, and the images are handed straight back to you as a download. Not a single byte is uploaded, stored or logged, and there is no account to create. Because the conversion runs on your own device, there is also no file-size cap from a pricing plan and no watermark stamped onto the images. It delivers the convenience of an online converter while keeping the privacy of an offline, desktop-grade tool that happens to need nothing installed.",
+      },
+      {
+        heading: "Who converts PDFs to JPG and why",
+        body: "The reasons are surprisingly varied. Social media users turn a PDF flyer or infographic into an image so it can be posted, since most platforms accept pictures but not PDFs. People extract a single page as a JPG to insert into a report, an email or a chat where attaching a whole PDF would be clumsy. Designers and marketers grab page images to use as previews, thumbnails or mockups. Teachers turn worksheet pages into images for slides. Anyone building a website might convert PDF pages to images to display them inline without forcing visitors to download a file. And sometimes you simply need a quick visual of a document to share at a glance. In every case the aim is the same: get clean, ready-to-use images out of a PDF — quickly, privately and for free. It is the natural counterpart to the image-to-PDF workflow: where one bundles pictures into a document, this one unpacks a document back into pictures, so together they let you move freely between the two formats depending on what a given platform or person expects. Keeping both within reach means you are never stuck because something only accepts one format and you happen to have the other.",
+      },
+    ],
+    howTo: [
+      { name: "Add your PDF", text: "Drag a PDF into the drop area, or click to choose one from your device. The tool reads its page count." },
+      { name: "Convert", text: "Click convert and In1 renders each page to a high-quality JPG, locally in your browser." },
+      { name: "Get your images", text: "A one-page PDF downloads as a single JPG; a multi-page PDF downloads as a ZIP of numbered images." },
+      { name: "Use them anywhere", text: "Drop the JPGs into slides, posts, documents or web pages. No watermark, no sign-up and no upload." },
+    ],
+    faq: [
+      { q: "Is the PDF to JPG converter free?", a: "Yes. Converting PDFs to JPG on In1 is completely free with no watermark, no limits and no account required." },
+      { q: "Is my PDF uploaded to a server?", a: "No. Every page is rendered entirely in your browser, so your document never leaves your device." },
+      { q: "What do I get for a multi-page PDF?", a: "A ZIP archive containing one JPG per page, numbered in order so the images stay in sequence." },
+      { q: "Will the images be good quality?", a: "Yes. Pages are rendered at an increased scale using pdf.js, so text stays sharp and the JPGs look good on screen and in print." },
+      { q: "Can it convert to PNG instead?", a: "This tool outputs JPG, which is ideal for pages with photos and gives small files. For transparency needs, a PNG-based workflow is better suited." },
+      { q: "Is there a page or size limit?", a: "There is no fixed limit. Because everything runs on your device, the practical ceiling is your available memory." },
+    ],
+  },
+
+  // ---------------------------------------------------------------------------
+  {
+    slug: "crop-image",
+    category: "image",
+    name: "Image Cropper",
+    shortDescription: "Crop JPG, PNG and WebP images with free or fixed aspect ratios.",
+    icon: "crop",
+    processing: "client",
+    accept: ["image/jpeg", "image/png", "image/webp"],
+    multiple: false,
+    keywords: ["crop image", "image cropper", "crop photo online", "crop picture", "cut image"],
+    metaTitle: "Crop Image — Free Online Image & Photo Cropper | In1",
+    metaDescription:
+      "Free online image cropper. Crop JPG, PNG and WebP photos with free or fixed aspect ratios (1:1, 4:3, 16:9, 9:16) — in your browser, no uploads, no watermark.",
+    h1: "Crop images online",
+    intro:
+      "Drag to frame exactly the part of your photo you want to keep, then download the cropped image. Choose a free crop or a fixed aspect ratio, zoom to fine-tune, and save — all in your browser, with no uploads.",
+    sections: [
+      {
+        heading: "Crop to exactly what matters",
+        body: "Most photos contain more than you actually want to show. There is dead space around the subject, a distracting edge, a stray object in the corner, or simply the wrong framing for where the image needs to go. Cropping fixes all of that by letting you keep only the part that matters and cut away the rest. With In1 you drag a frame over your image and move or resize it until it sits exactly where you want, with a live preview of what the final picture will look like. A good crop can completely change an image: it tightens the focus on the subject, removes clutter, straightens a lopsided composition, and turns an average snapshot into something that looks deliberate. Whether you are trimming a few pixels off an edge or pulling a tight portrait out of a wide shot, cropping is the single most useful edit there is, and it takes only a few seconds here. It is also non-destructive in spirit: your original file stays exactly as it was on your device, and you download a separate cropped copy, so you can always come back and crop the same photo a different way. That freedom to try a tight square now and a wide banner later, from the very same source image, is what makes cropping such a low-risk, high-impact edit to reach for.",
+      },
+      {
+        heading: "Free crop or fixed aspect ratios",
+        body: "Different destinations demand different shapes, so the cropper gives you both freedom and precision. Leave the aspect ratio free to draw any rectangle you like, or lock it to a fixed proportion when you need the result to match a specific slot. Common presets are one tap away: a perfect 1:1 square for profile pictures and many social posts, 4:3 and 16:9 for classic photo and widescreen framing, and 9:16 for vertical stories and reels. Locking the ratio guarantees the crop comes out at exactly the proportion the target expects, so your image is never rejected or awkwardly stretched by the platform afterward. Switching between free and fixed modes is instant, which means you can experiment — try a square, then a widescreen version of the same shot — and pick whichever framing works best without starting over.",
+      },
+      {
+        heading: "Zoom and reposition for the perfect frame",
+        body: "Cropping is not just about the outer boundary; it is about composition. That is why the tool lets you zoom into the image and drag it around behind the crop frame, so you can fill the frame precisely with the part of the picture you want. Zooming in is perfect for pulling a tight detail out of a larger photo or for centering a face in a square avatar, while repositioning lets you nudge the subject into exactly the right spot. The live preview updates as you move and zoom, so what you see is exactly what you will download — there is no guesswork and no surprises. This fine control is the difference between a crop that merely cuts the image and one that genuinely improves it.",
+      },
+      {
+        heading: "Private and free — nothing is uploaded",
+        body: "Photos are personal, and many of them are not meant for anyone else's server. Family pictures, screenshots that contain private details, unreleased work, ID photos — all of these can be cropped here without ever leaving your device. In1 does the cropping entirely in your browser using a canvas, so the image is read into memory, trimmed locally, and handed straight back to you as a download. There is no upload, no queue, no storage and no account to create. Because the work is local, it is also instant and unlimited: there is no file-size cap imposed by a pricing plan and no watermark stamped onto the result. The output keeps the original format, so a PNG stays a PNG with its transparency intact and a JPG stays a JPG — you simply get the same kind of file you started with, framed exactly the way you wanted.",
+      },
+      {
+        heading: "Who crops images and why",
+        body: "Almost everyone who shares pictures online ends up cropping them. Social media users square up profile photos, frame posts to a platform's preferred ratio, and cut vertical clips for stories and reels. Online sellers crop product shots so the item fills the frame cleanly. Bloggers and site owners crop hero images and thumbnails to fit their layout. Job seekers tidy up a headshot for a CV or profile. People crop screenshots to show just the relevant part, remove a distracting background element from a photo, or straighten a crooked scan. Designers pull specific regions out of a larger image to use as assets. In every case the goal is the same: keep the part of the picture that works, drop the part that doesn't, and get a clean result at the right proportions — quickly, privately and for free. Cropping also pairs naturally with the other image tools: crop first to get the framing right, then resize the result to exact pixel dimensions or convert it to a lighter format for the web. Reaching for the right combination — crop, resize, convert — turns a raw photo into a polished, purpose-built image in just a few quick steps, all without installing anything or handing your pictures to a server.",
+      },
+    ],
+    howTo: [
+      { name: "Add an image", text: "Drag a JPG, PNG or WebP file into the drop area, or click to choose one from your device." },
+      { name: "Frame your crop", text: "Drag and resize the crop area, and pick a free crop or a fixed ratio like 1:1, 4:3, 16:9 or 9:16." },
+      { name: "Zoom to fine-tune", text: "Zoom in and reposition the image so the frame holds exactly what you want." },
+      { name: "Crop and download", text: "Click crop and save the result. Your image is never uploaded anywhere." },
+    ],
+    faq: [
+      { q: "Is the image cropper free?", a: "Yes. Cropping images on In1 is completely free with no watermark, no limits and no account required." },
+      { q: "Are my images uploaded to a server?", a: "No. Cropping happens entirely in your browser, so your images never leave your device." },
+      { q: "Which aspect ratios can I use?", a: "You can crop freely to any shape, or lock to fixed ratios such as 1:1 (square), 4:3, 16:9 and 9:16 (vertical)." },
+      { q: "Does cropping change the image format?", a: "No. The output keeps the original format, so a PNG stays a PNG (with transparency) and a JPG stays a JPG." },
+      { q: "Will cropping reduce quality?", a: "Cropping itself doesn't re-compress the kept pixels noticeably; you simply get the selected region at its original resolution." },
+      { q: "Is there a file size limit?", a: "There is no fixed limit. Because everything runs on your device, the practical ceiling is your available memory." },
+    ],
+  },
+
+  // ---------------------------------------------------------------------------
+  {
+    slug: "compress-pdf",
+    category: "pdf",
+    name: "Compress PDF",
+    shortDescription: "Reduce the file size of image-heavy and scanned PDFs in your browser.",
+    icon: "shrink",
+    processing: "client",
+    accept: ["application/pdf"],
+    multiple: false,
+    keywords: ["compress pdf", "reduce pdf size", "shrink pdf", "make pdf smaller", "compress pdf online"],
+    metaTitle: "Compress PDF — Reduce PDF File Size Online Free | In1",
+    metaDescription:
+      "Free online PDF compressor. Shrink large, scanned and image-heavy PDFs right in your browser — choose a quality level, no uploads, no watermark, no sign-up.",
+    h1: "Compress PDF files online",
+    intro:
+      "Make a heavy PDF smaller so it is easier to email, upload and store. Pick a quality level and In1 re-renders the pages to shrink the file, showing you exactly how much space you saved. Everything happens in your browser — your document is never uploaded.",
+    sections: [
+      {
+        heading: "Shrink PDFs that are too big to share",
+        body: "Oversized PDFs are a constant nuisance. Email providers bounce attachments over a size limit, upload forms reject files that are too large, and cloud storage fills up faster than it should. The biggest offenders are usually scanned documents and image-heavy files, where every page is essentially a high-resolution photo. Compressing the PDF brings the size down so it actually fits where you need it to go. In1 works by re-rendering each page at a sensible resolution and re-encoding it, which is especially effective on scans and PDFs built from photos — exactly the files that tend to be too big in the first place. After compressing, you see the original size, the new size and the percentage saved, so you know immediately whether the result is small enough for that email, portal or storage limit you were fighting with. The savings on a chunky scan can be dramatic — it is common to see a bloated multi-megabyte document drop to a fraction of its original weight — which is often the difference between an attachment that bounces and one that sends on the first try. And because the comparison is shown every time, you are never guessing: you can immediately tell whether one more pass at a lower quality is worth it or whether you are already comfortably under the limit.",
+      },
+      {
+        heading: "Choose the quality that fits",
+        body: "Compression is always a balance between file size and visual quality, and In1 puts that choice in your hands with a simple quality control. A higher setting keeps pages looking crisp while still trimming weight, which is ideal when the document needs to be read closely or printed. A lower setting squeezes the file much harder, which is perfect for a quick preview, an archive copy, or any time getting under a size limit matters more than pixel-perfect sharpness. Because the tool reports the before-and-after sizes every time, you can try a setting, see the result, and adjust until you hit the sweet spot for your particular file. There is no single 'right' level — it depends on the document and what you need it for — so being able to dial it in yourself is what makes the result genuinely useful.",
+      },
+      {
+        heading: "Honest about what 'basic compression' means",
+        body: "It is worth being clear about how browser-based PDF compression works, because not every PDF will shrink. This tool reduces size by rendering each page to an image and rebuilding the document from those images, which is why it is so effective on scans and photo-heavy PDFs. The trade-off is that the rebuilt pages become images, so text in them is no longer selectable or searchable, and a PDF that is already mostly plain text or vector graphics — which are extremely compact to begin with — may not get smaller, or could even grow. To protect you from that, In1 only hands back the compressed file when it is actually smaller than the original; if your PDF is already well optimized, it tells you so and keeps your original untouched. That honesty means you never end up with a larger, lower-quality file by accident.",
+      },
+      {
+        heading: "Private and free — nothing is uploaded",
+        body: "PDFs are where some of the most sensitive documents live: contracts, bank statements, medical records, scanned IDs and confidential reports. Sending those to an online server just to make them smaller is a real privacy risk, and many compression sites do exactly that. In1 takes a different approach and compresses everything locally in your browser. Your file is read into memory, re-rendered on your own device and offered straight back to you as a download — not a single byte is uploaded, stored or logged, and there is no account to create. Because the work is local there is no file-size cap imposed by a pricing plan and no watermark added to your pages. You get the convenience of an online compressor with the privacy of an offline tool, which matters a great deal when the document you are shrinking is something you would never want sitting on someone else's server.",
+      },
+      {
+        heading: "Who compresses PDFs and why",
+        body: "The need comes up everywhere. Job seekers shrink a scanned CV or portfolio to fit an application form's upload limit. Students compress scanned assignments and readings so they can be submitted or shared. Office workers reduce reports and presentations to slip under an email attachment cap. Accountants and freelancers compress scanned receipts and invoices for bookkeeping and submission. People applying for visas, loans or benefits squeeze scanned paperwork down to a portal's strict size requirement. Anyone who has scanned a stack of paper into one enormous PDF eventually needs to make it smaller before it can go anywhere. In all of these cases the aim is the same: take a file that is too big, bring it down to a workable size at an acceptable quality, and do it quickly, privately and for free — without installing software or trusting a server with a private document.",
+      },
+    ],
+    howTo: [
+      { name: "Add your PDF", text: "Drag a PDF into the drop area, or click to choose one from your device." },
+      { name: "Pick a quality level", text: "Use the quality slider to balance file size against how sharp the pages look." },
+      { name: "Compress", text: "In1 re-renders the pages locally and shows the original vs. compressed size." },
+      { name: "Download", text: "Save the smaller PDF. If it can't be reduced, your original is kept untouched." },
+    ],
+    faq: [
+      { q: "Is the PDF compressor free?", a: "Yes. Compressing PDFs on In1 is completely free with no watermark, no limits and no account required." },
+      { q: "Is my PDF uploaded to a server?", a: "No. Compression happens entirely in your browser, so your document never leaves your device." },
+      { q: "Why didn't my PDF get smaller?", a: "PDFs that are already mostly text or vector graphics are very compact, so image-based compression can't shrink them. In that case the tool keeps your original instead of returning a larger file." },
+      { q: "Will the text stay selectable?", a: "No. This is basic compression that rebuilds pages as images, so text becomes part of the image and is no longer selectable or searchable. It works best on scans and image-heavy PDFs." },
+      { q: "How much smaller will my PDF be?", a: "It depends on the document and the quality you choose, but scanned and photo-heavy PDFs often shrink substantially. The tool shows the exact before-and-after sizes." },
+      { q: "Is there a file size limit?", a: "There is no fixed limit. Because everything runs on your device, the practical ceiling is your available memory." },
+    ],
+  },
+
+  // ---------------------------------------------------------------------------
+  {
+    slug: "background-remover",
+    category: "image",
+    name: "Background Remover",
+    shortDescription: "Erase the background from any image automatically with on-device AI.",
+    icon: "eraser",
+    processing: "client",
+    accept: ["image/jpeg", "image/png", "image/webp"],
+    multiple: false,
+    keywords: ["background remover", "remove background", "remove background from image", "transparent background", "background eraser"],
+    metaTitle: "Background Remover — Erase Image Backgrounds Free | In1",
+    metaDescription:
+      "Free online background remover. Automatically erase the background from any photo with on-device AI and download a transparent PNG — no uploads, no watermark.",
+    h1: "Remove image backgrounds",
+    intro:
+      "Drop in a photo and let AI erase the background automatically, leaving a clean cut-out on a transparent background. The model runs entirely on your device, so your images are never uploaded. Download the result as a transparent PNG.",
+    sections: [
+      {
+        heading: "Automatic background removal with AI",
+        body: "Cutting a subject out of its background used to mean tedious manual work with selection tools, careful tracing around edges, and a lot of patience. In1's background remover does it automatically. It uses an AI segmentation model to figure out what the main subject is — a person, a product, an animal, an object — and erases everything around it in one step, leaving a clean cut-out on a transparent background. There is nothing to trace and no tools to learn: you add an image and the AI handles the separation for you in seconds. The result is a PNG with real transparency, so the subject can be dropped onto any background, color or layout without an ugly rectangle around it. For the vast majority of photos — especially clear shots of people and products against a reasonably distinct background — the automatic result is genuinely good, and it turns a job that once took minutes of fiddly editing into a single click.",
+      },
+      {
+        heading: "Runs entirely on your device — private by design",
+        body: "This is the part that makes In1 different from most background removers online. The AI model runs in your browser, on your own device, not on a remote server. Your photo is never uploaded, never stored and never seen by anyone else — the entire process happens locally. That matters enormously for the kinds of images people remove backgrounds from: portraits and headshots, pictures of children, product shots that are not public yet, ID photos, and personal pictures of all kinds. With a typical online tool, every one of those images would be sent to and processed on someone else's servers. Here, nothing leaves your machine. You get the convenience of automatic, AI-powered cut-outs with the privacy of an offline app, and there is no account to create and no data trail left behind.",
+      },
+      {
+        heading: "The first run downloads the AI model",
+        body: "Because the AI runs locally, the model that powers it has to be downloaded to your browser the first time you use the tool. That download is a few megabytes and happens once — after it is cached, subsequent images process faster and even work offline. We show a progress indicator during that initial download so you know what is happening and that the tool has not stalled. The processing itself is computational work done on your device, so it leans on your CPU; a powerful laptop will be quicker than an older phone, and very large images take longer than small ones. None of this requires any setup from you — it is simply the trade-off that makes on-device, private AI possible. The upside is that once the model is loaded, you can remove backgrounds from as many images as you like, for free, with no per-image wait for an upload or a server queue.",
+      },
+      {
+        heading: "Transparent PNGs ready to use anywhere",
+        body: "The output is a PNG with a transparent background, which is the format you want for a cut-out. A transparent PNG drops cleanly onto a colored slide, a different photo, a product page, a logo layout or a thumbnail without any visible box around the subject. That makes the background remover a natural first step for all sorts of creative and practical tasks: placing a product on a clean white or branded background for a store listing, building a marketing graphic around a person, creating a profile picture that sits on any color, making stickers and memes, or compositing a subject into a new scene. Once you have the transparent cut-out, you can pair it with the other In1 image tools — for example resize it to the exact dimensions a platform needs, or convert it to WebP for a lighter web file — to take it the rest of the way.",
+      },
+      {
+        heading: "Tips and realistic expectations",
+        body: "Automatic background removal is powerful, but it is not magic, so a few tips help you get the best result. Images where the subject stands out clearly from the background — good lighting, decent contrast, a not-too-busy backdrop — produce the cleanest cut-outs. Very fine details like flyaway hair, fur, transparent glass or thin wires are the hardest things for any automatic tool to handle perfectly, and you may see slightly soft edges in those areas. Busy backgrounds that share colors with the subject can also confuse the model. For most everyday photos none of this is an issue, but if a particular image comes out imperfect, trying a clearer photo of the same subject usually helps. Think of it as an excellent, instant first pass that nails the great majority of images — and does it privately, on your device, for free. If you plan to place the cut-out on a busy scene, small soft edges often disappear against the new background anyway, so a result that looks slightly imperfect on the checkerboard can look perfectly clean once it is composited. And because re-running costs you nothing, it is always worth a quick second attempt with a cleaner source photo before reaching for manual editing.",
+      },
+    ],
+    howTo: [
+      { name: "Add an image", text: "Drag a JPG, PNG or WebP photo into the drop area, or click to choose one from your device." },
+      { name: "Remove the background", text: "Click remove and the on-device AI erases the background automatically. The first run downloads the model." },
+      { name: "Check the cut-out", text: "Preview the result on a checkerboard so you can see the transparent areas clearly." },
+      { name: "Download the PNG", text: "Save the transparent PNG. Your image was never uploaded anywhere." },
+    ],
+    faq: [
+      { q: "Is the background remover free?", a: "Yes. Removing backgrounds on In1 is completely free with no watermark, no limits and no account required." },
+      { q: "Are my images uploaded to a server?", a: "No. The AI model runs entirely in your browser, so your images never leave your device." },
+      { q: "Why is the first use slower?", a: "The AI model (a few MB) downloads to your browser the first time you use the tool. After that it's cached, so later images process faster and even work offline." },
+      { q: "What format is the result?", a: "A PNG with a transparent background, ready to drop onto any color, photo or layout." },
+      { q: "Is the result always perfect?", a: "It's excellent for most photos, especially clear shots of people and products. Very fine details like loose hair or glass can have softer edges, as with any automatic tool." },
+      { q: "Does it work on my phone?", a: "Yes, in a modern mobile browser. Processing uses your device's CPU, so it may be slower on older phones or with very large images." },
+    ],
+  },
+
+  // ---------------------------------------------------------------------------
+  {
+    slug: "mp4-to-mp3",
+    category: "video",
+    name: "MP4 to MP3",
+    shortDescription: "Extract the audio from a video and save it as an MP3 file.",
+    icon: "file-audio",
+    processing: "client",
+    accept: ["video/*"],
+    multiple: false,
+    keywords: ["mp4 to mp3", "video to mp3", "extract audio from video", "convert mp4 to mp3", "mp4 to audio"],
+    metaTitle: "MP4 to MP3 — Extract Audio from Video Free | In1",
+    metaDescription:
+      "Free online MP4 to MP3 converter. Extract the audio track from a video and download it as an MP3 — all in your browser, no uploads, no watermark, no sign-up.",
+    h1: "Convert MP4 to MP3",
+    intro:
+      "Pull the audio out of a video and save it as an MP3. Drop in an MP4 (or most other video formats), pick a bitrate, and In1 extracts the soundtrack right in your browser. Your video is never uploaded — the whole conversion runs on your device.",
+    sections: [
+      {
+        heading: "Get just the audio from any video",
+        body: "Often the part of a video you actually want is the sound: a song, a podcast or interview recorded as video, a lecture, a sermon, a voice memo someone filmed, or the audio from a clip you want to listen to on the go. Converting MP4 to MP3 strips away the picture and keeps the soundtrack as a compact audio file you can play anywhere — in a music app, on a phone during a commute, in the car, or on a smart speaker. In1 reads the video, extracts its audio track and re-encodes it as an MP3 in a single step. There is nothing to configure beyond the quality you want, and because MP3 is the most universally supported audio format on the planet, the result will play on essentially any device or app without compatibility headaches. Stripping the video also shrinks the file dramatically — audio is a small fraction of a video's size — which makes the MP3 far easier to store on a phone, attach to a message, or sync to a player. And once it is audio-only, you can listen with the screen off, something a video file will not let you do, which is exactly what you want for a podcast or a long lecture you plan to play in the background.",
+      },
+      {
+        heading: "Choose the audio quality you need",
+        body: "MP3 lets you trade file size against audio fidelity, and In1 puts that choice in your hands with a bitrate selector. A higher bitrate like 256 or 320 kbps keeps the audio crisp and is the right pick for music or anything where sound quality matters. A lower bitrate like 128 kbps produces a much smaller file that is perfect for spoken-word content such as podcasts, lectures and interviews, where ultra-high fidelity is unnecessary and a small file is more convenient to store and share. The default sits in the middle at a balanced setting that sounds good for almost everything. Being able to pick the bitrate means you are never stuck with a needlessly huge file for a simple voice recording, or a low-quality file for your favorite track.",
+      },
+      {
+        heading: "Runs in your browser — private and free",
+        body: "This conversion happens entirely on your own device. The video is processed in your browser using ffmpeg compiled to WebAssembly, so your file is never uploaded to a server, never stored and never seen by anyone else. That privacy matters: home videos, recordings of family and friends, confidential meetings and unreleased footage are exactly the kind of thing you should not be handing to a random website. With In1 there is no upload, no account, no watermark on the output and no daily limit. The trade-off for keeping everything local is that the work uses your device's processor, so very long videos take longer to convert — but for the typical clip, song or talk, extraction finishes in a reasonable time, and you never have to wait on an upload or a server queue.",
+      },
+      {
+        heading: "The first conversion loads the engine",
+        body: "Because the conversion engine runs locally, the ffmpeg core has to be downloaded to your browser the first time you use a video or audio tool on In1. That download happens once and is then cached, so subsequent conversions start much faster. While it loads and while your file is processing, a progress indicator keeps you informed so you know the tool is working and has not stalled. To keep things responsive and avoid running out of memory, there is a sensible size limit on the video you can convert — browser-based processing holds the file in memory, so extremely large videos are best trimmed or handled by a desktop application. For everyday clips, songs and recordings, though, the in-browser approach is fast, private and completely free.",
+      },
+      {
+        heading: "Who converts MP4 to MP3 and why",
+        body: "The reasons are everywhere. Music lovers pull the audio from a music video to listen offline. Students and professionals turn recorded video lectures, webinars and meetings into MP3s they can replay on the move. Podcasters and content creators who recorded on video extract the audio track to publish or edit as a podcast. People save the sound from a clip — a speech, a comedy bit, a guided meditation — to keep just the part they care about. Others convert videos to MP3 simply to save space, since an audio file is a fraction of the size of the video. Whatever the motivation, the goal is the same: separate the sound from the picture and get a clean, portable MP3 — quickly, privately and for free, without installing any software. It pairs naturally with the audio converter too: extract an MP3 here, then convert it to WAV, OGG or M4A if a particular device or app prefers a different format. Having both tools side by side means you can go from a raw video to exactly the audio file you need in a couple of quick, private steps on your own machine.",
+      },
+    ],
+    howTo: [
+      { name: "Add your video", text: "Drag an MP4 or other video file into the drop area, or click to choose one from your device." },
+      { name: "Pick a bitrate", text: "Choose the MP3 quality — higher for music, lower for spoken word and smaller files." },
+      { name: "Convert", text: "Click convert and In1 extracts the audio locally in your browser. The first run loads the engine." },
+      { name: "Download the MP3", text: "Save the extracted audio. Your video was never uploaded anywhere." },
+    ],
+    faq: [
+      { q: "Is the MP4 to MP3 converter free?", a: "Yes. Extracting audio on In1 is completely free with no watermark, no limits and no account required." },
+      { q: "Is my video uploaded to a server?", a: "No. The conversion runs entirely in your browser, so your video never leaves your device." },
+      { q: "Which video formats are supported?", a: "MP4 and most common video formats are accepted; the tool extracts and re-encodes the audio track to MP3." },
+      { q: "Why is the first conversion slower?", a: "The ffmpeg engine (single-threaded, to keep the site fast and ad-supported) downloads to your browser on first use, then is cached so later conversions start faster." },
+      { q: "Is there a size limit?", a: "Yes. Because processing happens in memory on your device, very large videos are limited; for typical clips and recordings there's no issue." },
+      { q: "What bitrate should I choose?", a: "Use 256–320 kbps for music and 128 kbps for podcasts, lectures or interviews where a smaller file is more convenient." },
+    ],
+  },
+
+  // ---------------------------------------------------------------------------
+  {
+    slug: "audio-converter",
+    category: "video",
+    name: "Audio Converter",
+    shortDescription: "Convert audio between MP3, WAV, OGG and M4A right in your browser.",
+    icon: "audio-lines",
+    processing: "client",
+    accept: ["audio/*"],
+    multiple: false,
+    keywords: ["audio converter", "convert audio", "mp3 converter", "wav to mp3", "m4a to mp3"],
+    metaTitle: "Audio Converter — MP3, WAV, OGG & M4A Free | In1",
+    metaDescription:
+      "Free online audio converter. Convert between MP3, WAV, OGG and M4A right in your browser — no uploads, no watermark, no sign-up. Private and fast.",
+    h1: "Convert audio files online",
+    intro:
+      "Convert an audio file from one format to another in a few clicks. Drop in an MP3, WAV, OGG or M4A, choose the output format, and In1 re-encodes it in your browser. Your audio is never uploaded — the whole conversion happens on your device.",
+    sections: [
+      {
+        heading: "Convert between the formats that matter",
+        body: "Audio comes in many formats, and the one you have is not always the one you need. MP3 is the universal standard that plays everywhere and keeps files small. WAV is uncompressed, lossless audio — large, but perfect when you need maximum quality or a format that audio editors and many devices accept without fuss. OGG (Vorbis) is a free, open format that often sounds better than MP3 at the same size and is common in games and on the web. M4A (AAC) is the format favored across the Apple ecosystem and many modern devices, offering great quality at small sizes. In1 converts freely between all four, so whether a website only accepts MP3, an editor wants WAV, or a device prefers M4A, you can get your audio into exactly the right format in seconds — without hunting for a desktop program or trusting an upload site. Understanding the difference helps you choose well: the lossy formats (MP3, OGG, M4A) discard inaudible detail to stay small, while WAV keeps every sample. Converting a lossy file to WAV will not restore quality that was already removed — it just makes a bigger file — so the best results come from starting with the highest-quality source you have and converting outward to whatever each destination needs.",
+      },
+      {
+        heading: "Pick the right format for the job",
+        body: "Choosing a format is really about matching the destination. Reach for MP3 when you want something that plays on absolutely anything and stays small — it is the safest default for sharing and for portable players. Choose WAV when quality is paramount or when a tool specifically asks for uncompressed audio, such as some editing software, voice-processing pipelines or certain instruments and samplers; just expect a much larger file. Pick OGG when you want strong quality at a small size and the target supports it, which is typical for web apps and game engines. Go with M4A when you are working in the Apple world or want efficient, high-quality compression on modern hardware. Because the conversion is instant and free, you can always try a format, check that it plays where you need it, and convert again if something prefers a different one.",
+      },
+      {
+        heading: "Runs in your browser — private and free",
+        body: "Every conversion happens entirely on your own device using ffmpeg compiled to WebAssembly. Your audio file is read into memory, re-encoded locally and handed straight back to you — it is never uploaded to a server, stored or logged, and there is no account to create. That privacy matters more than people assume: voice memos, interview recordings, demos of unreleased music, confidential meeting audio and personal messages are exactly the kind of files you should not be sending to an unknown website just to change their format. With In1 there is no upload, no watermark and no daily limit. Because the work is local it leans on your device's processor, so a very long recording takes longer to convert, but for typical songs, clips and voice recordings the conversion finishes quickly and there is no waiting on an upload or a server queue.",
+      },
+      {
+        heading: "The first conversion loads the engine",
+        body: "Since the conversion engine runs locally, the ffmpeg core downloads to your browser the first time you use an audio or video tool here. It happens once and is then cached, so later conversions start much faster and even work offline. While the engine loads and while your file is processing, a progress indicator shows that the tool is working. To stay responsive and avoid running out of memory, there is a sensible size limit on the file you can convert, because browser-based processing keeps the audio in memory; for the occasional very long recording a desktop application may be a better fit. For everyday audio, though, the in-browser approach gives you the convenience of an online converter with the privacy of an offline one — no install, no sign-up and nothing leaving your machine.",
+      },
+      {
+        heading: "Who converts audio and why",
+        body: "The need turns up constantly. Musicians and producers convert WAV masters to MP3 for sharing, or MP3s to WAV to drop into an editor. People with voice memos or recordings in M4A convert them to MP3 so they play on a device or platform that is fussy about formats. Podcasters convert between formats to meet a host's requirements. Gamers and developers turn audio into OGG for engines that expect it. Students convert recorded lectures to a smaller format to save space, and transcription users convert audio into a format their software accepts. Anyone who has ever been told 'this format isn't supported' has needed an audio converter. In every case the goal is the same: take the audio you have, turn it into the format you need at a sensible quality, and do it quickly, privately and for free. It works hand in hand with the MP4 to MP3 tool as well: extract a soundtrack from a video there, then convert it here to WAV for editing or M4A for an Apple device. With both tools running locally in the same place, moving audio between formats stops being a chore that needs special software and becomes a quick, private step you can do anytime, on any modern browser.",
+      },
+    ],
+    howTo: [
+      { name: "Add your audio", text: "Drag an MP3, WAV, OGG or M4A file into the drop area, or click to choose one from your device." },
+      { name: "Choose the output format", text: "Pick MP3, WAV, OGG or M4A as the format you want to convert to." },
+      { name: "Convert", text: "Click convert and In1 re-encodes the audio locally in your browser. The first run loads the engine." },
+      { name: "Download", text: "Save the converted file. Your audio was never uploaded anywhere." },
+    ],
+    faq: [
+      { q: "Is the audio converter free?", a: "Yes. Converting audio on In1 is completely free with no watermark, no limits and no account required." },
+      { q: "Is my audio uploaded to a server?", a: "No. The conversion runs entirely in your browser, so your audio never leaves your device." },
+      { q: "Which formats are supported?", a: "You can convert between MP3, WAV, OGG (Vorbis) and M4A (AAC) in any direction." },
+      { q: "Which format should I choose?", a: "MP3 for universal playback and small size, WAV for lossless quality, OGG for small high-quality web/game audio, and M4A for the Apple ecosystem and efficient compression." },
+      { q: "Why is the first conversion slower?", a: "The ffmpeg engine (single-threaded, to keep the site fast and ad-supported) downloads to your browser on first use, then is cached so later conversions start faster." },
+      { q: "Is there a size limit?", a: "Yes. Because processing happens in memory on your device, very large files are limited; for typical songs and recordings there's no issue." },
+    ],
+  },
+
+  // ---------------------------------------------------------------------------
+  {
+    slug: "case-converter",
+    category: "text",
+    name: "Case Converter",
+    shortDescription: "Convert text between UPPERCASE, lowercase, Title Case and more.",
+    icon: "case-sensitive",
+    processing: "client",
+    keywords: ["case converter", "uppercase to lowercase", "title case converter", "text case changer", "capitalize text"],
+    metaTitle: "Case Converter — Change Text Case Online Free | In1",
+    metaDescription:
+      "Free online case converter. Change text to UPPERCASE, lowercase, Title Case, Sentence case, camelCase, snake_case and kebab-case instantly — private, in your browser.",
+    h1: "Convert text case",
+    intro:
+      "Paste your text and switch it to UPPERCASE, lowercase, Title Case, Sentence case or programming styles like camelCase, snake_case and kebab-case in one click. Everything runs in your browser, and you can copy the result instantly.",
+    sections: [
+      {
+        heading: "Every case style in one place",
+        body: "Changing the capitalization of text by hand is slow and error-prone, especially for anything longer than a sentence. A case converter does it instantly. In1 brings the most useful styles together so you never have to retype a word: UPPERCASE for emphasis and headings, lowercase for normalizing messy input, Title Case for headlines and titles, and Sentence case for turning a shouty block of text back into something readable. On top of those everyday styles it also handles the conventions programmers rely on — camelCase, snake_case and kebab-case — which are tedious to produce manually. You paste your text once and switch between styles with a single click, seeing the result immediately. Whether you accidentally left Caps Lock on, pasted a heading that came through in all capitals, or need to reformat a list of labels, the right transformation is one tap away instead of a frustrating manual rewrite.",
+      },
+      {
+        heading: "Fix text that came out wrong",
+        body: "So much text arrives in the wrong case. You paste a title from a PDF and it is in ALL CAPS. You copy a sentence and the formatting mangles the capitalization. Someone sends a message typed entirely in lowercase that needs tidying before you forward it. Retyping is a waste of time, and manual editing introduces typos. A case converter fixes all of this in seconds: drop the text in, choose the case you want, and copy the corrected version straight back out. Sentence case is particularly handy for rescuing a wall of capitals into normal prose, while Title Case instantly smartens up a heading that came through flat. Because the conversion is deterministic and instant, you can clean up anything from a single label to a long document without touching the keyboard, and the original meaning is preserved — only the capitalization changes. That makes it a reliable cleanup step you can trust before publishing or sharing.",
+      },
+      {
+        heading: "Built for writers and developers alike",
+        body: "The tool serves two audiences at once. Writers, editors, students and marketers lean on UPPERCASE, lowercase, Title Case and Sentence case to format headlines, clean up pasted text, normalize data and follow a style guide consistently. Developers and technical users reach for camelCase, snake_case and kebab-case constantly: variable and function names, database columns, JSON keys, CSS classes, file names, URL slugs and environment variables all follow one of these conventions. Producing them by hand — capitalizing the right letters, swapping spaces for underscores or hyphens — is fiddly and easy to get wrong. Here you type or paste a phrase in plain words and instantly get the exact identifier style you need. Having both the human styles and the code styles side by side means the same tool works whether you are polishing a blog headline or renaming a batch of variables to match your project's conventions — no context-switching to a second utility just to change capitalization.",
+      },
+      {
+        heading: "Private and instant — nothing is uploaded",
+        body: "Your text can be sensitive: an unpublished draft, internal naming, a private message, or data you would rather not share. In1 converts everything locally in your browser using plain JavaScript, so not a single character is sent to a server. There is no upload, no storage and no account to create. The conversion happens the instant you click, even on a long document, because there is no network round trip — and it works exactly the same whether you are online or offline. This local-only approach is both a privacy feature and a speed feature: you can safely paste real content, transform it however you like, and copy the result, confident that the text never left your device. When you close the tab, nothing remains, which makes it a safe place to reformat anything from a confidential paragraph to a list of internal identifiers.",
+      },
+      {
+        heading: "How the case styles work",
+        body: "Each style follows a clear rule. UPPERCASE makes every letter capital; lowercase makes every letter small. Title Case capitalizes the first letter of each word, which suits headings and names. Sentence case capitalizes only the first letter of each sentence and lowercases the rest, turning shouted text back into normal prose. The programming styles remove the spaces between words and join them: camelCase lowercases the first word and capitalizes each following word with no separators (myVariableName); snake_case lowercases everything and joins words with underscores (my_variable_name); and kebab-case does the same but joins with hyphens (my-variable-name), which is the standard for URL slugs and CSS classes. Because you can flip between all of them on the same input, it is easy to compare and grab exactly the format a particular destination expects — a headline, a sentence, or a code identifier — without memorizing any of the rules yourself. A handy workflow is to type a name in plain words once and then sample each style in turn: the same phrase can become a Title Case heading, a snake_case database column and a kebab-case URL slug in a few clicks, with no risk of a mistyped capital or a missed separator along the way.",
+      },
+    ],
+    howTo: [
+      { name: "Paste your text", text: "Type or paste the text you want to reformat into the input box." },
+      { name: "Choose a case", text: "Click UPPERCASE, lowercase, Title Case, Sentence case, camelCase, snake_case or kebab-case." },
+      { name: "See the result", text: "The converted text appears instantly, with your original meaning preserved." },
+      { name: "Copy it", text: "Copy the result with one click and paste it wherever you need it." },
+    ],
+    faq: [
+      { q: "Is the case converter free?", a: "Yes. Converting text case on In1 is completely free with no account and no limits." },
+      { q: "Is my text uploaded anywhere?", a: "No. All conversion happens locally in your browser, so your text never leaves your device." },
+      { q: "What's the difference between Title Case and Sentence case?", a: "Title Case capitalizes the first letter of every word (good for headings); Sentence case capitalizes only the first letter of each sentence (good for normal prose)." },
+      { q: "Can it produce camelCase, snake_case and kebab-case?", a: "Yes. These programming styles join words without spaces, using capitalization (camelCase), underscores (snake_case) or hyphens (kebab-case)." },
+      { q: "Does it change my words or just the capitalization?", a: "Only the capitalization and word separators change. The words themselves and their order stay the same." },
+      { q: "Is there a length limit?", a: "There is no fixed limit. Because everything runs on your device, you can convert anything from a label to a long document instantly." },
+    ],
+  },
+
+  // ---------------------------------------------------------------------------
+  {
+    slug: "color-converter",
+    category: "web",
+    name: "Color Converter",
+    shortDescription: "Convert colors between HEX, RGB and HSL with a live preview.",
+    icon: "palette",
+    processing: "client",
+    keywords: ["color converter", "hex to rgb", "rgb to hex", "hex to hsl", "color code converter"],
+    metaTitle: "Color Converter — HEX, RGB & HSL Converter Free | In1",
+    metaDescription:
+      "Free online color converter. Convert between HEX, RGB and HSL instantly with a live color preview and a picker — private, in your browser, no sign-up.",
+    h1: "Convert colors between HEX, RGB and HSL",
+    intro:
+      "Type a color in any common format — HEX, RGB or HSL — or pick one visually, and instantly get all three values with a live preview. Copy whichever format you need. Everything runs in your browser.",
+    sections: [
+      {
+        heading: "One color, every format you need",
+        body: "Colors on the web are written in several different notations, and the one you have is rarely the one a particular tool wants. A designer hands you a HEX code, but your CSS variable is defined in HSL. A screenshot gives you RGB values, but the design system uses hex. Converting by hand means looking up conversion math or juggling another app. In1's color converter removes that friction: enter a color in HEX, RGB or HSL and it instantly shows you all three equivalents at once, each ready to copy with a single click. There is no calculation to do and no formula to remember. You can also pick a color visually with the built-in color picker and read off its values, or paste a value and see exactly what it looks like. Whether you are translating a brand color into the format your code expects or just checking what a hex string actually is, every representation is right there in front of you.",
+      },
+      {
+        heading: "See the color, not just the numbers",
+        body: "Color codes are abstract — '#3a7bd5' tells you very little until you actually see it. That is why the converter shows a live swatch of your color alongside the values, updating the moment you change the input. Seeing the real color matters: it lets you confirm you pasted the right code, compare a value against a design, or simply sanity-check that the color is what you expected before you drop it into a stylesheet or a document. The preview also makes the picker genuinely useful — nudge the color visually until it looks right, then copy the exact HEX, RGB or HSL value it produces. This tight loop between the numbers and the visual is what turns a dry conversion utility into something you actually enjoy using, because you are always working with the color itself, not just a string of characters that could be anything.",
+      },
+      {
+        heading: "Understand HEX, RGB and HSL",
+        body: "Each format describes the same color in a different way, and each is good at something. HEX (like #3a7bd5) is the compact six-digit code most common in design tools and CSS; it is really just RGB written in hexadecimal. RGB (like rgb(58, 123, 213)) lists the red, green and blue channels from 0 to 255, which maps directly to how screens emit light and is easy to tweak channel by channel. HSL (like hsl(214, 64%, 53%)) describes the color as hue, saturation and lightness, which is far more intuitive for humans: you can make a color lighter, more muted or shift its hue just by changing one number, without guessing at red-green-blue combinations. Being able to move between all three means you can work in whichever model fits the task — HEX to paste into a design file, RGB to fine-tune a channel, or HSL to create a lighter or darker variant of the same hue.",
+      },
+      {
+        heading: "Private and instant — nothing is uploaded",
+        body: "Color conversion is pure math, so there is no reason for it to involve a server — and In1 does it all locally in your browser. Nothing you type is uploaded, stored or logged, and there is no account to create. The conversions happen the instant you type, with no network round trip, so the values and the preview update in real time as you adjust the input or drag the picker. This local-only approach also means the tool works offline and stays fast no matter how many colors you convert. For most people privacy is not the main concern with a color, but the same architecture that keeps your data on your device is what makes the experience immediate and reliable: there is never a spinner, a queue or a failed request between you and the answer. You paste or pick a color and the results are simply there.",
+      },
+      {
+        heading: "Who uses a color converter?",
+        body: "The audience is wide. Front-end developers convert HEX codes from a design into the RGB or HSL values their CSS, Tailwind config or theme variables expect, and back again. Designers translate colors between the formats their various tools prefer, or grab the exact code for a color they picked by eye. Digital artists and illustrators read off values to reproduce a color precisely across apps. Marketers and brand managers confirm that a brand color is being used consistently by checking its codes. Students learning web development use it to understand how the three color models relate to one another. Even hobbyists building a website, theming an app or tweaking a chart reach for it to nail down a color. In every case the goal is the same: take a color in whatever format you have, see it, and get the exact value you need in the format you want — instantly, privately and for free. It also pairs well with picking palettes by hand: drop in a base color, switch to HSL, and nudge the lightness up or down to build a consistent set of tints and shades from a single starting point.",
+      },
+    ],
+    howTo: [
+      { name: "Enter a color", text: "Type a HEX, RGB or HSL value, or use the color picker to choose one visually." },
+      { name: "See all formats", text: "The HEX, RGB and HSL equivalents appear instantly, with a live preview swatch." },
+      { name: "Check the preview", text: "Confirm the color looks right in the swatch before you use it." },
+      { name: "Copy what you need", text: "Copy any of the three formats with one click and paste it into your code or design." },
+    ],
+    faq: [
+      { q: "Is the color converter free?", a: "Yes. Converting colors on In1 is completely free with no account and no limits." },
+      { q: "Which formats can I convert between?", a: "HEX, RGB and HSL, in any direction. Enter any one and you instantly get the other two." },
+      { q: "Is my input uploaded anywhere?", a: "No. All conversion happens locally in your browser, so nothing you type leaves your device." },
+      { q: "What input formats are accepted?", a: "HEX (#rgb or #rrggbb), rgb(r, g, b) and hsl(h, s%, l%). You can also pick a color with the picker." },
+      { q: "What's the difference between RGB and HSL?", a: "RGB lists red, green and blue channels (0–255), matching how screens work. HSL uses hue, saturation and lightness, which is more intuitive for making a color lighter, darker or more muted." },
+      { q: "Does it support transparency (alpha)?", a: "This tool focuses on solid colors in HEX, RGB and HSL. For most design and CSS work those three cover what you need." },
+    ],
+  },
+
+  // ---------------------------------------------------------------------------
+  {
+    slug: "hash-generator",
+    category: "web",
+    name: "Hash Generator",
+    shortDescription: "Generate MD5, SHA-1, SHA-256 and SHA-512 hashes from any text.",
+    icon: "hash",
+    processing: "client",
+    keywords: ["hash generator", "md5 generator", "sha256 generator", "sha512 hash", "generate hash online"],
+    metaTitle: "Hash Generator — MD5, SHA-1, SHA-256 & SHA-512 | In1",
+    metaDescription:
+      "Free online hash generator. Create MD5, SHA-1, SHA-256 and SHA-512 hashes from any text instantly — private, in your browser, no uploads, no sign-up.",
+    h1: "Generate hashes from text",
+    intro:
+      "Type or paste any text and instantly get its MD5, SHA-1, SHA-256 and SHA-512 hashes. Everything is computed in your browser, so nothing you enter is ever uploaded. Copy any hash with a click.",
+    sections: [
+      {
+        heading: "Four hash algorithms, computed instantly",
+        body: "A hash is a fixed-length fingerprint of some data: feed in any text and a hashing algorithm produces a short string that is practically unique to that exact input. Change a single character and the hash changes completely. In1 computes the four hashes you are most likely to need — MD5, SHA-1, SHA-256 and SHA-512 — all at once, the moment you type, so you can grab whichever one a particular system expects. Each result appears in standard hexadecimal and can be copied with a single click. Generating hashes by hand is impossible, and command-line tools are not always at hand, so having all four in one place in the browser is genuinely convenient. Whether you need a quick checksum to compare two pieces of text, a SHA-256 digest to paste into a config or a verification field, or just want to see how hashing works, the values are right there as fast as you can type the input.",
+      },
+      {
+        heading: "Built on the browser's native crypto",
+        body: "The SHA family of hashes here is produced by the Web Crypto API — the browser's own built-in cryptographic implementation, the same one used for secure operations across the web. That means the SHA-1, SHA-256 and SHA-512 digests are computed by trusted, well-tested native code rather than a hand-rolled script, so you can rely on the output being correct and standards-compliant. MD5, which the Web Crypto API deliberately does not include because it is considered cryptographically broken, is computed by a dedicated, widely-used library. The result is that all four algorithms produce exactly the hashes you would get from standard command-line tools or server-side libraries, letting you verify checksums and digests with confidence. Because it leans on the platform's own crypto, hashing is also extremely fast, handling everything from a short string to a large block of text in an instant. The text is always treated as UTF-8 before hashing, which is what makes the results match other standard tools exactly — the same string produces the same hash here as it would from a shell command or a server library, including for accented characters, non-Latin scripts and emoji.",
+      },
+      {
+        heading: "Private by design — nothing is uploaded",
+        body: "Hashing is often done on things you would never want to send anywhere: passwords you are checking, API payloads, tokens, configuration values, or sensitive identifiers. Sending that text to a server just to hash it would defeat the purpose and create a real risk. In1 computes every hash locally in your browser, so the text you enter is never uploaded, stored or logged, and there is no account to create. The hashes are generated the instant you type, with no network round trip, which also means the tool works offline and stays fast no matter how much text you hash. This local-only approach is exactly what you want from a hashing tool: you get the convenience of an online utility without the danger of handing potentially sensitive input to a third party. When you close the tab, nothing remains on this end.",
+      },
+      {
+        heading: "What hashes are used for",
+        body: "Hashes show up all over computing. The most common use is integrity checking: a file or message is hashed, and anyone can re-hash it later to confirm it has not changed, since even a tiny edit produces a completely different hash. Developers compare hashes to detect duplicate or modified content, generate cache keys and ETags, and create deterministic identifiers from input. SHA-256 in particular underpins countless systems, from software release checksums to blockchains and digital signatures. Hashes are also used to index data and to fingerprint values without storing the original. It is worth knowing what hashing is not: it is one-way, so you cannot reverse a hash back into the original text, and on its own it is not encryption. MD5 and SHA-1 in particular should be treated as checksums for non-security uses, since both are considered weak for cryptographic purposes today.",
+      },
+      {
+        heading: "Who uses a hash generator?",
+        body: "The audience is mostly technical but broad. Developers generate hashes constantly — to verify file integrity, build cache keys, create test fixtures, compare strings quickly, or check that a value matches an expected digest. QA and DevOps engineers confirm that a downloaded artifact's checksum matches the one published by its author. Security-minded users hash values to compare them without exposing the originals. Students learning about cryptography and data structures use it to see hashing in action and understand how a small input change cascades into a totally different output. Even non-developers occasionally need a quick MD5 or SHA-256 to paste into a form, a tool or a verification field. Whatever the reason, the need is the same: turn some text into a standard MD5, SHA-1, SHA-256 or SHA-512 hash, and do it quickly, privately and for free, without installing anything or trusting a server with the input. Having all four algorithms generated side by side is part of the appeal: you do not need to remember a command's flags or switch tools to compare, say, an MD5 checksum against a SHA-256 digest — you paste once and read off whichever the task in front of you happens to require.",
+      },
+    ],
+    howTo: [
+      { name: "Enter your text", text: "Type or paste the text you want to hash into the input box." },
+      { name: "Get all four hashes", text: "MD5, SHA-1, SHA-256 and SHA-512 are computed instantly as you type." },
+      { name: "Pick the one you need", text: "Each hash is shown in standard hexadecimal, ready to use." },
+      { name: "Copy it", text: "Copy any hash with a single click and paste it wherever you need it." },
+    ],
+    faq: [
+      { q: "Is the hash generator free?", a: "Yes. Generating hashes on In1 is completely free with no account and no limits." },
+      { q: "Is my text uploaded anywhere?", a: "No. All hashes are computed locally in your browser, so the text you enter never leaves your device." },
+      { q: "Which algorithms are supported?", a: "MD5, SHA-1, SHA-256 and SHA-512. The SHA hashes use the browser's native Web Crypto API." },
+      { q: "Can I reverse a hash back to the text?", a: "No. Hashing is one-way by design — you can't recover the original input from a hash. It is not encryption." },
+      { q: "Are MD5 and SHA-1 safe to use?", a: "They're fine as checksums for non-security uses, but both are considered cryptographically weak. Prefer SHA-256 or SHA-512 for security-sensitive purposes." },
+      { q: "Does it handle accents and emoji?", a: "Yes. Text is hashed as UTF-8, so accented characters, non-Latin scripts and emoji produce correct, consistent hashes." },
+    ],
+  },
+
+  // ---------------------------------------------------------------------------
+  {
+    slug: "rotate-pdf",
+    category: "pdf",
+    name: "Rotate PDF",
+    shortDescription: "Rotate the pages of a PDF by 90, 180 or 270 degrees.",
+    icon: "rotate-cw",
+    processing: "client",
+    accept: ["application/pdf"],
+    multiple: false,
+    keywords: ["rotate pdf", "rotate pdf pages", "turn pdf", "fix pdf orientation", "rotate pdf online"],
+    metaTitle: "Rotate PDF — Turn PDF Pages Online Free | In1",
+    metaDescription:
+      "Free online PDF rotator. Rotate every page of a PDF by 90, 180 or 270 degrees and download the fixed file — all in your browser, no uploads, no watermark.",
+    h1: "Rotate PDF pages",
+    intro:
+      "Fix a sideways or upside-down PDF in seconds. Drop in your file, choose how far to rotate — 90, 180 or 270 degrees — and download a corrected PDF. Everything happens in your browser, so your document is never uploaded.",
+    sections: [
+      {
+        heading: "Fix sideways and upside-down PDFs",
+        body: "Scanned documents and photographed pages have a habit of coming out in the wrong orientation. You open a PDF and the text is lying on its side, or a page that was fed in the wrong way is upside down, forcing you to tilt your head or your phone just to read it. Rotating the PDF fixes this permanently so the file looks right everywhere — on screen, when shared, and when printed. In1 lets you turn the pages by a quarter (90°), a half (180°) or three-quarters (270°) of a full turn, which covers every orientation problem a scan or export can produce. Instead of living with a document that is annoying to read or re-scanning the whole thing, you correct it in a couple of clicks and download a clean version. The rotation is baked into the file itself, so the corrected orientation sticks no matter what app or device opens it next. This is different from simply turning the view in a reader, which only affects how you see it on screen and reverts the moment someone else opens the file — here the change travels with the document, so the person you send it to, and the printer you send it to, both get it the right way up.",
+      },
+      {
+        heading: "Rotate the whole document at once",
+        body: "When a scan comes out rotated, usually every page is rotated the same way, so the fastest fix is to turn the entire document in one go. That is exactly what this tool does: pick an angle and it applies the rotation to all pages at once, saving you from correcting them one by one. The rotation is also relative to each page's current orientation, so it does the sensible thing even on files where pages already carry some rotation. For the common case — a batch scan that all came in sideways — you simply choose 90° or 270° depending on which way it needs to turn, click rotate, and the whole file is fixed instantly. Because the operation just updates each page's orientation flag rather than re-rendering the content, it is fast and completely lossless: text stays selectable and images keep their original quality.",
+      },
+      {
+        heading: "Lossless and quality-preserving",
+        body: "Rotating a PDF here does not degrade it in any way. Unlike approaches that turn pages into images, In1 changes only the orientation metadata of each page, leaving the underlying content untouched. That means selectable text stays selectable, embedded fonts stay intact, and images keep their exact original resolution — the page simply displays at the new angle. The file size barely changes, and there is no generation loss from re-encoding. This matters when the PDF is something you will keep working with: a contract you still need to search, a report you will print, or a document you will combine with others later. You get the orientation fixed without sacrificing any of the qualities that made it a proper PDF in the first place, which is exactly what you want from a tool that is supposed to repair a file rather than rebuild it.",
+      },
+      {
+        heading: "Private and free — nothing is uploaded",
+        body: "The documents that most often need rotating are scans, and scans are frequently sensitive: contracts, identity documents, financial paperwork, medical records and signed forms. Uploading those to an online service just to turn them the right way up is an unnecessary risk. In1 rotates everything locally in your browser, so your file is read into memory, adjusted on your own device, and handed straight back to you as a download — nothing is uploaded, stored or logged, and there is no account to create. Because the work is local there is also no file-size cap from a pricing plan and no watermark stamped onto your pages. It gives you the convenience of an online rotator with the privacy of a desktop tool, which is reassuring when the file you are fixing is a private document you would never want sitting on someone else's server.",
+      },
+      {
+        heading: "Who needs to rotate PDFs?",
+        body: "The need is extremely common wherever paper meets digital. People who scan documents at home or in the office constantly end up with pages that came out sideways and need straightening before sending. Students rotate scanned notes, worksheets and readings so they are comfortable to study. Office workers fix the orientation of contracts, invoices and reports before sharing or filing them. Anyone who photographs a document with a phone to turn it into a PDF often finds the orientation is off. Even files exported from other software sometimes carry the wrong rotation. In all of these cases the goal is the same and the fix is trivial: turn the pages the right way up and get a clean, correctly oriented PDF — quickly, privately and for free, without re-scanning anything or installing software just to perform one simple correction. It is also a natural step to pair with the other PDF tools: rotate a scan the right way up, then split out the pages you need or compress it before sending, all without the file ever leaving your device.",
+      },
+    ],
+    howTo: [
+      { name: "Add your PDF", text: "Drag a PDF into the drop area, or click to choose one from your device." },
+      { name: "Choose an angle", text: "Pick how far to rotate the pages: 90°, 180° or 270°." },
+      { name: "Rotate", text: "In1 applies the rotation to every page locally in your browser." },
+      { name: "Download", text: "Save the corrected PDF. No watermark, no sign-up and no upload." },
+    ],
+    faq: [
+      { q: "Is the PDF rotator free?", a: "Yes. Rotating PDFs on In1 is completely free with no watermark, no limits and no account required." },
+      { q: "Is my PDF uploaded to a server?", a: "No. The rotation happens entirely in your browser, so your document never leaves your device." },
+      { q: "Does rotating reduce quality?", a: "No. Only each page's orientation is changed; text stays selectable and images keep their original resolution, so it's completely lossless." },
+      { q: "Does it rotate all pages or just one?", a: "It rotates every page by the angle you choose, which is the usual fix for a scan that all came in sideways." },
+      { q: "Which angles are available?", a: "You can rotate by 90, 180 or 270 degrees, which covers every common orientation problem." },
+      { q: "Is there a file size limit?", a: "There is no fixed limit. Because everything runs on your device, the practical ceiling is your available memory." },
+    ],
+  },
+
+  // ---------------------------------------------------------------------------
+  {
+    slug: "watermark-pdf",
+    category: "pdf",
+    name: "Watermark PDF",
+    shortDescription: "Stamp a diagonal text watermark across every page of a PDF.",
+    icon: "stamp",
+    processing: "client",
+    accept: ["application/pdf"],
+    multiple: false,
+    keywords: ["watermark pdf", "add watermark to pdf", "pdf watermark", "stamp pdf", "confidential watermark pdf"],
+    metaTitle: "Watermark PDF — Add a Text Watermark Online Free | In1",
+    metaDescription:
+      "Free online PDF watermark tool. Stamp custom diagonal text like CONFIDENTIAL or DRAFT across every page with adjustable opacity — in your browser, no uploads.",
+    h1: "Add a watermark to a PDF",
+    intro:
+      "Stamp your own text — like CONFIDENTIAL, DRAFT or a name — diagonally across every page of a PDF. Choose the wording and how strong the watermark looks, then download. Everything runs in your browser, so your document is never uploaded.",
+    sections: [
+      {
+        heading: "Mark a document as yours or as a draft",
+        body: "A watermark is a simple, powerful way to communicate something about a document at a glance: that it is confidential, that it is only a draft, that it belongs to you, or that it is a sample not meant for distribution. By laying semi-transparent text diagonally across every page, a watermark stays visible no matter how the document is viewed, shared or printed, without obscuring the underlying content. In1 lets you type whatever text you want — CONFIDENTIAL, DRAFT, COPY, a company name, a person's name, a date — and stamps it across the entire PDF in one step. It is the fastest way to signal intent before you send a file out: a draft contract that should not be acted on yet, an internal report that must not circulate, or a proof you are sharing for review. The message rides along with the document, so anyone who opens it understands its status immediately. Because the watermark sits over the content rather than replacing it, the document remains fully usable — readable, printable and shareable — while carrying its label everywhere it goes. That combination of clear signalling and untouched content is exactly why a diagonal text watermark has become the standard way to mark drafts, copies and confidential material.",
+      },
+      {
+        heading: "Control the text and how strong it looks",
+        body: "A watermark has to strike a balance: visible enough to register, but faint enough that the document underneath stays readable. In1 puts that balance in your hands. You choose the exact text, and an opacity control lets you set how bold or subtle the stamp appears — a heavier setting for an unmistakable CONFIDENTIAL warning, or a lighter one for a gentle DRAFT or ownership mark that does not get in the way of reading. The watermark is sized and angled to span each page diagonally, which is the classic, professional look and the hardest to crop out or ignore. Because you can adjust the wording and strength and re-run instantly, it is easy to preview different options and land on a watermark that does its job without overwhelming the content beneath it.",
+      },
+      {
+        heading: "Applied to every page automatically",
+        body: "A watermark is only effective if it is on every page — a confidential notice that appears on page one but not page five is easy to miss or misuse. That is why In1 applies your watermark to all pages of the document at once, consistently, so the message is unmissable throughout. There is no need to place it page by page or worry that some pages slipped through. The text is drawn directly into the PDF as part of each page, so it travels with the file: it shows up when the document is opened in any reader, when it is shared, and when it is printed. Whether the PDF has a single page or hundreds, the watermark is stamped uniformly across all of them in one quick operation, giving the whole document the same clear status from the first page to the last.",
+      },
+      {
+        heading: "Private and free — nothing is uploaded",
+        body: "The documents people watermark are very often the sensitive ones — confidential reports, draft contracts, proprietary designs, paperwork being shared for limited review. Uploading such a file to an online service to stamp it would undercut the very confidentiality the watermark is meant to assert. In1 adds the watermark entirely in your browser, so your document is read into memory, stamped on your own device, and handed straight back to you as a download — nothing is uploaded, stored or logged, and there is no account to create. Because the work is local there is no file-size cap from a pricing plan and, of course, no unwanted watermark of ours added on top of yours. You get the convenience of an online tool with the privacy of an offline one, which is exactly what you want when the whole point is to control how a private document is handled.",
+      },
+      {
+        heading: "Who adds watermarks to PDFs?",
+        body: "The use cases span work and personal life. Businesses stamp CONFIDENTIAL or INTERNAL on reports and plans before circulating them, and DRAFT on documents that are not final. Freelancers and agencies watermark proofs and samples — designs, photos compiled into a PDF, written deliverables — so previews cannot be used without payment. Legal and finance teams mark copies, drafts and privileged documents. Photographers and creators protect portfolios shared as PDFs with their name. Students and researchers sometimes mark drafts of a thesis or paper. Anyone sending a document for review who wants to make its status unmistakable reaches for a watermark. In every case the goal is the same: lay a clear, consistent message across the pages of a PDF to signal ownership or status — quickly, privately and for free, without installing specialized software or exposing the file to a server. It also slots neatly into a wider PDF workflow: watermark a draft before circulating it for review, then later remove the draft version and share a clean final, or combine watermarking with compressing and splitting depending on what each recipient needs — all handled locally in the browser.",
+      },
+    ],
+    howTo: [
+      { name: "Add your PDF", text: "Drag a PDF into the drop area, or click to choose one from your device." },
+      { name: "Type your watermark", text: "Enter the text you want — for example CONFIDENTIAL, DRAFT or your name." },
+      { name: "Set the opacity", text: "Adjust how strong or subtle the watermark appears with the opacity control." },
+      { name: "Apply and download", text: "Click apply and save the watermarked PDF. Your file is never uploaded anywhere." },
+    ],
+    faq: [
+      { q: "Is the PDF watermark tool free?", a: "Yes. Watermarking PDFs on In1 is completely free, and it never adds a watermark of its own — only your text." },
+      { q: "Is my PDF uploaded to a server?", a: "No. The watermark is applied entirely in your browser, so your document never leaves your device." },
+      { q: "Can I choose the watermark text?", a: "Yes. You type any text you want, such as CONFIDENTIAL, DRAFT, COPY, a name or a date." },
+      { q: "Is the watermark added to every page?", a: "Yes. Your text is stamped diagonally across all pages of the document for consistent coverage." },
+      { q: "Can I control how visible it is?", a: "Yes. An opacity control lets you make the watermark bold and unmistakable or light and subtle." },
+      { q: "Can I add an image or logo watermark?", a: "This tool focuses on text watermarks, which cover the most common needs. An image watermark may be added in the future." },
+    ],
+  },
+
+  // ---------------------------------------------------------------------------
+  {
+    slug: "organize-pdf",
+    category: "pdf",
+    name: "Organize PDF",
+    shortDescription: "Reorder and delete PDF pages visually, then rebuild the document.",
+    icon: "list-ordered",
+    processing: "client",
+    accept: ["application/pdf"],
+    multiple: false,
+    keywords: ["organize pdf", "reorder pdf pages", "delete pdf pages", "rearrange pdf", "remove pages from pdf"],
+    metaTitle: "Organize PDF — Reorder & Delete Pages Online Free | In1",
+    metaDescription:
+      "Free online tool to organize PDF pages. Reorder and delete pages with visual thumbnails, then download the rebuilt PDF — in your browser, no uploads, no watermark.",
+    h1: "Organize PDF pages",
+    intro:
+      "Rearrange and remove pages from a PDF with a visual page-by-page view. Drop in your file, move pages into the order you want, delete the ones you don't need, and download the rebuilt document. Everything happens in your browser.",
+    sections: [
+      {
+        heading: "See your pages and rearrange them",
+        body: "Editing the structure of a PDF blind — by typing page numbers and hoping for the best — is frustrating and error-prone. In1 shows you a thumbnail of every page so you can see exactly what you are working with. From there, reordering is simple: move any page earlier or later until the document flows the way you want. This visual approach makes it easy to fix a scan that came out in the wrong order, move an appendix to the end, bring a summary to the front, or interleave pages that were captured separately. Because you can see each page as you move it, there is no guesswork and no need to open the file repeatedly to check whether you got the order right. When the arrangement on screen matches what you want, that is exactly what the downloaded PDF will contain — what you see is what you get. Working visually also helps you catch problems you would never spot from page numbers alone: a page that is out of place, a near-duplicate, or a blank sheet hiding in the middle of a long scan. Seeing the document as a grid of pages turns reorganizing from a tedious, abstract task into something closer to rearranging cards on a table.",
+      },
+      {
+        heading: "Delete the pages you don't need",
+        body: "Often a PDF contains pages that simply should not be there: a blank sheet from a scanner, a cover page you don't want to share, duplicated pages, or sections that are irrelevant to the recipient. With In1 you can remove any page with a single click, watching the document shrink to just the pages that matter. This is perfect for trimming a long report down to the relevant section before sending, cleaning up the stray blank pages that scanners love to insert, or removing sensitive pages from a copy you need to share. The original file is never touched — you are building a new version — so you can delete freely without any risk to your source document. Combined with reordering, deleting pages lets you reshape almost any PDF into exactly the document you need, all from the same visual view.",
+      },
+      {
+        heading: "Rebuilt cleanly, without quality loss",
+        body: "When you are done arranging and deleting, In1 rebuilds the PDF by copying the pages you kept, in the order you chose, into a fresh document. Crucially, the pages are copied as-is rather than re-rendered into images, so nothing is degraded: text stays selectable and searchable, embedded fonts remain intact, and images keep their original resolution. The result is a genuine PDF, just with a new page structure — not a flattened, lower-quality imitation. This matters when the document needs to stay functional: a contract you will still search, a report you will print, or a file you will combine with others later. The thumbnails you used to arrange everything are only a visual guide; the actual rebuild works from the original high-quality pages, so the document you download is every bit as crisp and usable as the one you started with.",
+      },
+      {
+        heading: "Private and free — nothing is uploaded",
+        body: "Reorganizing a PDF often means handling exactly the documents you would least want to expose: contracts, financial records, scanned identity papers, medical files and confidential reports. Uploading such a file to an online service just to drop a page or change the order is an unnecessary risk. In1 does all the work in your browser — it reads the file into memory, renders the thumbnails locally, and rebuilds the document on your own device, then hands it back as a download. Nothing is uploaded, stored or logged, and there is no account to create. Because the processing is local there is no file-size cap from a pricing plan and no watermark added to your pages. You get the convenience and visual ease of an online page organizer with the privacy of an offline tool, which is exactly what you want when the file you are reshaping is something private that should never sit on someone else's server.",
+      },
+      {
+        heading: "Who organizes PDF pages?",
+        body: "The need is everywhere documents are assembled or scanned. Office workers reorder and trim reports, proposals and contracts before circulating them. Students rearrange scanned notes and remove blank or irrelevant pages from readings and assignments. People who scan stacks of paper fix the page order and delete the inevitable blank sheets. Anyone combining material from different sources needs to put the pages into a sensible sequence and cut what does not belong. Administrators prepare clean, correctly ordered packets from messy source files. Job seekers assemble a portfolio in the right order and drop pages they don't want a particular employer to see. In all of these cases the goal is the same: take a PDF whose pages are in the wrong order or include pages you don't want, and shape it into a clean, correctly ordered document — quickly, visually, privately and for free, without installing dedicated PDF software.",
+      },
+    ],
+    howTo: [
+      { name: "Add your PDF", text: "Drag a PDF into the drop area, or click to choose one. Page thumbnails are generated in your browser." },
+      { name: "Reorder pages", text: "Move pages earlier or later until the document is in the order you want." },
+      { name: "Delete pages", text: "Remove any pages you don't need with a single click." },
+      { name: "Rebuild and download", text: "Click apply to rebuild the PDF from the pages you kept, then download it. Nothing is uploaded." },
+    ],
+    faq: [
+      { q: "Is the organize PDF tool free?", a: "Yes. Reordering and deleting PDF pages on In1 is completely free with no watermark, no limits and no account required." },
+      { q: "Is my PDF uploaded to a server?", a: "No. Thumbnails are rendered and the document is rebuilt entirely in your browser, so your file never leaves your device." },
+      { q: "Can I both reorder and delete pages?", a: "Yes. You can move pages into any order and remove the ones you don't need, then download the rebuilt PDF." },
+      { q: "Does it reduce quality?", a: "No. Kept pages are copied as-is, not re-rendered, so text stays selectable and images keep their original resolution." },
+      { q: "Will my original file change?", a: "No. The tool builds a new PDF from your selections; your original file is never modified." },
+      { q: "Is there a page or size limit?", a: "There is no fixed limit, though generating thumbnails for a very large PDF takes longer. Everything is bounded by your device's memory." },
+    ],
+  },
+
+  // ---------------------------------------------------------------------------
+  {
+    slug: "trim-video",
+    category: "video",
+    name: "Trim Video",
+    shortDescription: "Cut a clip from a video by setting a start and end time.",
+    icon: "scissors-line-dashed",
+    processing: "client",
+    accept: ["video/*"],
+    multiple: false,
+    keywords: ["trim video", "cut video", "video cutter", "clip video", "shorten video online"],
+    metaTitle: "Trim Video — Cut Video Clips Online Free | In1",
+    metaDescription:
+      "Free online video trimmer. Cut a clip from any video by start and end time and download it — fast and private, in your browser, no uploads, no watermark.",
+    h1: "Trim a video",
+    intro:
+      "Keep just the part of a video you want. Drop in your file, set a start and end time, and download the trimmed clip. The cut is done in your browser, so your video is never uploaded.",
+    sections: [
+      {
+        heading: "Cut a clip down to what matters",
+        body: "Most videos contain more than you need. There is dead air at the start while the camera settles, a long tail after the action is over, or a single moment in the middle that is the only part worth keeping. Trimming lets you cut the video down to just that span, so you can share a tight clip instead of asking people to scrub through minutes of filler. In1 makes this simple: you set a start time and an end time, and the tool produces a new video containing only that section. It is perfect for grabbing a highlight from a longer recording, removing the boring beginning and end of a screen capture, or isolating the exact few seconds you want to send. Because you keep only the portion you choose, the resulting file is also smaller and quicker to upload or message — you are sending the moment, not the whole reel. Setting a precise start and end also means you do not have to rely on whoever watches it to skip ahead; the clip simply begins where the interesting part begins and ends where it ends, which is exactly what a viewer expects from something shared deliberately rather than a raw recording dumped in full.",
+      },
+      {
+        heading: "Fast, because it doesn't re-encode",
+        body: "Trimming on In1 is built for speed. Instead of re-encoding the whole video — which is slow, especially in the browser — it copies the existing audio and video streams directly into the new clip, simply discarding everything outside your chosen range. That means trimming is dramatically faster than a full conversion and there is no loss of quality at all, since the original frames and audio are passed through untouched. The trade-off worth knowing about is that, to keep this speed and quality, the cut snaps to the nearest keyframe near your start point, so the clip may begin a fraction of a second from the exact time you typed. For the vast majority of uses that is imperceptible, and in return you get a near-instant, lossless trim instead of a long wait while every frame is rebuilt.",
+      },
+      {
+        heading: "Runs in your browser — private and free",
+        body: "The cut happens entirely on your own device using ffmpeg compiled to WebAssembly, so your video is never uploaded to a server, stored or logged. That privacy is important, because the videos people trim are often personal: family recordings, clips of friends, screen captures that may show private information, or footage that simply is not meant to be public. With In1 there is no upload, no account, no watermark on the output and no daily limit. Because the processing is local it leans on your device's resources rather than a server, so there is a sensible size limit on the video you can load, and very long files are best handled by a desktop application. For the typical clip you want to shorten, though, trimming in the browser is fast, completely private, and free, with nothing leaving your machine and no waiting on an upload or a queue.",
+      },
+      {
+        heading: "The first trim loads the engine",
+        body: "Because the trimming engine runs locally, the ffmpeg core downloads to your browser the first time you use a video or audio tool here. It happens once and is then cached, so later operations start much faster and even work offline. While the engine loads and while your clip is being produced, a progress indicator shows that the tool is working and has not stalled. Trimming itself is quick since it copies streams rather than re-encoding them, so the bulk of any wait on the very first use is simply that one-time engine download. None of this requires any setup from you — it is the trade-off that makes private, on-device video editing possible without installing anything. Once the engine is cached, trimming feels close to instant for typical clips, and you can cut as many videos as you like for free.",
+      },
+      {
+        heading: "Who trims videos and why",
+        body: "The need shows up constantly. People cut a highlight out of a long phone recording to share on a chat or social feed. Creators trim the dead space off the start and end of a screen recording before posting a tutorial. Someone preparing a clip for a presentation isolates the exact segment they want to show. Players trim a gameplay moment worth keeping. Anyone sending a video by message cuts it down to fit a size limit or to respect the recipient's time. Teachers and students clip the relevant portion out of a recorded lecture. In every case the goal is the same: take a longer video and keep only the part that matters, producing a smaller, sharper clip — and do it quickly, privately and for free, without uploading personal footage to a server or installing video-editing software for one simple cut. It also pairs naturally with the other media tools: trim a clip down first, then convert it to a different format or turn it into a GIF, all locally and in a few seconds.",
+      },
+    ],
+    howTo: [
+      { name: "Add your video", text: "Drag a video file into the drop area, or click to choose one from your device." },
+      { name: "Set start and end", text: "Enter the start and end time, in seconds, of the section you want to keep." },
+      { name: "Trim", text: "Click trim and In1 cuts the clip locally in your browser. The first run loads the engine." },
+      { name: "Download", text: "Save the trimmed clip. Your video was never uploaded anywhere." },
+    ],
+    faq: [
+      { q: "Is the video trimmer free?", a: "Yes. Trimming videos on In1 is completely free with no watermark, no limits and no account required." },
+      { q: "Is my video uploaded to a server?", a: "No. The trim happens entirely in your browser, so your video never leaves your device." },
+      { q: "Why is trimming so fast?", a: "It copies the existing video and audio streams instead of re-encoding them, which is much faster and completely lossless." },
+      { q: "Why doesn't the clip start at the exact time I set?", a: "To stay fast and lossless, the cut snaps to the nearest keyframe near your start point, so it may begin a fraction of a second off. For most clips this is imperceptible." },
+      { q: "Does the output keep the original quality?", a: "Yes. Because the streams are copied rather than re-encoded, the trimmed clip keeps the original video and audio quality." },
+      { q: "Is there a size limit?", a: "Yes. Because processing happens in memory on your device, very large videos are limited; for typical clips there's no issue." },
+    ],
+  },
+
+  // ---------------------------------------------------------------------------
+  {
+    slug: "video-converter",
+    category: "video",
+    name: "Video Converter",
+    shortDescription: "Convert videos between MP4 and WebM right in your browser.",
+    icon: "video",
+    processing: "client",
+    accept: ["video/*"],
+    multiple: false,
+    keywords: ["video converter", "convert video", "mov to mp4", "webm to mp4", "mp4 to webm"],
+    metaTitle: "Video Converter — MP4 & WebM Converter Free | In1",
+    metaDescription:
+      "Free online video converter. Convert videos between MP4 (H.264) and WebM right in your browser — no uploads, no watermark, no sign-up. Private and free.",
+    h1: "Convert video files",
+    intro:
+      "Convert a video from one format to another without uploading it anywhere. Drop in your file, choose MP4 or WebM, and In1 re-encodes it in your browser. Best for short clips, since conversion runs on your device.",
+    sections: [
+      {
+        heading: "Convert between MP4 and WebM",
+        body: "Video formats are not interchangeable, and the one you have is not always the one a particular site, app or editor will accept. MP4 (with H.264 video) is the universal standard that plays virtually everywhere — phones, browsers, editors, social platforms and TVs — which makes it the safest choice for sharing and compatibility. WebM is a free, open format designed for the web that often produces smaller files and is preferred by some web apps and platforms. In1 converts between the two so you can take a WebM that will not open in your editor and turn it into an MP4, or convert an MP4 into a lighter WebM for embedding on a page. You simply pick the output format and the tool re-encodes the video for you. Because both formats are widely supported, having a quick way to move between them means you are never blocked by a file that is technically fine but in the wrong container.",
+      },
+      {
+        heading: "Runs in your browser — private and free",
+        body: "The conversion happens entirely on your own device using ffmpeg compiled to WebAssembly, so your video is never uploaded to a server, stored or logged. That matters because video is often deeply personal — recordings of family and friends, screen captures that may contain private details, or footage that simply is not meant to be public. Most online converters send your file to their servers to process it; In1 does not, which removes that privacy risk entirely. There is no account, no watermark on the output and no daily limit. The trade-off for keeping everything local is that re-encoding video is computationally heavy and runs on your device, so this is best suited to short clips rather than feature-length files. For the typical clip you want to convert, though, it gives you the convenience of an online tool with the privacy of an offline one, and nothing ever leaves your machine.",
+      },
+      {
+        heading: "Honest about performance",
+        body: "It is worth being upfront: re-encoding a video is fundamentally more demanding than converting an image or extracting audio, and In1 runs the encoder in a single thread to keep the site fast and compatible with the ads that keep it free. The practical effect is that conversion speed depends on your device and the length of the clip — a few seconds of video convert quickly, while a long recording can take a while. To keep things responsive and avoid running out of memory, there is a sensible size limit on the file you can load, and very large or long videos are better handled by a desktop application. We use a fast encoder preset so the wait stays reasonable, and a progress bar keeps you informed throughout. Setting expectations here means you can decide when the in-browser convenience is the right call and when a heavier file belongs in dedicated software. For most short clips, the local approach is more than fast enough and well worth the privacy it buys.",
+      },
+      {
+        heading: "The first conversion loads the engine",
+        body: "Because the encoder runs locally, the ffmpeg core downloads to your browser the first time you use a video or audio tool here. It happens once and is then cached, so later conversions start much faster and even work offline. While the engine loads and while your video is being re-encoded, a progress indicator shows that the tool is working and has not stalled. None of this requires any setup from you — it is simply what makes private, on-device video conversion possible without installing anything. Once the core is cached, the only time cost is the encoding itself, which depends on the clip. This one-time download is also why the very first conversion feels slower than the ones that follow: after it, the engine is ready and waiting, so you can convert several clips in a row without paying that cost again.",
+      },
+      {
+        heading: "Who converts video and why",
+        body: "The need is common. People convert a WebM downloaded from the web into MP4 so it opens in their phone's gallery or a video editor that does not support WebM. Others convert an MP4 into WebM to embed it on a website with a smaller file size. Someone whose camera or screen recorder produced a format an upload form rejects converts it into a widely accepted one. Developers convert clips into the format a platform or player expects. Anyone who has hit 'this video format is not supported' has needed a converter. In every case the goal is the same: take the video you have and turn it into a format that works where you need it, at a reasonable quality — and, with In1, do it privately on your own device and for free, without sending personal footage to a server or installing heavy software for an occasional conversion. As a rule of thumb, reach for MP4 when you need something that will play anywhere without question, and choose WebM when a smaller, web-optimized file is the priority and you know the destination supports it.",
+      },
+    ],
+    howTo: [
+      { name: "Add your video", text: "Drag a video file into the drop area, or click to choose one from your device." },
+      { name: "Choose a format", text: "Pick MP4 (H.264) for maximum compatibility, or WebM for a smaller web-friendly file." },
+      { name: "Convert", text: "Click convert and In1 re-encodes the video locally. The first run loads the engine." },
+      { name: "Download", text: "Save the converted video. Your file was never uploaded anywhere." },
+    ],
+    faq: [
+      { q: "Is the video converter free?", a: "Yes. Converting videos on In1 is completely free with no watermark, no limits and no account required." },
+      { q: "Is my video uploaded to a server?", a: "No. The conversion runs entirely in your browser, so your video never leaves your device." },
+      { q: "Which formats are supported?", a: "You can convert between MP4 (H.264 video) and WebM (VP8 video), in either direction." },
+      { q: "Why is conversion slower than other tools?", a: "Re-encoding video is computationally heavy and runs single-threaded (to keep the site ad-supported and fast), so it's best for short clips." },
+      { q: "Is there a size limit?", a: "Yes. Because processing happens in memory on your device, large or long videos are limited; short clips work best." },
+      { q: "Why is the first conversion slower?", a: "The ffmpeg engine downloads to your browser on first use, then is cached so later conversions start faster." },
+    ],
+  },
+
+  // ---------------------------------------------------------------------------
+  {
+    slug: "video-to-gif",
+    category: "video",
+    name: "Video to GIF",
+    shortDescription: "Turn a short video clip into an animated GIF.",
+    icon: "clapperboard",
+    processing: "client",
+    accept: ["video/*"],
+    multiple: false,
+    keywords: ["video to gif", "mp4 to gif", "make a gif", "convert video to gif", "gif maker"],
+    metaTitle: "Video to GIF — Make Animated GIFs Online Free | In1",
+    metaDescription:
+      "Free online video to GIF maker. Turn a short clip into an animated GIF with adjustable frame rate, size and length — in your browser, no uploads, no watermark.",
+    h1: "Convert video to GIF",
+    intro:
+      "Turn a short video clip into an animated GIF. Drop in your file, choose the frame rate, size and how many seconds to capture, and download the GIF. Everything happens in your browser, so your video is never uploaded.",
+    sections: [
+      {
+        heading: "Make a GIF from any short clip",
+        body: "Animated GIFs are the universal language of reactions, demos and short loops. They autoplay silently, work in chat apps, documents, issue trackers and web pages without a video player, and loop endlessly to drive a point home. In1 turns a short video clip into a GIF so you can capture a funny moment, a reaction, a quick product demo, or a how-to loop and drop it anywhere a GIF is welcome. You pick the part of the clip to capture and a few quality settings, and the tool produces a ready-to-use animated GIF. Because a GIF needs no audio track and no player controls, it is often the friendliest way to share a brief moving image — it just plays, everywhere, the instant it loads. For short, silent, looping moments, a GIF communicates faster than asking someone to click play on a video. And because GIFs are treated as images rather than media, they slip into places a video file often cannot go — an issue comment, a wiki page, a chat that does not embed players, or an email — and start moving the instant they appear, with no thumbnail to tap and no controls to fumble with.",
+      },
+      {
+        heading: "Control frame rate, size and length",
+        body: "A GIF is a trade-off between smoothness, sharpness and file size, and In1 hands you the controls that matter. The frame rate sets how smooth the motion looks — higher is smoother but heavier, while a lower rate keeps the file small and is perfectly fine for simple loops. The width sets the dimensions of the GIF; a smaller size keeps it light for chat and email, while a larger one shows more detail. And because GIFs balloon in size with every extra second, you choose a start point and a short duration to capture, keeping the result manageable. Together these three settings let you dial in exactly the GIF you want: a tiny, snappy reaction loop, or a slightly larger, smoother demo. Seeing how the choices affect the output helps you find the sweet spot between looking good and staying small enough to share.",
+      },
+      {
+        heading: "Why GIFs are kept short and small",
+        body: "It helps to understand why this tool nudges you toward short clips. The GIF format is old and inefficient compared to modern video: it stores many full frames rather than cleverly compressing motion, so file size grows quickly with length, frame rate and dimensions. A few seconds at a modest size produces a shareable file; a long, high-frame-rate, full-size GIF can be enormous — far larger than the original video — and slow to load. That is why In1 focuses on short captures with adjustable quality, so you get a GIF that is actually practical to send and embed. If you need a long clip with sound, a video format is the right tool; but for a brief, silent, looping moment that needs to play instantly and everywhere, a compact GIF is exactly right, and keeping it short is what keeps it usable.",
+      },
+      {
+        heading: "Runs in your browser — private and free",
+        body: "The GIF is created entirely on your own device using ffmpeg compiled to WebAssembly, so your video is never uploaded to a server, stored or logged. That privacy matters because the clips people turn into GIFs are often personal — moments with family and friends, screen recordings that may show private details, or footage not meant to be public. Most online GIF makers send your file to their servers; In1 does not. There is no account, no watermark stamped on the GIF and no daily limit. Because the work is local it uses your device's resources, so this is designed for short clips rather than long videos, and there is a sensible size limit on what you can load. For the brief moments a GIF is meant to capture, though, you get the convenience of an online maker with the privacy of an offline tool, and nothing ever leaves your machine.",
+      },
+      {
+        heading: "Who makes GIFs and why",
+        body: "The audience is broad. Social media users and chatters create reaction GIFs and shareable loops from clips they love. Product teams and developers turn short screen recordings into GIFs to demonstrate a feature in a README, an issue, a pull request or release notes, where an autoplaying loop is far more convenient than a video file. Marketers make eye-catching looping snippets for emails and landing pages. Support teams capture a quick how-to as a GIF that plays inline. Educators and writers embed small animated examples in documents. Anyone who wants to show a brief moving moment without the friction of a video player reaches for a GIF. In every case the goal is the same: take a short clip and turn it into a compact, autoplaying, universally supported animation — quickly, privately and for free, without uploading personal footage or installing GIF-making software. It also pairs well with the trimmer: cut the exact moment you want first, then turn that tight clip into a GIF, so the animation contains only the part worth looping.",
+      },
+    ],
+    howTo: [
+      { name: "Add your video", text: "Drag a short video clip into the drop area, or click to choose one from your device." },
+      { name: "Set the options", text: "Choose the frame rate, the width, and the start time and duration to capture." },
+      { name: "Create the GIF", text: "Click create and In1 builds the GIF locally in your browser. The first run loads the engine." },
+      { name: "Download", text: "Save the animated GIF. Your video was never uploaded anywhere." },
+    ],
+    faq: [
+      { q: "Is the video to GIF maker free?", a: "Yes. Making GIFs on In1 is completely free with no watermark, no limits and no account required." },
+      { q: "Is my video uploaded to a server?", a: "No. The GIF is created entirely in your browser, so your video never leaves your device." },
+      { q: "Why should I keep the GIF short?", a: "The GIF format is inefficient, so file size grows fast with length, frame rate and size. Short captures stay small enough to share and load quickly." },
+      { q: "Can I choose the part of the video to capture?", a: "Yes. You set a start time and a duration, plus the frame rate and width, to control exactly what the GIF contains." },
+      { q: "Does the GIF have sound?", a: "No. GIFs cannot contain audio — they are silent animations. If you need sound, keep it as a video." },
+      { q: "Is there a size limit?", a: "Yes. Because processing happens in memory on your device, large videos are limited; short clips work best for GIFs anyway." },
+    ],
+  },
+];
+
+// --- Helpers -----------------------------------------------------------------
+
+export function getAllTools(): Tool[] {
+  return tools;
+}
+
+export function getToolBySlug(slug: string): Tool | undefined {
+  return tools.find((t) => t.slug === slug);
+}
+
+export function getToolsByCategory(category: ToolCategory): Tool[] {
+  return tools.filter((t) => t.category === category);
+}
+
+export function getCategory(slug: ToolCategory): CategoryMeta | undefined {
+  return categories.find((c) => c.slug === slug);
+}
+
+/** Categories that currently have at least one tool, in registry order. */
+export function getActiveCategories(): CategoryMeta[] {
+  return categories.filter((c) => tools.some((t) => t.category === c.slug));
+}
