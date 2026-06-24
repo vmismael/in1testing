@@ -51,11 +51,17 @@ export function CategoryShowcase() {
               href={`/category/${c.slug}`}
               className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card transition-colors hover:border-primary/40"
             >
-              <div className="flex aspect-[16/10] items-center justify-center bg-secondary">
+              <div className="relative flex aspect-square items-center justify-center bg-secondary">
                 {c.icon ? (
-                  <Image src={c.icon} alt="" className="h-full w-full object-contain p-6" />
+                  <Image
+                    src={c.icon}
+                    alt=""
+                    fill
+                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                    className="object-contain p-8"
+                  />
                 ) : c.lucide ? (
-                  <Icon name={c.lucide} className="size-10 text-foreground/80" strokeWidth={1.5} />
+                  <Icon name={c.lucide} className="size-9 text-foreground/70" strokeWidth={1.75} />
                 ) : null}
               </div>
               <div className="flex flex-1 flex-col p-5">
